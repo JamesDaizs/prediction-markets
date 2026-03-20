@@ -1,0 +1,3186 @@
+[
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Basketball",
+    "volume": 117713469.0,
+    "open_interest": 147291890.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Basketball",
+    "volume": 83234988.0,
+    "open_interest": 127763652.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Bitcoin",
+    "volume": 71854820.67725453,
+    "open_interest": 25183761.35400302,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "UNKNOWN",
+    "subcategory": "UNKNOWN",
+    "volume": 71848488.0,
+    "open_interest": 18981776.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Bitcoin",
+    "volume": 52684672.98691103,
+    "open_interest": 34283430.58870799,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Basketball",
+    "volume": 52587964.04469196,
+    "open_interest": 14156400.60046997,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Soccer",
+    "volume": 52192926.608412065,
+    "open_interest": 36185715.51997202,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Tennis",
+    "volume": 47567376.0,
+    "open_interest": 919160.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "UNKNOWN",
+    "subcategory": "UNKNOWN",
+    "volume": 45266080.0,
+    "open_interest": 22124516.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Tennis",
+    "volume": 41010374.0,
+    "open_interest": 862679.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Basketball",
+    "volume": 40371656.61824295,
+    "open_interest": 6648320.832512973,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Soccer",
+    "volume": 39560042.898991995,
+    "open_interest": 40926554.31120701,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Bitcoin",
+    "volume": 39060575.0,
+    "open_interest": 10925372.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Bitcoin",
+    "volume": 37486656.0,
+    "open_interest": 11237004.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Soccer",
+    "volume": 27984750.0,
+    "open_interest": 20930212.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Bitcoin",
+    "volume": 27307401.0,
+    "open_interest": 10476973.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Movies",
+    "volume": 25050532.0,
+    "open_interest": 1686433.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Interest Rates",
+    "volume": 24512485.826808006,
+    "open_interest": 57096060.348742,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Interest Rates",
+    "volume": 23939556.562321,
+    "open_interest": 53248518.92098,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Elections",
+    "volume": 22078688.229798,
+    "open_interest": 59200698.33109779,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Elections",
+    "volume": 21634515.721071992,
+    "open_interest": 64484120.6152068,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Movies",
+    "volume": 19529488.0,
+    "open_interest": 953529.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "International Elections",
+    "volume": 17872794.299401,
+    "open_interest": 45840049.17459199,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Baseball",
+    "volume": 17115033.0,
+    "open_interest": 6169764.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Baseball",
+    "volume": 17079358.0,
+    "open_interest": 10453465.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Esports",
+    "volume": 15805090.019069005,
+    "open_interest": -970433.9839950041,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Social Media",
+    "volume": 15721079.781956995,
+    "open_interest": -5204298.144323013,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "International Elections",
+    "volume": 14633657.149647007,
+    "open_interest": 47505183.21270199,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Executive Branch",
+    "volume": 14318124.99693,
+    "open_interest": 36193633.09398796,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Esports",
+    "volume": 14099060.729289006,
+    "open_interest": 718492.4035879946,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Ethereum",
+    "volume": 14080011.514808,
+    "open_interest": 8376360.876375012,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "Military Conflicts",
+    "volume": 13478011.590138003,
+    "open_interest": 61222975.153753,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "Military Conflicts",
+    "volume": 11961197.960210996,
+    "open_interest": 62661590.474272996,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Executive Branch",
+    "volume": 11947001.374233007,
+    "open_interest": 27367046.59987694,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Movies",
+    "volume": 11684440.775261,
+    "open_interest": 8757220.47775899,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Soccer",
+    "volume": 11276791.0,
+    "open_interest": 24585738.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Hockey",
+    "volume": 11022374.930530002,
+    "open_interest": 7774353.37960099,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Ethereum",
+    "volume": 10244545.037391,
+    "open_interest": 10019754.411202012,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Hockey",
+    "volume": 7256289.0,
+    "open_interest": 16014196.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Hockey",
+    "volume": 7105726.692677001,
+    "open_interest": 5497022.096473989,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Hockey",
+    "volume": 6907990.0,
+    "open_interest": 14821396.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Movies",
+    "volume": 6783772.418968998,
+    "open_interest": 1896514.0729189934,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Golf",
+    "volume": 6694881.0,
+    "open_interest": 19682843.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Tennis",
+    "volume": 6147792.901354002,
+    "open_interest": -26258.819004999823,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Social Media",
+    "volume": 5835702.284689,
+    "open_interest": -5145587.5052230125,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Climate and Weather",
+    "volume": 5703984.157529,
+    "open_interest": 1939781.4808659956,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Solana",
+    "volume": 5021634.306805001,
+    "open_interest": 2363471.8129969947,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Golf",
+    "volume": 4879290.0,
+    "open_interest": 21964425.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "XRP",
+    "volume": 4411582.714225001,
+    "open_interest": 967811.6823809999,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Solana",
+    "volume": 4152992.7474850025,
+    "open_interest": 3017429.0235839956,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Commodities",
+    "volume": 4051110.5103639998,
+    "open_interest": 10852470.687361998,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Climate and Weather",
+    "volume": 3709024.780177,
+    "open_interest": 1134746.8398609955,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "Mention Markets",
+    "volume": 3537837.0,
+    "open_interest": 624259.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Ethereum",
+    "volume": 3376196.0,
+    "open_interest": 950121.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Climate and Weather",
+    "volume": 3223629.0,
+    "open_interest": 2820753.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "MMA",
+    "volume": 3222452.658253,
+    "open_interest": -419493.4721179991,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Climate and Weather",
+    "volume": 3207703.0,
+    "open_interest": 3328023.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "XRP",
+    "volume": 3203332.547942002,
+    "open_interest": 1143846.8940869998,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "Mention Markets",
+    "volume": 3101885.0,
+    "open_interest": 454476.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Ethereum",
+    "volume": 3005994.0,
+    "open_interest": 1001351.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Motorsports",
+    "volume": 2587958.212885999,
+    "open_interest": 905247.0995740008,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Commodities",
+    "volume": 2584293.4204120003,
+    "open_interest": 11072856.980688998,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Golf",
+    "volume": 2383573.1841659998,
+    "open_interest": 593881.7435879998,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Baseball",
+    "volume": 2283648.5477179987,
+    "open_interest": 593013.0668250083,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Ethereum",
+    "volume": 2159007.0,
+    "open_interest": 906816.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Elections",
+    "volume": 2151864.0,
+    "open_interest": 108427980.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Esports",
+    "volume": 2117807.0,
+    "open_interest": 224622.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Elections",
+    "volume": 2025224.0,
+    "open_interest": 107355078.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Interest Rates",
+    "volume": 1790380.0,
+    "open_interest": 26660451.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Golf",
+    "volume": 1747533.2450719997,
+    "open_interest": 134113.70138799952,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Motorsports",
+    "volume": 1698420.684154,
+    "open_interest": 817779.1875710008,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Baseball",
+    "volume": 1670563.1363800005,
+    "open_interest": 165085.28643700836,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Sports Combo",
+    "volume": 1661025.840454,
+    "open_interest": 1104196.940275004,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Esports",
+    "volume": 1657430.0,
+    "open_interest": 207197.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Sports Combo",
+    "volume": 1607439.818164,
+    "open_interest": 1095786.9433520038,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Altcoin FDV",
+    "volume": 1556570.425485,
+    "open_interest": 9901623.484835,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Cricket",
+    "volume": 1447259.2939059997,
+    "open_interest": 216126.09910300022,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Cricket",
+    "volume": 1355912.0,
+    "open_interest": 496675.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "Diplomacy",
+    "volume": 1262897.6474370002,
+    "open_interest": 3449744.863969003,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Artificial Intelligence",
+    "volume": 1244310.7487419997,
+    "open_interest": 2708975.262737013,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Interest Rates",
+    "volume": 1231353.0,
+    "open_interest": 25444263.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Music",
+    "volume": 1214291.243051,
+    "open_interest": 713800.3735429966,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Commodities",
+    "volume": 1169493.0,
+    "open_interest": 2272628.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Commodities",
+    "volume": 936467.0,
+    "open_interest": 2682712.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "XRP",
+    "volume": 923349.0,
+    "open_interest": 87537.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Solana",
+    "volume": 916615.0,
+    "open_interest": 206601.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Solana",
+    "volume": 906571.0,
+    "open_interest": 200149.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Music",
+    "volume": 847454.7551190001,
+    "open_interest": 766872.2939409966,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Artificial Intelligence",
+    "volume": 837441.1275189999,
+    "open_interest": 3026925.629076013,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Solana",
+    "volume": 827853.0,
+    "open_interest": 212217.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "XRP",
+    "volume": 780005.0,
+    "open_interest": 77432.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Executive Branch",
+    "volume": 776857.0,
+    "open_interest": 12462006.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Stock Indices",
+    "volume": 771608.0,
+    "open_interest": 2534139.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Corporate Metrics",
+    "volume": 715947.810642,
+    "open_interest": 1525451.5111990005,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Video Games",
+    "volume": 703511.494497,
+    "open_interest": 1090986.0170229995,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "XRP",
+    "volume": 671310.0,
+    "open_interest": 84856.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Religion",
+    "volume": 648649.498493,
+    "open_interest": 9136614.534612993,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "TV",
+    "volume": 629913.0,
+    "open_interest": 9923223.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Football",
+    "volume": 620011.385037,
+    "open_interest": 1007710.9788479813,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Music",
+    "volume": 611592.0,
+    "open_interest": 2546359.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Altcoin FDV",
+    "volume": 600727.171319,
+    "open_interest": 9571423.174406001,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Stock Indices",
+    "volume": 576263.4573059998,
+    "open_interest": 576363.3766720004,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Individual Stocks",
+    "volume": 570855.675421,
+    "open_interest": 480069.17530300096,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Individual Stocks",
+    "volume": 555058.457434,
+    "open_interest": 665278.7413870008,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Employment",
+    "volume": 539607.0,
+    "open_interest": 574985.5,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Mention Markets",
+    "volume": 532300.0,
+    "open_interest": 3374944.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Executive Branch",
+    "volume": 527383.0,
+    "open_interest": 11950975.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Legislative Branch",
+    "volume": 526841.0,
+    "open_interest": 5262922.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Stock Indices",
+    "volume": 498728.0,
+    "open_interest": 2596413.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "NFT",
+    "volume": 487151.043467,
+    "open_interest": 866230.7447250001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Mention Markets",
+    "volume": 485709.0,
+    "open_interest": 281036.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Corporate Events",
+    "volume": 457101.037013,
+    "open_interest": 1711293.0933750009,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Football",
+    "volume": 452904.0,
+    "open_interest": 22085602.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Music",
+    "volume": 441450.0,
+    "open_interest": 2451643.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Religion",
+    "volume": 430226.12927999994,
+    "open_interest": 8965322.613075992,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Football",
+    "volume": 426349.91864299995,
+    "open_interest": 989858.9688359813,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "TV",
+    "volume": 422838.0,
+    "open_interest": 9759165.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "Diplomacy",
+    "volume": 419008.7196379999,
+    "open_interest": 3473478.8959910027,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Football",
+    "volume": 408279.0,
+    "open_interest": 22258501.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Sentiment",
+    "volume": 391371.0,
+    "open_interest": 137296.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Corporate Metrics",
+    "volume": 383193.99908000004,
+    "open_interest": 1497032.4592180005,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Legislative Branch",
+    "volume": 378846.0,
+    "open_interest": 5184878.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "TV",
+    "volume": 359807.0,
+    "open_interest": 9445922.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Sentiment",
+    "volume": 354189.0,
+    "open_interest": 128868.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Employment",
+    "volume": 332070.0,
+    "open_interest": 536082.5,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Movies",
+    "volume": 331717.0,
+    "open_interest": 1082042.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Employment",
+    "volume": 331401.0,
+    "open_interest": 530901.5,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Crypto Market",
+    "volume": 331186.25900199974,
+    "open_interest": 1829379.2941040013,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Mention Markets",
+    "volume": 330803.0,
+    "open_interest": 911383.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Crypto Market",
+    "volume": 321123.8911309999,
+    "open_interest": 1760773.9993390013,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Token Launch",
+    "volume": 310473.291553,
+    "open_interest": 1287929.759116995,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Mention Markets",
+    "volume": 304337.0,
+    "open_interest": 307685.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Trade",
+    "volume": 303786.976491,
+    "open_interest": 1406207.910187001,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Video Games",
+    "volume": 302618.495086,
+    "open_interest": 975340.8489879995,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "International Elections",
+    "volume": 274769.0,
+    "open_interest": 4949235.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Inflation",
+    "volume": 255449.653212,
+    "open_interest": 175474.57392000002,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Corporate Events",
+    "volume": 245336.633585,
+    "open_interest": 1818956.274857001,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Industry Awards",
+    "volume": 235816.628079,
+    "open_interest": 625813.9068909998,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Music",
+    "volume": 235495.0,
+    "open_interest": 2747878.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "TV",
+    "volume": 227029.24591499992,
+    "open_interest": 388913.4398120007,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Cricket",
+    "volume": 213969.0,
+    "open_interest": 586618.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Mention Markets",
+    "volume": 213275.0,
+    "open_interest": 3439303.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Space",
+    "volume": 209422.418275,
+    "open_interest": 5480032.439898999,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "Mention Markets",
+    "volume": 206911.940084,
+    "open_interest": 63908.0421799999,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Trade",
+    "volume": 200976.506295,
+    "open_interest": 1762748.041403001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "International Elections",
+    "volume": 190976.0,
+    "open_interest": 4937319.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "TV",
+    "volume": 183793.357226,
+    "open_interest": 477893.09449700074,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "Diplomacy",
+    "volume": 182053.0,
+    "open_interest": 5236691.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Inflation",
+    "volume": 176623.0,
+    "open_interest": 1062934.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Cricket",
+    "volume": 176584.381381,
+    "open_interest": 42177.35259700028,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Dogecoin",
+    "volume": 172938.30781399997,
+    "open_interest": 159222.13218300013,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Space",
+    "volume": 167117.22464300002,
+    "open_interest": 5433872.493596,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "Diplomacy",
+    "volume": 159877.0,
+    "open_interest": 5187791.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Inflation",
+    "volume": 140866.0,
+    "open_interest": 1147984.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Space",
+    "volume": 133606.0,
+    "open_interest": 6404738.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Judicial Branch",
+    "volume": 131336.820541,
+    "open_interest": 850084.2541670001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Motorsports",
+    "volume": 130079.0,
+    "open_interest": 3702717.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Industry Awards",
+    "volume": 128959.552143,
+    "open_interest": 626257.5342819998,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Stock Indices",
+    "volume": 126958.662812,
+    "open_interest": 371017.7384890005,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Dogecoin",
+    "volume": 118819.351521,
+    "open_interest": 163844.27966200013,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Token Launch",
+    "volume": 114362.705837,
+    "open_interest": 1183912.942866995,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Natural Disasters",
+    "volume": 111910.53647800002,
+    "open_interest": 307078.8490019997,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Mention Markets",
+    "volume": 103386.0,
+    "open_interest": 554791.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Motorsports",
+    "volume": 96983.0,
+    "open_interest": 3735600.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "Mention Markets",
+    "volume": 91750.043322,
+    "open_interest": 171460.4461389999,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "MMA",
+    "volume": 87645.0,
+    "open_interest": 508049.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Space",
+    "volume": 85487.0,
+    "open_interest": 6386782.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Corporate Metrics",
+    "volume": 83604.0,
+    "open_interest": 512671.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Artificial Intelligence",
+    "volume": 78220.0,
+    "open_interest": 2730913.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Artificial Intelligence",
+    "volume": 74848.0,
+    "open_interest": 2795745.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Corporate Events",
+    "volume": 72276.0,
+    "open_interest": 2473590.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Altcoin Prices",
+    "volume": 72011.264661,
+    "open_interest": 496774.84641800006,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Transportation",
+    "volume": 71389.459504,
+    "open_interest": 35025.741074000034,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "MMA",
+    "volume": 69646.0,
+    "open_interest": 430162.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "Military Conflicts",
+    "volume": 67715.0,
+    "open_interest": 56902.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Inflation",
+    "volume": 66584.626913,
+    "open_interest": 125914.92132200002,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "GDP",
+    "volume": 61341.839675,
+    "open_interest": 303021.03404199996,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "Military Conflicts",
+    "volume": 60580.0,
+    "open_interest": 211367.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Video Games",
+    "volume": 55407.0,
+    "open_interest": 1128837.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Altcoin Prices",
+    "volume": 53131.06685799999,
+    "open_interest": 481112.6824030001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Corporate Metrics",
+    "volume": 49995.0,
+    "open_interest": 523073.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "GDP",
+    "volume": 49888.675188999994,
+    "open_interest": 301998.64258399996,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Dogecoin",
+    "volume": 48865.0,
+    "open_interest": 131507.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Dogecoin",
+    "volume": 47156.0,
+    "open_interest": 133290.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Natural Disasters",
+    "volume": 44863.252832,
+    "open_interest": 365203.60530599975,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Unknown",
+    "volume": 44657.65706200008,
+    "open_interest": 35761.09117799991,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Health",
+    "volume": 39928.612805000004,
+    "open_interest": 206827.31279000058,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Wealth",
+    "volume": 39263.463403,
+    "open_interest": 203814.2872559999,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "NFT",
+    "volume": 38841.84562099999,
+    "open_interest": 1025252.7690900001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "GDP",
+    "volume": 38743.0,
+    "open_interest": 908172.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Health",
+    "volume": 38672.22971,
+    "open_interest": 204285.8317420006,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Employment",
+    "volume": 38571.148481000004,
+    "open_interest": 139946.56489700027,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Judicial Branch",
+    "volume": 38311.361002000005,
+    "open_interest": 923218.7339410001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Corporate Events",
+    "volume": 37946.0,
+    "open_interest": 2490370.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Memecoins",
+    "volume": 35451.0,
+    "open_interest": 1795.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "MMA",
+    "volume": 34888.548329000005,
+    "open_interest": -738790.7109909991,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Wealth",
+    "volume": 34798.908613,
+    "open_interest": 202419.2289609999,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Inflation",
+    "volume": 32850.0,
+    "open_interest": 932439.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Dogecoin",
+    "volume": 30874.0,
+    "open_interest": 124652.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Boxing",
+    "volume": 30680.0,
+    "open_interest": 172942.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Video Games",
+    "volume": 28116.0,
+    "open_interest": 1170223.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "GDP",
+    "volume": 27312.0,
+    "open_interest": 929820.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Chess",
+    "volume": 26792.0,
+    "open_interest": 214481.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Podcast",
+    "volume": 24584.589279,
+    "open_interest": 43439.50027299995,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Judicial Branch",
+    "volume": 24226.0,
+    "open_interest": 1097538.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Chess",
+    "volume": 24093.0,
+    "open_interest": 222675.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "GDP",
+    "volume": 21718.0,
+    "open_interest": 917194.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Lacrosse",
+    "volume": 20832.0,
+    "open_interest": 53959.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "USA Judicial Branch",
+    "volume": 20240.0,
+    "open_interest": 1086070.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Celebrity",
+    "volume": 19745.0,
+    "open_interest": 380440.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Stablecoins",
+    "volume": 19239.186354999998,
+    "open_interest": 106010.92575300044,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Celebrity",
+    "volume": 18285.804838,
+    "open_interest": 170292.24689999185,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Stablecoins",
+    "volume": 17862.197898,
+    "open_interest": 103952.01292400045,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Transportation",
+    "volume": 16866.0,
+    "open_interest": 5851.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Video Games",
+    "volume": 14662.0,
+    "open_interest": 1115444.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Product Launch",
+    "volume": 14652.288091999997,
+    "open_interest": 80529.146587,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Social Media",
+    "volume": 14571.0,
+    "open_interest": 76892.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Celebrity",
+    "volume": 11850.006655000001,
+    "open_interest": 169054.78913499185,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Celebrity",
+    "volume": 11323.0,
+    "open_interest": 370757.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Airdrop",
+    "volume": 10770.968911,
+    "open_interest": 253982.94789599974,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Transportation",
+    "volume": 10473.0,
+    "open_interest": 11499.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Social Media",
+    "volume": 10364.0,
+    "open_interest": 69091.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Product Launch",
+    "volume": 10333.481876999998,
+    "open_interest": 71092.55892499999,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Real Estate",
+    "volume": 9761.344985999998,
+    "open_interest": 19221.766935,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Foreign Exchange",
+    "volume": 9595.0,
+    "open_interest": 28084.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Natural Disasters",
+    "volume": 9283.0,
+    "open_interest": 148777.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Social Media",
+    "volume": 9011.0,
+    "open_interest": 77379.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Airdrop",
+    "volume": 8903.53845,
+    "open_interest": 252761.13845099974,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Wealth",
+    "volume": 8664.0,
+    "open_interest": 253128.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Memecoins",
+    "volume": 8436.0,
+    "open_interest": 1760.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Product Launch",
+    "volume": 8092.0,
+    "open_interest": 258444.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Foreign Exchange",
+    "volume": 8026.568491000001,
+    "open_interest": 33469.62877200001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Celebrity",
+    "volume": 7980.0,
+    "open_interest": 372976.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Industry Awards",
+    "volume": 7903.0,
+    "open_interest": 289582.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Exchange",
+    "volume": 7583.398155000001,
+    "open_interest": 194491.77688099994,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Exchange",
+    "volume": 7404.636791999999,
+    "open_interest": 197400.35899599994,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Rugby",
+    "volume": 7122.772863000001,
+    "open_interest": 85891.81270499999,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Boxing",
+    "volume": 6962.0,
+    "open_interest": 178039.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Transportation",
+    "volume": 6908.966393000001,
+    "open_interest": 53859.72744600003,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Energy",
+    "volume": 6812.0,
+    "open_interest": 280919.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Lacrosse",
+    "volume": 6614.0,
+    "open_interest": 61606.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Industry Awards",
+    "volume": 6461.0,
+    "open_interest": 293849.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Mention Markets",
+    "volume": 6372.772514,
+    "open_interest": 2926.5447039999763,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Computers and Internet",
+    "volume": 6321.469954,
+    "open_interest": 1890.6165920000037,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Pickleball",
+    "volume": 6272.952,
+    "open_interest": -5126.1617559999995,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Energy",
+    "volume": 6203.0,
+    "open_interest": 260803.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Memecoins",
+    "volume": 5490.0,
+    "open_interest": 1011.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Security",
+    "volume": 5424.71,
+    "open_interest": 23327.605324000004,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Unknown",
+    "volume": 5161.05036,
+    "open_interest": 39837.48792499991,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Security",
+    "volume": 5135.68,
+    "open_interest": 18180.795324000002,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Industry Awards",
+    "volume": 4791.0,
+    "open_interest": 298389.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Employment",
+    "volume": 4756.909265,
+    "open_interest": 140754.63018400027,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Product Launch",
+    "volume": 4747.0,
+    "open_interest": 261566.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Natural Disasters",
+    "volume": 4499.0,
+    "open_interest": 144750.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Legislative Branch",
+    "volume": 4482.780258000001,
+    "open_interest": 41687.05111899912,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Politics",
+    "subcategory": "USA Legislative Branch",
+    "volume": 4256.095228,
+    "open_interest": 39408.95592199912,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Mention Markets",
+    "volume": 4092.0962259999997,
+    "open_interest": 1345.608124999976,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Rugby",
+    "volume": 3942.4271310000013,
+    "open_interest": 59545.340739999985,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "STEM Awards and Competition",
+    "volume": 3922.0,
+    "open_interest": 5909.656876999986,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Foreign Exchange",
+    "volume": 3759.0,
+    "open_interest": 28874.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "Wealth",
+    "volume": 3523.0,
+    "open_interest": 269411.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Unknown",
+    "subcategory": "Unknown",
+    "volume": 3486.8016610000004,
+    "open_interest": 136583.59545599515,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Real Estate",
+    "volume": 3412.0127669999997,
+    "open_interest": 16515.6582,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Health",
+    "volume": 3035.0,
+    "open_interest": 307470.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Real Estate",
+    "volume": 2559.0,
+    "open_interest": 58931.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Computers and Internet",
+    "volume": 2549.0380889999997,
+    "open_interest": 3176.0798340000038,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Crypto Market",
+    "volume": 2400.0,
+    "open_interest": 84842.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Self-Driving",
+    "volume": 2064.565683,
+    "open_interest": 46640.27697600021,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Religion",
+    "volume": 1999.0,
+    "open_interest": 68419.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Altcoin FDV",
+    "volume": 1996.0,
+    "open_interest": 23491.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Health",
+    "volume": 1760.0,
+    "open_interest": 288747.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Trade",
+    "volume": 1744.0,
+    "open_interest": 10702.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Trade",
+    "volume": 1614.0,
+    "open_interest": 9053.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Real Estate",
+    "volume": 1464.0,
+    "open_interest": 60728.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Fashion",
+    "volume": 1308.0,
+    "open_interest": 11624.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Altcoin Prices",
+    "volume": 1214.0,
+    "open_interest": 868.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Crypto Market",
+    "volume": 1107.0,
+    "open_interest": 84510.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Foreign Exchange",
+    "volume": 1084.939432,
+    "open_interest": 31506.53352800001,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Religion",
+    "volume": 1012.0,
+    "open_interest": 66054.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Education",
+    "volume": 1000.0,
+    "open_interest": 25479.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Self-Driving",
+    "volume": 972.3382159999999,
+    "open_interest": 44759.31462500021,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Fashion",
+    "volume": 943.0,
+    "open_interest": 11180.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Insolvency",
+    "volume": 747.243265,
+    "open_interest": 64404.91013100008,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Insolvency",
+    "volume": 719.806684,
+    "open_interest": 64016.41382700008,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Token Launch",
+    "volume": 718.0,
+    "open_interest": 5929.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Altcoin Prices",
+    "volume": 622.0,
+    "open_interest": 1443.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Altcoin FDV",
+    "volume": 589.0,
+    "open_interest": 23535.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Food and Dining",
+    "volume": 560.0,
+    "open_interest": 5961.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Insolvency",
+    "volume": 533.0,
+    "open_interest": 8986.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Education",
+    "volume": 530.0,
+    "open_interest": 25765.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Token Launch",
+    "volume": 447.0,
+    "open_interest": 6159.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Sports Combo",
+    "volume": 442.0,
+    "open_interest": 1925.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Government Debt",
+    "volume": 419.0,
+    "open_interest": 34374.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Fashion",
+    "volume": 382.0,
+    "open_interest": 10186.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Altcoin FDV",
+    "volume": 363.0,
+    "open_interest": 23504.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "STEM Awards and Competition",
+    "volume": 350.0,
+    "open_interest": 10180.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Rugby",
+    "volume": 337.0,
+    "open_interest": 505.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Government Debt",
+    "volume": 318.0,
+    "open_interest": 34028.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Government Debt",
+    "volume": 296.0,
+    "open_interest": 24849.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Crypto Market",
+    "volume": 254.0,
+    "open_interest": 84586.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Auction",
+    "volume": 246.0,
+    "open_interest": 481.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Demographics",
+    "volume": 242.0,
+    "open_interest": 32282.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Darts",
+    "volume": 241.0,
+    "open_interest": 2686.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Religion",
+    "volume": 233.0,
+    "open_interest": 56934.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Demographics",
+    "volume": 222.0,
+    "open_interest": 28860.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Insolvency",
+    "volume": 221.0,
+    "open_interest": 9979.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Podcast",
+    "volume": 211.0,
+    "open_interest": 21866.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Poker",
+    "volume": 205.0,
+    "open_interest": 11398.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Podcast",
+    "volume": 192.087264,
+    "open_interest": 20085.92574699995,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Demographics",
+    "volume": 192.0,
+    "open_interest": 25595.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Business Metrics",
+    "volume": 178.0,
+    "open_interest": 7484.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Scientific Breakthroughs",
+    "volume": 149.0,
+    "open_interest": 25862.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Altcoin Prices",
+    "volume": 144.0,
+    "open_interest": 1100.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Boxing",
+    "volume": 141.306581,
+    "open_interest": 130384.30387599973,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Crypto",
+    "subcategory": "Token Launch",
+    "volume": 100.0,
+    "open_interest": 5952.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Auction",
+    "volume": 86.0,
+    "open_interest": 282.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Poker",
+    "volume": 80.0,
+    "open_interest": 11478.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Podcast",
+    "volume": 76.0,
+    "open_interest": 22444.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Insolvency",
+    "volume": 67.0,
+    "open_interest": 10929.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Running",
+    "volume": 58.84,
+    "open_interest": 1202.1278600000073,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "STEM Awards and Competition",
+    "volume": 53.0,
+    "open_interest": 9570.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Boxing",
+    "volume": 52.319084,
+    "open_interest": 133117.26926199973,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "STEM Awards and Competition",
+    "volume": 49.472375,
+    "open_interest": 7915.656876999986,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Business Metrics",
+    "volume": 49.0,
+    "open_interest": 11645.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Energy",
+    "volume": 47.0,
+    "open_interest": 22740.045247999904,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "Business Metrics",
+    "volume": 43.0,
+    "open_interest": 5204.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Food and Dining",
+    "volume": 42.0,
+    "open_interest": 7020.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Government Debt",
+    "volume": 26.27,
+    "open_interest": 4918.270455000002,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Rugby",
+    "volume": 24.0,
+    "open_interest": 618.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Scientific Breakthroughs",
+    "volume": 18.0,
+    "open_interest": 28782.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Podcast",
+    "volume": 18.0,
+    "open_interest": 23064.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Memecoins",
+    "volume": 15.95,
+    "open_interest": 15153.251137000205,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Food and Dining",
+    "volume": 10.0,
+    "open_interest": 5998.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Darts",
+    "volume": 6.0,
+    "open_interest": 2699.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "DeFi",
+    "volume": 2.1,
+    "open_interest": 443.01380100002615,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "Auction",
+    "volume": 1.0,
+    "open_interest": 481.0,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Memecoins",
+    "volume": 0.0,
+    "open_interest": 15151.688637000205,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Mention Markets",
+    "volume": 0.0,
+    "open_interest": 92.36546899996246,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Auction",
+    "volume": 0.0,
+    "open_interest": 13181.954214000063,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Fashion",
+    "volume": 0.0,
+    "open_interest": 332.29522900000006,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Lottery",
+    "volume": 0.0,
+    "open_interest": 171.7247,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Early Polymarket Trades",
+    "subcategory": "Early Polymarket Trades",
+    "volume": 0.0,
+    "open_interest": 0.02269099999102764,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Demographics",
+    "volume": 0.0,
+    "open_interest": 36.27017699999976,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Government Debt",
+    "volume": 0.0,
+    "open_interest": 4918.270455000002,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Mention Markets",
+    "volume": 0.0,
+    "open_interest": 2172.4400919997165,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Mention Markets",
+    "volume": 0.0,
+    "open_interest": 2285.1750890009416,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Cybersecurity",
+    "volume": 0.0,
+    "open_interest": 3628.150350999802,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Energy",
+    "volume": 0.0,
+    "open_interest": 22740.045247999904,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Chess",
+    "volume": 0.0,
+    "open_interest": 6261.168169000047,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Climbing",
+    "volume": 0.0,
+    "open_interest": 10694.104325000098,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Cycling",
+    "volume": 0.0,
+    "open_interest": 909.8249890000234,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Darts",
+    "volume": 0.0,
+    "open_interest": 1366.1114290001126,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Gymnastics",
+    "volume": 0.0,
+    "open_interest": 1.8492170000000647,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Handball",
+    "volume": 0.0,
+    "open_interest": 3.92557500001017,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Horse Racing",
+    "volume": 0.0,
+    "open_interest": 532.8934739999952,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Lacrosse",
+    "volume": 0.0,
+    "open_interest": 15.748188000000226,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Olympics",
+    "volume": 0.0,
+    "open_interest": 19173.16017099992,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Pickleball",
+    "volume": 0.0,
+    "open_interest": -7774.672855999999,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Poker",
+    "volume": 0.0,
+    "open_interest": 713.6165260000021,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Running",
+    "volume": 0.0,
+    "open_interest": 1202.1278600000073,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Sailing",
+    "volume": 0.0,
+    "open_interest": 20.10472799999881,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Swimming",
+    "volume": 0.0,
+    "open_interest": 26.521823000030192,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Table Tennis",
+    "volume": 0.0,
+    "open_interest": -1524.685254,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Volleyball",
+    "volume": 0.0,
+    "open_interest": 0.006000000001222361,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "DeFi",
+    "volume": 0.0,
+    "open_interest": 443.01380100002615,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Crypto",
+    "subcategory": "Mention Markets",
+    "volume": 0.0,
+    "open_interest": 92.36546899996246,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Auction",
+    "volume": 0.0,
+    "open_interest": 13181.954214000063,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Fashion",
+    "volume": 0.0,
+    "open_interest": 332.29522900000006,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Culture",
+    "subcategory": "Lottery",
+    "volume": 0.0,
+    "open_interest": 171.7247,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Early Polymarket Trades",
+    "subcategory": "Early Polymarket Trades",
+    "volume": 0.0,
+    "open_interest": 0.02269099999102764,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Demographics",
+    "volume": 0.0,
+    "open_interest": 36.27017699999976,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Economics",
+    "subcategory": "Mention Markets",
+    "volume": 0.0,
+    "open_interest": 2175.8021379997167,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Financials",
+    "subcategory": "Mention Markets",
+    "volume": 0.0,
+    "open_interest": 2291.0156450009417,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "STEM",
+    "subcategory": "Cybersecurity",
+    "volume": 0.0,
+    "open_interest": 3628.150350999802,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Chess",
+    "volume": 0.0,
+    "open_interest": 6324.599919000047,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Climbing",
+    "volume": 0.0,
+    "open_interest": 10694.104325000098,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Cycling",
+    "volume": 0.0,
+    "open_interest": 909.8249890000234,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Darts",
+    "volume": 0.0,
+    "open_interest": 1366.1114290001126,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Gymnastics",
+    "volume": 0.0,
+    "open_interest": 1.8492170000000647,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Handball",
+    "volume": 0.0,
+    "open_interest": 3.92557500001017,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Horse Racing",
+    "volume": 0.0,
+    "open_interest": 532.8934739999952,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Lacrosse",
+    "volume": 0.0,
+    "open_interest": 15.748188000000226,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Olympics",
+    "volume": 0.0,
+    "open_interest": 19239.42456499992,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Poker",
+    "volume": 0.0,
+    "open_interest": 954.556334000002,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Sailing",
+    "volume": 0.0,
+    "open_interest": 20.10472799999881,
+    "market_count": 0
+  },
+  {
+    "source": "Polymarket",
+    "category": "Sports",
+    "subcategory": "Swimming",
+    "volume": 0.0,
+    "open_interest": 26.521823000030192,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 1047.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 41.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Self-Driving",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 1043.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Economics",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Financials",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Politics",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "STEM",
+    "subcategory": "Self-Driving",
+    "volume": 0.0,
+    "open_interest": 0.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Sports",
+    "subcategory": "Sports Combo",
+    "volume": 0.0,
+    "open_interest": 715.0,
+    "market_count": 0
+  },
+  {
+    "source": "Kalshi",
+    "category": "Culture",
+    "subcategory": "UNKNOWN",
+    "volume": 0.0,
+    "open_interest": 1043.0,
+    "market_count": 0
+  }
+]

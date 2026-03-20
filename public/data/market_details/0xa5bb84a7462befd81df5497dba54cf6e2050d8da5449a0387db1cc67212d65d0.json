@@ -1,0 +1,116 @@
+{
+  "condition_id": "0xa5bb84a7462befd81df5497dba54cf6e2050d8da5449a0387db1cc67212d65d0",
+  "slug": "cbb-lehi-pvam-2026-03-18",
+  "question": "Lehigh Mountain Hawks vs. Prairie View A&M Panthers",
+  "volume": 3043341.1704059984,
+  "open_interest": 515364.054668,
+  "end_date": "2026-03-18T04:00:00+00:00",
+  "status": "active",
+  "polymarket_link": "https://polymarket.com/event/cbb-lehi-pvam-2026-03-18",
+  "trade_count": 2000,
+  "unique_traders": 416,
+  "total_volume": 278912.926533,
+  "avg_trade_size": 139.4564632665,
+  "median_trade_size": 4.999995,
+  "whale_count": 1,
+  "timeseries": {
+    "volumes": [
+      {
+        "timestamp": 1773532800,
+        "notional_volume_usd": 11,
+        "trade_count": 5
+      },
+      {
+        "timestamp": 1773619200,
+        "notional_volume_usd": 110444.96817300002,
+        "trade_count": 201
+      },
+      {
+        "timestamp": 1773705600,
+        "notional_volume_usd": 381241.962526,
+        "trade_count": 1687
+      },
+      {
+        "timestamp": 1773792000,
+        "notional_volume_usd": 3043341.1704059984,
+        "trade_count": 6813
+      }
+    ],
+    "open_interest": [
+      {
+        "timestamp": 1773532800,
+        "open_interest_usd": 11,
+        "daily_net_change_usd": 11
+      },
+      {
+        "timestamp": 1773619200,
+        "open_interest_usd": -32904.240117,
+        "daily_net_change_usd": -32915.240117
+      },
+      {
+        "timestamp": 1773705600,
+        "open_interest_usd": -9399.156873,
+        "daily_net_change_usd": 23505.083244
+      },
+      {
+        "timestamp": 1773792000,
+        "open_interest_usd": 515364.054668,
+        "daily_net_change_usd": 524763.211541
+      }
+    ],
+    "prices": [
+      {
+        "timestamp": 1773532800,
+        "side_a": {
+          "token_id": "69822760506963293788091860614727344210894891120716057456257735813369996441588",
+          "label": "Lehigh Mountain Hawks",
+          "price": 0.57
+        },
+        "side_b": {
+          "token_id": "79261892311773612151914108261572861958184785682610290193371234066836996484694",
+          "label": "Prairie View A&M Panthers",
+          "price": 0.43
+        }
+      },
+      {
+        "timestamp": 1773619200,
+        "side_a": {
+          "token_id": "69822760506963293788091860614727344210894891120716057456257735813369996441588",
+          "label": "Lehigh Mountain Hawks",
+          "price": 0.59
+        },
+        "side_b": {
+          "token_id": "79261892311773612151914108261572861958184785682610290193371234066836996484694",
+          "label": "Prairie View A&M Panthers",
+          "price": 0.4
+        }
+      },
+      {
+        "timestamp": 1773705600,
+        "side_a": {
+          "token_id": "69822760506963293788091860614727344210894891120716057456257735813369996441588",
+          "label": "Lehigh Mountain Hawks",
+          "price": 0.61
+        },
+        "side_b": {
+          "token_id": "79261892311773612151914108261572861958184785682610290193371234066836996484694",
+          "label": "Prairie View A&M Panthers",
+          "price": 0.4
+        }
+      },
+      {
+        "timestamp": 1773792000,
+        "side_a": {
+          "token_id": "69822760506963293788091860614727344210894891120716057456257735813369996441588",
+          "label": "Lehigh Mountain Hawks",
+          "price": 0.45
+        },
+        "side_b": {
+          "token_id": "79261892311773612151914108261572861958184785682610290193371234066836996484694",
+          "label": "Prairie View A&M Panthers",
+          "price": 0.5400000020909091
+        }
+      }
+    ]
+  }
+}

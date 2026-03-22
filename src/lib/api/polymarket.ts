@@ -28,6 +28,31 @@ export async function getPolymarketRanking(params?: {
   return getData(res);
 }
 
+export async function getAllPolymarketRanking(params?: {
+  sort_by?: "notional_volume_usd" | "open_interest";
+  order?: "asc" | "desc";
+  status?: string;
+  end_before?: string;
+  maxPages?: number;
+}) {
+  const PAGE_SIZE = 50;
+  const maxPages = params?.maxPages ?? 10; // default cap: 500 markets
+  const all: PolymarketRankingItem[] = [];
+  let offset = 0;
+  for (let page = 0; page < maxPages; page++) {
+    const { maxPages: _, ...rest } = params ?? {};
+    const batch = await getPolymarketRanking({
+      ...rest,
+      limit: PAGE_SIZE,
+      offset,
+    });
+    all.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
+    offset += PAGE_SIZE;
+  }
+  return all;
+}
+
 export async function getPolymarketMarkets(params?: {
   market_slug?: string;
   limit?: number;

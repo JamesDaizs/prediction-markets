@@ -25,6 +25,9 @@ export interface PolymarketRankingItem {
   open_interest_usd: number;
   end_time: number;
   polymarket_link: string;
+  tags?: string[];
+  category?: string;
+  subcategory?: string;
 }
 
 export interface PolymarketSide {
@@ -46,6 +49,8 @@ export interface PolymarketMarketItem {
   close_time: number;
   game_start_time?: number;
   tags: string[];
+  category?: string;
+  subcategory?: string;
   volume_1_week: number;
   volume_1_month: number;
   volume_1_year: number;
@@ -132,13 +137,16 @@ export interface KalshiRankingItem {
   title: string;
   event_title: string;
   category: string;
+  subcategory?: string;
   status: string;
   payout_type: string;
   notional_volume_usd: number;
   open_interest: number;
+  last_day_open_interest?: number;
   high: number;
   low: number;
   last_price: number;
+  end_time?: number;
   timestamp: number;
 }
 
@@ -147,6 +155,9 @@ export interface KalshiMarketItem {
   event_ticker: string;
   title: string;
   status: string;
+  category?: string;
+  subcategory?: string;
+  tags?: string[];
   last_price: number;
   total_volume: number;
   start_time: number;

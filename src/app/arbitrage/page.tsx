@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { getPolymarketRanking } from "@/lib/api/polymarket";
+import { getPolymarketRanking, getPolymarketPrices } from "@/lib/api/polymarket";
 import { getKalshiRanking } from "@/lib/api/kalshi";
 import { ArbitrageClient } from "./arbitrage-client";
 
@@ -41,7 +41,11 @@ export default async function ArbitragePage() {
   ]);
 
   // Fuzzy match markets across platforms
-  const matches: MatchCandidate[] = [];
+  const rawMatches: {
+    poly: (typeof polyMarkets)[0];
+    kalshi: (typeof kalshiMarkets)[0];
+  }[] = [];
+
   const polyTokens = polyMarkets.map((m) => ({
     market: m,
     tokens: tokenize(m.question),
@@ -62,26 +66,48 @@ export default async function ArbitragePage() {
       }
     }
     if (bestMatch) {
-      // Estimate price from available data
-      const polyPrice = 0.5; // ranking doesn't have price, placeholder
-      const kalshiPrice = bestMatch.market.last_price;
-      const spread = Math.abs(polyPrice - kalshiPrice);
-
-      matches.push({
-        polyId: poly.market.condition_id,
-        polyQuestion: poly.market.question,
-        polyPrice,
-        polyVolume: poly.market.notional_volume_usd,
-        polyLink: poly.market.polymarket_link,
-        kalshiTicker: bestMatch.market.market_ticker,
-        kalshiTitle: bestMatch.market.title,
-        kalshiPrice,
-        kalshiVolume: bestMatch.market.notional_volume_usd,
-        kalshiLink: `https://kalshi.com/markets/${bestMatch.market.market_ticker.toLowerCase()}`,
-        spread,
-      });
+      rawMatches.push({ poly: poly.market, kalshi: bestMatch.market });
     }
   }
+
+  // Fetch real Polymarket prices for matched markets in batches of 5
+  const BATCH_SIZE = 5;
+  const priceResults: (number | null)[] = [];
+  for (let i = 0; i < rawMatches.length; i += BATCH_SIZE) {
+    const batch = rawMatches.slice(i, i + BATCH_SIZE);
+    const batchResults = await Promise.all(
+      batch.map(async ({ poly }) => {
+        try {
+          const prices = await getPolymarketPrices(poly.condition_id, "7d", "latest");
+          return prices[0]?.side_a?.price ?? null;
+        } catch {
+          return null;
+        }
+      })
+    );
+    priceResults.push(...batchResults);
+  }
+
+  // Build final matches with real prices
+  const matches: MatchCandidate[] = rawMatches.map(({ poly, kalshi }, i) => {
+    const polyPrice = priceResults[i] ?? 0;
+    const kalshiPrice = kalshi.last_price;
+    const spread = Math.abs(polyPrice - kalshiPrice);
+
+    return {
+      polyId: poly.condition_id,
+      polyQuestion: poly.question,
+      polyPrice,
+      polyVolume: poly.notional_volume_usd,
+      polyLink: poly.polymarket_link,
+      kalshiTicker: kalshi.market_ticker,
+      kalshiTitle: kalshi.title,
+      kalshiPrice,
+      kalshiVolume: kalshi.notional_volume_usd,
+      kalshiLink: `https://kalshi.com/markets/${kalshi.market_ticker.toLowerCase()}`,
+      spread,
+    };
+  });
 
   // Sort by spread descending
   matches.sort((a, b) => b.spread - a.spread);

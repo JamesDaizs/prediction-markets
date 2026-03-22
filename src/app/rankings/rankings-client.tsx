@@ -2,91 +2,46 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type {
-  Platform,
-  PolymarketRankingItem,
-  KalshiRankingItem,
-} from "@/lib/api/types";
+import type { Platform } from "@/lib/api/types";
+import type { CHMarketRow } from "@/lib/api/clickhouse";
 import { PlatformToggle } from "@/components/platform-toggle";
-import { formatCurrency } from "@/lib/utils";
-import { cn } from "@/lib/utils";
+import { formatCurrency, cn } from "@/lib/utils";
 
 type RankTab = "volume" | "oi";
 
 interface Props {
-  polyByVolume: PolymarketRankingItem[];
-  polyByOI: PolymarketRankingItem[];
-  kalshiByVolume: KalshiRankingItem[];
-  kalshiByOI: KalshiRankingItem[];
+  byVolume: CHMarketRow[];
+  byOI: CHMarketRow[];
 }
 
-export function RankingsClient({
-  polyByVolume,
-  polyByOI,
-  kalshiByVolume,
-  kalshiByOI,
-}: Props) {
+function marketHref(m: CHMarketRow): string {
+  return m.source === "Kalshi"
+    ? `/markets/kalshi-${m.market_id}`
+    : `/markets/poly-${m.market_id}`;
+}
+
+export function RankingsClient({ byVolume, byOI }: Props) {
   const [platform, setPlatform] = useState<Platform>("both");
   const [tab, setTab] = useState<RankTab>("volume");
 
   const getList = () => {
-    const items: {
-      rank: number;
-      question: string;
-      platform: string;
-      value: number;
-      href: string;
-    }[] = [];
+    const source = tab === "volume" ? byVolume : byOI;
+    const filtered =
+      platform === "both"
+        ? source
+        : source.filter(
+            (m) =>
+              m.source.toLowerCase() ===
+              (platform === "polymarket" ? "polymarket" : "kalshi")
+          );
 
-    if (tab === "volume") {
-      if (platform !== "kalshi") {
-        polyByVolume.forEach((m, i) =>
-          items.push({
-            rank: i + 1,
-            question: m.question,
-            platform: "Polymarket",
-            value: m.notional_volume_usd,
-            href: `/markets/poly-${m.condition_id}`,
-          })
-        );
-      }
-      if (platform !== "polymarket") {
-        kalshiByVolume.forEach((m, i) =>
-          items.push({
-            rank: i + 1,
-            question: m.title,
-            platform: "Kalshi",
-            value: m.notional_volume_usd,
-            href: `/markets/kalshi-${m.market_ticker}`,
-          })
-        );
-      }
-    } else {
-      if (platform !== "kalshi") {
-        polyByOI.forEach((m, i) =>
-          items.push({
-            rank: i + 1,
-            question: m.question,
-            platform: "Polymarket",
-            value: m.open_interest_usd,
-            href: `/markets/poly-${m.condition_id}`,
-          })
-        );
-      }
-      if (platform !== "polymarket") {
-        kalshiByOI.forEach((m, i) =>
-          items.push({
-            rank: i + 1,
-            question: m.title,
-            platform: "Kalshi",
-            value: m.open_interest,
-            href: `/markets/kalshi-${m.market_ticker}`,
-          })
-        );
-      }
-    }
-
-    return items.sort((a, b) => b.value - a.value).slice(0, 50);
+    return filtered.slice(0, 50).map((m) => ({
+      question: m.title,
+      platform: m.source,
+      value:
+        tab === "volume" ? m.notional_volume_usd : m.open_interest_usd,
+      href: marketHref(m),
+    }));
   };
 
   const list = getList();

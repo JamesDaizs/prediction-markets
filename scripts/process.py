@@ -41,7 +41,6 @@ def process_categories() -> list[dict]:
                 "subcategory": subcat,
                 "volume": float(item.get("notional_volume_usd", 0) or 0),
                 "open_interest": float(item.get("open_interest_usd", 0) or 0),
-                "market_count": int(item.get("market_count", 0) or 0),
             })
     categories.sort(key=lambda x: x["volume"], reverse=True)
     return categories
@@ -81,6 +80,9 @@ def process_rankings() -> list[dict]:
             "end_date": end_date,
             "status": item.get("status", ""),
             "polymarket_link": link,
+            "category": item.get("category", ""),
+            "subcategory": item.get("subcategory", ""),
+            "tags": item.get("tags", []),
         })
     markets.sort(key=lambda x: x["volume"], reverse=True)
     return markets
@@ -263,8 +265,7 @@ def process_overview(categories: list, markets: list, trade_stats: dict) -> dict
     total_volume = sum(c["volume"] for c in poly_cats)
     total_oi = sum(c["open_interest"] for c in poly_cats)
 
-    # Use market count from rankings if available
-    active_markets = len(markets) if markets else sum(c.get("market_count", 0) for c in poly_cats)
+    active_markets = len(markets)
 
     top_cat = max(poly_cats, key=lambda x: x["volume"], default={"category": "N/A", "volume": 0})
 

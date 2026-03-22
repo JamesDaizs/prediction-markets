@@ -21,6 +21,10 @@ export const CATEGORY_COLORS: Record<string, string> = {
   Weather: "#6366f1",
   Culture: "#a855f7",
   Other: "#71717a",
+  // CH aliases (mapped by normalizeCHCategory, but kept for safety)
+  Financials: "#14b8a6",
+  STEM: "#06b6d4",
+  Unknown: "#71717a",
 };
 
 export const TREEMAP_COLORS = [

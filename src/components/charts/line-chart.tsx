@@ -43,8 +43,8 @@ export function TimeSeriesChart({
       {title && (
         <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>
       )}
-      <div style={{ height }}>
-        <ResponsiveContainer width="100%" height="100%">
+      <div style={{ height, minHeight: height }} className="min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
             <XAxis dataKey="date" stroke="#52525b" fontSize={10} />

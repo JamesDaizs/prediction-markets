@@ -14,8 +14,6 @@ export interface Category {
   subcategory: string;
   volume: number;
   open_interest: number;
-  market_count: number;
-  avg_volume: number;
 }
 
 export interface Market {

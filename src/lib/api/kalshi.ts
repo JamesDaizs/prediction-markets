@@ -25,6 +25,30 @@ export async function getKalshiRanking(params?: {
   return getData(res);
 }
 
+export async function getAllKalshiRanking(params?: {
+  sort_by?: "notional_volume_usd" | "open_interest" | "ticker";
+  order?: "asc" | "desc";
+  status?: string;
+  maxPages?: number;
+}) {
+  const PAGE_SIZE = 50;
+  const maxPages = params?.maxPages ?? 10;
+  const all: KalshiRankingItem[] = [];
+  let offset = 0;
+  for (let page = 0; page < maxPages; page++) {
+    const { maxPages: _, ...rest } = params ?? {};
+    const batch = await getKalshiRanking({
+      ...rest,
+      limit: PAGE_SIZE,
+      offset,
+    });
+    all.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
+    offset += PAGE_SIZE;
+  }
+  return all;
+}
+
 export async function getKalshiMarkets(params?: {
   market_ticker?: string;
   limit?: number;

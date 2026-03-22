@@ -38,8 +38,8 @@ export function PriceChart({
       {title && (
         <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>
       )}
-      <div className="h-64">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-64 min-h-[256px] min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorYes" x1="0" y1="0" x2="0" y2="1">

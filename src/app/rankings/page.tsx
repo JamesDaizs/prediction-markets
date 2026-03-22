@@ -1,30 +1,13 @@
 export const dynamic = "force-dynamic";
 
-import { getPolymarketRanking } from "@/lib/api/polymarket";
-import { getKalshiRanking } from "@/lib/api/kalshi";
+import { getMarketRanking } from "@/lib/api/clickhouse";
 import { RankingsClient } from "./rankings-client";
 
 export default async function RankingsPage() {
-  const [polyByVolume, polyByOI, kalshiByVolume, kalshiByOI] =
-    await Promise.all([
-      getPolymarketRanking({
-        sort_by: "notional_volume_usd",
-        limit: 50,
-      }),
-      getPolymarketRanking({ sort_by: "open_interest", limit: 50 }),
-      getKalshiRanking({
-        sort_by: "notional_volume_usd",
-        limit: 50,
-      }),
-      getKalshiRanking({ sort_by: "open_interest", limit: 50 }),
-    ]);
+  const [byVolume, byOI] = await Promise.all([
+    getMarketRanking({ limit: 100, sortBy: "volume" }),
+    getMarketRanking({ limit: 100, sortBy: "oi" }),
+  ]);
 
-  return (
-    <RankingsClient
-      polyByVolume={polyByVolume}
-      polyByOI={polyByOI}
-      kalshiByVolume={kalshiByVolume}
-      kalshiByOI={kalshiByOI}
-    />
-  );
+  return <RankingsClient byVolume={byVolume} byOI={byOI} />;
 }

@@ -1,20 +1,12 @@
 export const dynamic = "force-dynamic";
 
-import { getPolymarketRanking } from "@/lib/api/polymarket";
-import { getKalshiRanking } from "@/lib/api/kalshi";
-import { unifyPolymarketMarket, unifyKalshiMarket } from "@/lib/utils";
+import { getMarketRanking } from "@/lib/api/clickhouse";
+import { unifyFromClickHouse } from "@/lib/utils";
 import { MarketsClient } from "./markets-client";
 
 export default async function MarketsPage() {
-  const [polyMarkets, kalshiMarkets] = await Promise.all([
-    getPolymarketRanking({ sort_by: "notional_volume_usd", limit: 50 }),
-    getKalshiRanking({ sort_by: "notional_volume_usd", limit: 50 }),
-  ]);
-
-  const unified = [
-    ...polyMarkets.map(unifyPolymarketMarket),
-    ...kalshiMarkets.map(unifyKalshiMarket),
-  ].sort((a, b) => b.volume - a.volume);
+  const markets = await getMarketRanking({ limit: 300, sortBy: "volume" });
+  const unified = markets.map(unifyFromClickHouse).sort((a, b) => b.volume - a.volume);
 
   return <MarketsClient markets={unified} />;
 }

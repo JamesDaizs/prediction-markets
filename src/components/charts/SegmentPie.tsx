@@ -10,8 +10,8 @@ export function SegmentPie({ data, title, metric = "volume" }: { data: Segment[]
     <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
       {title && <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>}
       <div className="flex items-center gap-6">
-        <div className="h-48 w-48">
-          <ResponsiveContainer width="100%" height="100%">
+        <div className="h-48 w-48 min-h-[192px] min-w-[192px]">
+          <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
             <PieChart>
               <Pie data={data} dataKey={metric} nameKey="segment" cx="50%" cy="50%" outerRadius={70} innerRadius={40} strokeWidth={2} stroke="#18181b">
                 {data.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}

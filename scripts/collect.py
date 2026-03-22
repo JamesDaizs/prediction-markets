@@ -1,6 +1,7 @@
 """Collect data from Surf Prediction Market API."""
 
 import json
+import re
 import time
 from pathlib import Path
 
@@ -52,25 +53,50 @@ def collect_rankings() -> None:
 
 
 def collect_events() -> None:
-    """Fetch Polymarket events with pagination."""
+    """Fetch Polymarket events using event_slug from top-ranked markets."""
+    # Get event slugs from ranking data
+    rankings_path = RAW_DIR / "rankings_volume.json"
+    if not rankings_path.exists():
+        print("  No rankings data — run collect_rankings() first")
+        return
+
+    data = json.loads(rankings_path.read_text())
+    items = data.get("data", data) if isinstance(data, dict) else data
+    if not isinstance(items, list):
+        print("  Invalid rankings data format")
+        return
+
+    # Extract unique event slugs from polymarket_link
+    seen_slugs: set[str] = set()
+    for item in items:
+        link = item.get("polymarket_link", "")
+        # Link format: https://polymarket.com/event/slug/... or /event/slug
+        match = re.search(r"/event/([^/?]+)", link)
+        if match:
+            seen_slugs.add(match.group(1))
+
+    print(f"  Found {len(seen_slugs)} unique event slugs from rankings")
+
     all_events: list = []
-    for offset in range(0, 500, 50):
-        url = f"{BASE_URL}/polymarket/events?limit=50&offset={offset}"
-        resp = client.get(url)
-        if resp.status_code != 200:
-            print(f"  Events offset={offset}: HTTP {resp.status_code}")
-            break
-        data = resp.json()
-        items = data.get("data", data) if isinstance(data, dict) else data
-        if not items:
-            break
-        if isinstance(items, list):
-            all_events.extend(items)
-        else:
-            all_events.append(items)
-        print(f"  Events: fetched {len(all_events)} so far")
+    for slug in sorted(seen_slugs):
+        url = f"{BASE_URL}/polymarket/events?event_slug={slug}"
+        try:
+            resp = client.get(url)
+            if resp.status_code == 200:
+                event_data = resp.json()
+                event_items = event_data.get("data", event_data) if isinstance(event_data, dict) else event_data
+                if isinstance(event_items, list):
+                    all_events.extend(event_items)
+                elif event_items:
+                    all_events.append(event_items)
+            else:
+                print(f"  Event {slug}: HTTP {resp.status_code}")
+        except httpx.ReadTimeout:
+            print(f"  Timeout for event {slug}")
         time.sleep(0.3)
+
     save(all_events, RAW_DIR / "events.json")
+    print(f"  Collected {len(all_events)} events")
 
 
 def collect_trades(condition_ids: list[str]) -> None:

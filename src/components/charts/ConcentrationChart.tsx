@@ -7,8 +7,8 @@ export function ConcentrationChart({ data, title }: { data: Concentration[]; tit
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
       {title && <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>}
-      <div className="h-64">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-64 min-h-[256px] min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
           <AreaChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
             <XAxis dataKey="pct_traders" stroke="#52525b" fontSize={11} tickFormatter={(v) => `${v}%`} />

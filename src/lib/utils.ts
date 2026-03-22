@@ -5,6 +5,7 @@ import type {
   KalshiRankingItem,
   UnifiedMarket,
 } from "./api/types";
+import type { CHMarketRow } from "./api/clickhouse";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -68,8 +69,9 @@ export function unifyPolymarketMarket(
     status: m.status,
     volume: m.notional_volume_usd,
     openInterest: m.open_interest_usd,
-    lastPrice: 0, // ranking doesn't have price
+    lastPrice: 0, // ranking doesn't have price — fetched separately on detail pages
     endTime: m.end_time,
+    category: m.category,
     link: m.polymarket_link,
   };
 }
@@ -83,8 +85,27 @@ export function unifyKalshiMarket(m: KalshiRankingItem): UnifiedMarket {
     volume: m.notional_volume_usd,
     openInterest: m.open_interest,
     lastPrice: m.last_price,
-    endTime: m.timestamp,
+    endTime: m.end_time || m.timestamp,
     category: m.category,
     link: `https://kalshi.com/markets/${m.market_ticker.toLowerCase()}`,
+  };
+}
+
+export function unifyFromClickHouse(m: CHMarketRow): UnifiedMarket {
+  const platform = m.source === "Kalshi" ? "kalshi" : "polymarket";
+  return {
+    id: m.market_id,
+    platform,
+    question: m.title,
+    status: m.status,
+    volume: m.notional_volume_usd,
+    openInterest: m.open_interest_usd,
+    lastPrice: 0, // CH daily table has no price — detail pages use Hermod
+    endTime: 0,
+    category: m.category,
+    link:
+      platform === "kalshi"
+        ? `https://kalshi.com/markets/${m.market_id.toLowerCase()}`
+        : `https://polymarket.com/event/${m.market_id}`,
   };
 }

@@ -6,8 +6,8 @@ export function VolumeBarChart({ data, title }: { data: { name: string; volume: 
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
       {title && <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>}
-      <div className="h-80">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-80 min-h-[320px] min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
           <BarChart data={data} layout="vertical" margin={{ left: 120 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
             <XAxis type="number" tickFormatter={(v) => formatCurrency(v, true)} stroke="#52525b" fontSize={11} />

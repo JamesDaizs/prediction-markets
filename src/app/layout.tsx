@@ -7,6 +7,7 @@ import {
   Bell,
   LayoutDashboard,
   Search,
+  Target,
   TrendingUp,
   Trophy,
   Wallet,
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/markets", label: "Markets", icon: Search },
+  { href: "/accuracy", label: "Accuracy", icon: Target },
   { href: "/arbitrage", label: "Arbitrage", icon: ArrowLeftRight },
   { href: "/portfolio", label: "Portfolio", icon: Wallet },
   { href: "/rankings", label: "Rankings", icon: Trophy },

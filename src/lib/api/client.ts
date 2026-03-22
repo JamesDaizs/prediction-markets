@@ -3,7 +3,7 @@ import path from "path";
 import type { ApiResponse, ApiError } from "./types";
 
 const BASE_URL =
-  process.env.HERMOD_URL || "https://api.stg.ask.surf/gateway";
+  process.env.HERMOD_URL || "https://api.ask.surf/gateway";
 
 let cachedToken: string | null = null;
 let tokenExpiry = 0;
@@ -15,6 +15,84 @@ async function getToken(): Promise<string> {
   const now = Date.now() / 1000;
   if (cachedToken && tokenExpiry > now + 300) return cachedToken;
 
+  // Try ~/.config/surf/credentials.json first (same as Python scripts)
+  const credPath = path.join(
+    process.env.HOME || "~",
+    ".config",
+    "surf",
+    "credentials.json"
+  );
+  try {
+    const raw = await fs.readFile(credPath, "utf-8");
+    const creds = JSON.parse(raw);
+    const entry = creds["surf:default"] || creds["surf"];
+    let token = entry?.token;
+
+    if (token) {
+      // Check if token is expired
+      let exp = 0;
+      try {
+        const payload = JSON.parse(
+          Buffer.from(token.split(".")[1], "base64").toString()
+        );
+        exp = payload.exp || 0;
+      } catch {
+        // Can't parse — treat as expired
+      }
+
+      // If expired or close to expiry, try refresh
+      if (exp < now + 300 && entry?.refresh) {
+        try {
+          const refreshRes = await fetch(
+            "https://api.ask.surf/muninn/v2/auth/refresh",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ refresh_token: entry.refresh }),
+            }
+          );
+          if (refreshRes.ok) {
+            const refreshData = await refreshRes.json();
+            const tokenSource = refreshData.data || refreshData;
+            const newToken =
+              tokenSource.access_token ||
+              tokenSource.token ||
+              tokenSource.hermod_token;
+            if (newToken) {
+              token = newToken;
+              entry.token = newToken;
+              const newRefresh = tokenSource.refresh_token;
+              if (newRefresh) entry.refresh = newRefresh;
+              await fs.writeFile(credPath, JSON.stringify(creds, null, 2));
+            }
+          }
+        } catch {
+          // Refresh failed — if token is expired, set a 60s retry backoff
+          // to avoid hot-looping on every request
+          if (exp < now) {
+            cachedToken = token;
+            tokenExpiry = now + 60;
+            return cachedToken!;
+          }
+        }
+      }
+
+      cachedToken = token;
+      try {
+        const payload = JSON.parse(
+          Buffer.from(token.split(".")[1], "base64").toString()
+        );
+        tokenExpiry = payload.exp || now + 3600;
+      } catch {
+        tokenExpiry = now + 3600;
+      }
+      return cachedToken!;
+    }
+  } catch {
+    // Fall through to legacy session.json
+  }
+
+  // Fallback: ~/.surf-core/session.json
   try {
     const sessionPath = path.join(
       process.env.HOME || "~",
@@ -25,11 +103,10 @@ async function getToken(): Promise<string> {
     const session = JSON.parse(raw);
     const token = session.hermod_token || session.access_token;
 
-    // Try to refresh if we have a refresh token
     if (session.refresh_token) {
       try {
         const refreshRes = await fetch(
-          "https://api.stg.ask.surf/muninn/v2/auth/refresh",
+          "https://api.ask.surf/muninn/v2/auth/refresh",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -38,7 +115,6 @@ async function getToken(): Promise<string> {
         );
         if (refreshRes.ok) {
           const refreshData = await refreshRes.json();
-          // Response may be nested: { data: { access_token: "..." } }
           const tokenSource = refreshData.data || refreshData;
           const newToken =
             tokenSource.hermod_token ||
@@ -46,7 +122,6 @@ async function getToken(): Promise<string> {
             tokenSource.token;
           if (newToken) {
             cachedToken = newToken;
-            // Update session file
             const updatedSession = {
               ...session,
               hermod_token: newToken,
@@ -61,7 +136,6 @@ async function getToken(): Promise<string> {
               sessionPath,
               JSON.stringify(updatedSession, null, 2)
             );
-            // Parse JWT exp
             try {
               const payload = JSON.parse(
                 Buffer.from(newToken.split(".")[1], "base64").toString()
@@ -79,7 +153,6 @@ async function getToken(): Promise<string> {
     }
 
     cachedToken = token;
-    // Parse JWT exp from existing token
     try {
       const payload = JSON.parse(
         Buffer.from(token.split(".")[1], "base64").toString()
@@ -91,7 +164,7 @@ async function getToken(): Promise<string> {
     return cachedToken!;
   } catch {
     throw new Error(
-      "No Hermod token found. Set HERMOD_TOKEN env var or run `surf-session login`."
+      "No Hermod token found. Set HERMOD_TOKEN env var or create ~/.config/surf/credentials.json"
     );
   }
 }

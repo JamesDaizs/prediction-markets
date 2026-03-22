@@ -1,57 +1,86 @@
 export const dynamic = "force-dynamic";
 
-import { getCategoryMetrics } from "@/lib/api/search";
-import { getPolymarketRanking } from "@/lib/api/polymarket";
-import { getKalshiRanking } from "@/lib/api/kalshi";
+import {
+  getDashboardTotals,
+  getCategoryBreakdown,
+  getTopMarkets,
+} from "@/lib/api/clickhouse";
 import { formatCurrency, formatNumber } from "@/lib/utils";
 import { BarChart3, DollarSign, TrendingUp } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { DashboardClient } from "./dashboard-client";
 
 export default async function DashboardPage() {
-  // Fetch ranking + category metrics from BOTH platforms separately
-  // (single call hits 50-item limit, cutting off one platform)
-  const [polyRanking, kalshiRanking, polyCatMetrics, kalshiCatMetrics] =
-    await Promise.all([
-      getPolymarketRanking({ sort_by: "open_interest", limit: 50 }),
-      getKalshiRanking({ sort_by: "open_interest", limit: 50 }),
-      getCategoryMetrics({ source: "Polymarket", time_range: "30d", limit: 50 }),
-      getCategoryMetrics({ source: "Kalshi", time_range: "30d", limit: 50 }),
-    ]);
+  const [totals, catRows, topMarketsRaw] = await Promise.all([
+    getDashboardTotals(),
+    getCategoryBreakdown(),
+    getTopMarkets(15),
+  ]);
 
-  const totalPolyOI = polyRanking.reduce(
-    (sum, m) => sum + m.open_interest_usd,
-    0
-  );
-  const totalKalshiOI = kalshiRanking.reduce(
-    (sum, m) => sum + m.open_interest,
-    0
-  );
-  const totalPolyVolume = polyRanking.reduce(
-    (sum, m) => sum + m.notional_volume_usd,
-    0
-  );
-  const totalKalshiVolume = kalshiRanking.reduce(
-    (sum, m) => sum + m.notional_volume_usd,
-    0
-  );
+  // ── Totals ──
+  const poly = totals.find((t) => t.source === "Polymarket");
+  const kalshi = totals.find((t) => t.source === "Kalshi");
+  const totalOI = (poly?.total_oi ?? 0) + (kalshi?.total_oi ?? 0);
+  const totalVolume = (poly?.total_volume ?? 0) + (kalshi?.total_volume ?? 0);
+  const totalMarkets = (poly?.market_count ?? 0) + (kalshi?.market_count ?? 0);
 
-  // Merge both platform category metrics
+  // ── Category aggregation ──
   const catMap = new Map<
     string,
-    { polymarket: number; kalshi: number }
+    {
+      polymarket: number;
+      kalshi: number;
+      polyMarkets: { name: string; value: number }[];
+      kalshiMarkets: { name: string; value: number }[];
+    }
   >();
-  for (const cm of polyCatMetrics) {
-    const key = cm.category || "Uncategorized";
-    const existing = catMap.get(key) ?? { polymarket: 0, kalshi: 0 };
-    existing.polymarket += cm.notional_volume_usd;
-    catMap.set(key, existing);
-  }
-  for (const cm of kalshiCatMetrics) {
-    const key = cm.category || "Uncategorized";
-    const existing = catMap.get(key) ?? { polymarket: 0, kalshi: 0 };
-    existing.kalshi += cm.notional_volume_usd;
-    catMap.set(key, existing);
+
+  // Also build subcategory hierarchy for treemap
+  const hierarchy = new Map<
+    string,
+    Map<string, { name: string; size: number }[]>
+  >();
+
+  for (const row of catRows) {
+    const cat = row.category || "Other";
+    const sub = row.subcategory || "Other";
+
+    // Category map for bar chart + compare
+    const existing = catMap.get(cat) ?? {
+      polymarket: 0,
+      kalshi: 0,
+      polyMarkets: [],
+      kalshiMarkets: [],
+    };
+    if (row.source === "Polymarket") {
+      existing.polymarket += row.oi;
+      if (row.oi > 0) {
+        existing.polyMarkets.push({
+          name: `${sub} (${row.market_count} mkts)`,
+          value: row.oi,
+        });
+      }
+    } else {
+      existing.kalshi += row.oi > 0 ? row.oi : row.volume;
+      if (row.volume > 0 || row.oi > 0) {
+        existing.kalshiMarkets.push({
+          name: `${sub} (${row.market_count} mkts)`,
+          value: row.oi > 0 ? row.oi : row.volume,
+        });
+      }
+    }
+    catMap.set(cat, existing);
+
+    // Hierarchy for treemap
+    if (!hierarchy.has(cat)) hierarchy.set(cat, new Map());
+    const subMap = hierarchy.get(cat)!;
+    if (!subMap.has(sub)) subMap.set(sub, []);
+    const size = row.oi > 0 ? row.oi : row.volume;
+    if (size > 0) {
+      subMap
+        .get(sub)!
+        .push({ name: `${row.source}: ${sub}`, size });
+    }
   }
 
   const categoryData = Array.from(catMap.entries())
@@ -59,15 +88,39 @@ export default async function DashboardPage() {
       name,
       polymarket: v.polymarket,
       kalshi: v.kalshi,
-      totalVolume: v.polymarket + v.kalshi,
+      total: v.polymarket + v.kalshi,
+      polyMarkets: v.polyMarkets.sort((a, b) => b.value - a.value).slice(0, 15),
+      kalshiMarkets: v.kalshiMarkets
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 15),
     }))
-    .filter((c) => c.name !== "Uncategorized" || c.totalVolume > 1000)
-    .sort((a, b) => b.totalVolume - a.totalVolume);
+    .filter((c) => c.total > 1000)
+    .sort((a, b) => b.total - a.total);
 
   const treemapData = categoryData.map((c) => ({
     name: c.name,
-    size: c.totalVolume,
+    size: c.total,
   }));
+
+  const hierarchicalData = Array.from(hierarchy.entries())
+    .map(([catName, subMap]) => ({
+      name: catName,
+      children: Array.from(subMap.entries()).map(([subName, markets]) => ({
+        name: subName,
+        children: markets.sort((a, b) => b.size - a.size).slice(0, 20),
+      })),
+    }))
+    .sort((a, b) => {
+      const aTotal = a.children.reduce(
+        (s, sub) => s + sub.children.reduce((ss, m) => ss + m.size, 0),
+        0
+      );
+      const bTotal = b.children.reduce(
+        (s, sub) => s + sub.children.reduce((ss, m) => ss + m.size, 0),
+        0
+      );
+      return bTotal - aTotal;
+    });
 
   const barData = categoryData.map((c) => ({
     name: c.name,
@@ -75,20 +128,22 @@ export default async function DashboardPage() {
     kalshi: c.kalshi,
   }));
 
-  const topMarkets = [
-    ...polyRanking.slice(0, 10).map((m) => ({
-      name: m.question.slice(0, 50),
-      value: m.open_interest_usd,
-      platform: "Polymarket" as const,
-    })),
-    ...kalshiRanking.slice(0, 10).map((m) => ({
-      name: m.title.slice(0, 50),
-      value: m.open_interest,
-      platform: "Kalshi" as const,
-    })),
-  ]
-    .sort((a, b) => b.value - a.value)
-    .slice(0, 15);
+  const compareData = categoryData.map((c) => ({
+    name: c.name,
+    polymarket: c.polymarket,
+    kalshi: c.kalshi,
+    total: c.total,
+    polyMarkets: c.polyMarkets,
+    kalshiMarkets: c.kalshiMarkets,
+  }));
+
+  const topMarkets = topMarketsRaw.map((m) => ({
+    name: m.title.slice(0, 50),
+    value: Math.max(m.open_interest_usd, m.notional_volume_usd),
+    platform: (m.source === "Kalshi" ? "Kalshi" : "Polymarket") as
+      | "Polymarket"
+      | "Kalshi",
+  }));
 
   return (
     <div className="space-y-8">
@@ -102,20 +157,20 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard
           label="Total Open Interest"
-          value={formatCurrency(totalPolyOI + totalKalshiOI, true)}
-          sub={`Poly ${formatCurrency(totalPolyOI, true)} / Kalshi ${formatCurrency(totalKalshiOI, true)}`}
+          value={formatCurrency(totalOI, true)}
+          sub={`Poly ${formatCurrency(poly?.total_oi ?? 0, true)} / Kalshi ${formatCurrency(kalshi?.total_oi ?? 0, true)}`}
           icon={<TrendingUp className="h-4 w-4" />}
         />
         <StatCard
-          label="Total Volume (top 100)"
-          value={formatCurrency(totalPolyVolume + totalKalshiVolume, true)}
-          sub={`Poly ${formatCurrency(totalPolyVolume, true)} / Kalshi ${formatCurrency(totalKalshiVolume, true)}`}
+          label="Total Volume"
+          value={formatCurrency(totalVolume, true)}
+          sub={`Poly ${formatCurrency(poly?.total_volume ?? 0, true)} / Kalshi ${formatCurrency(kalshi?.total_volume ?? 0, true)}`}
           icon={<DollarSign className="h-4 w-4" />}
         />
         <StatCard
           label="Active Markets"
-          value={formatNumber(polyRanking.length + kalshiRanking.length)}
-          sub={`Poly ${polyRanking.length} / Kalshi ${kalshiRanking.length}`}
+          value={formatNumber(totalMarkets)}
+          sub={`Poly ${formatNumber(poly?.market_count ?? 0)} / Kalshi ${formatNumber(kalshi?.market_count ?? 0)}`}
           icon={<BarChart3 className="h-4 w-4" />}
         />
         <StatCard
@@ -123,7 +178,7 @@ export default async function DashboardPage() {
           value={categoryData[0]?.name ?? "-"}
           sub={
             categoryData[0]
-              ? formatCurrency(categoryData[0].totalVolume, true) + " volume"
+              ? formatCurrency(categoryData[0].total, true) + " OI"
               : ""
           }
           icon={<BarChart3 className="h-4 w-4" />}
@@ -134,6 +189,8 @@ export default async function DashboardPage() {
         treemapData={treemapData}
         barData={barData}
         topMarkets={topMarkets}
+        hierarchicalData={hierarchicalData}
+        compareData={compareData}
       />
     </div>
   );

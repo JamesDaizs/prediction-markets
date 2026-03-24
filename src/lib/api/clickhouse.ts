@@ -6,6 +6,22 @@ const CH_PASS = process.env.CLICKHOUSE_PASSWORD || "";
 const CH_DB = process.env.CLICKHOUSE_DB || "prediction_markets";
 const CACHE_TTL = 5 * 60 * 1000; // 5 min
 
+// ─── Input sanitization ──────────────────────────────────────────
+// ClickHouse string literal escaping: replace ' with '' (standard SQL escaping)
+// Also strip control characters and backslashes to prevent escape-based attacks
+function escapeString(s: string): string {
+  return s
+    .replace(/\\/g, "")           // strip backslashes
+    .replace(/'/g, "''")          // escape single quotes
+    .replace(/[\x00-\x1f\x7f]/g, ""); // strip control chars
+}
+
+// Whitelist validators for enum-like inputs
+const VALID_SOURCES = new Set(["Polymarket", "Kalshi"]);
+const VALID_PLATFORMS = new Set(["both", "polymarket", "kalshi"]);
+const VALID_SORT_FIELDS = new Set(["volume", "count"]);
+const VALID_STATUSES = new Set(["open", "active", "closed", "resolved"]);
+
 // ─── Cache ──────────────────────────────────────────────────────
 const cache = new Map<string, { data: unknown; fetchedAt: number }>();
 
@@ -40,7 +56,9 @@ async function queryClickHouse<T>(sql: string): Promise<T[]> {
 
     if (!res.ok) {
       const errText = await res.text().catch(() => "");
-      throw new Error(`ClickHouse HTTP ${res.status}: ${errText.slice(0, 500)}`);
+      // Log full error server-side but don't expose CH details to clients
+      console.error(`ClickHouse HTTP ${res.status}: ${errText.slice(0, 500)}`);
+      throw new Error(`Query failed (${res.status})`);
     }
 
     const text = await res.text();
@@ -199,10 +217,10 @@ export async function getMarketRanking(params?: {
     params?.sortBy === "oi"
       ? "open_interest_usd DESC"
       : "notional_volume_usd DESC";
-  const sourceFilter = params?.source
+  const sourceFilter = params?.source && VALID_SOURCES.has(params.source)
     ? `AND source = '${params.source}'`
     : "";
-  const statusFilter = params?.status
+  const statusFilter = params?.status && VALID_STATUSES.has(params.status)
     ? `AND status = '${params.status}'`
     : "";
 
@@ -378,7 +396,7 @@ export async function getMarketPrices(
   timeRange: string
 ): Promise<CHPriceRow[]> {
   const days = timeRangeToDays(timeRange);
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     if (days <= 30) {
@@ -438,7 +456,7 @@ export async function getMarketOI(
   timeRange: string
 ): Promise<CHOIRow[]> {
   const days = timeRangeToDays(timeRange);
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     const sql = `
@@ -484,7 +502,7 @@ export async function getMarketTrades(
   marketId: string,
   limit = 20
 ): Promise<CHTradeRow[]> {
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     const sql = `
@@ -538,7 +556,7 @@ export async function getMarketMetadata(
   platform: "polymarket" | "kalshi",
   marketId: string
 ): Promise<CHMarketMetadata | null> {
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     const sql = `
@@ -934,7 +952,7 @@ export async function searchMarkets(
   query: string,
   limit = 50
 ): Promise<CHMarketRow[]> {
-  const safeQ = query.replace(/'/g, "");
+  const safeQ = escapeString(query);
 
   const polySql = `
     WITH poly_ld AS (
@@ -1031,7 +1049,7 @@ export interface CHWalletTradeHistoryRow {
 export async function getWalletStats(
   address: string
 ): Promise<CHWalletStatsRow | null> {
-  const safeAddr = address.replace(/'/g, "").toLowerCase();
+  const safeAddr = escapeString(address).toLowerCase();
   const sql = `
     SELECT
       taker_address AS address,
@@ -1067,7 +1085,7 @@ export async function getWalletTrades(
   address: string,
   limit = 50
 ): Promise<CHWalletTradeHistoryRow[]> {
-  const safeAddr = address.replace(/'/g, "").toLowerCase();
+  const safeAddr = escapeString(address).toLowerCase();
   const sql = `
     WITH trades AS (
       SELECT condition_id, outcome_label, price, amount_usd, block_time, tx_hash
@@ -1255,8 +1273,8 @@ export async function getSubcategoryMarkets(
   platform: "both" | "polymarket" | "kalshi" = "both",
   limit = 20
 ): Promise<CHSubcategoryMarket[]> {
-  const safeCat = category.replace(/'/g, "''");
-  const safeSub = subcategory.replace(/'/g, "''");
+  const safeCat = escapeString(category);
+  const safeSub = escapeString(subcategory);
   const results: CHSubcategoryMarket[] = [];
 
   if (platform !== "kalshi") {

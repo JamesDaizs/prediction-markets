@@ -5,15 +5,15 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const category = searchParams.get("category") || "";
   const subcategory = searchParams.get("subcategory") || "";
-  const platform = (searchParams.get("platform") || "both") as
-    | "both"
-    | "polymarket"
-    | "kalshi";
+  const rawPlatform = searchParams.get("platform") || "both";
+  const platform = (["both", "polymarket", "kalshi"].includes(rawPlatform)
+    ? rawPlatform
+    : "both") as "both" | "polymarket" | "kalshi";
   const limit = Math.min(parseInt(searchParams.get("limit") || "20"), 50);
 
-  if (!category || !subcategory) {
+  if (!category || !subcategory || category.length > 100 || subcategory.length > 100) {
     return NextResponse.json(
-      { error: "Missing category or subcategory" },
+      { error: "Missing or invalid category/subcategory" },
       { status: 400 }
     );
   }

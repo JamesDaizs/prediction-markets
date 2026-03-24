@@ -18,19 +18,20 @@ async function queryClickHouse<T>(sql: string): Promise<T[]> {
   }
 
   try {
-    const url = `https://${CH_HOST}:8443/?database=${encodeURIComponent(CH_DB)}`;
+    const params = new URLSearchParams({
+      database: CH_DB,
+      user: CH_USER,
+      password: CH_PASS,
+    });
+    const url = `https://${CH_HOST}:8443/?${params}`;
     const body = `${sql.replace(/\s+/g, " ").trim()} FORMAT JSONEachRow`;
-    const auth = Buffer.from(`${CH_USER}:${CH_PASS}`).toString("base64");
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 60000);
 
     const res = await fetch(url, {
       method: "POST",
-      headers: {
-        Authorization: `Basic ${auth}`,
-        "Content-Type": "text/plain",
-      },
+      headers: { "Content-Type": "text/plain" },
       body,
       signal: controller.signal,
     });

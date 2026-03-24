@@ -1,5 +1,5 @@
-// Revalidate every 5 minutes — serves cached SSR instantly, refreshes in background
-export const revalidate = 300;
+// Static at deploy time — rebuild locally to refresh (CH is IP-restricted, no ISR from Vercel)
+export const dynamic = "force-static";
 
 import {
   getDashboardTotals,

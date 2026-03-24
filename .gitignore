@@ -45,3 +45,6 @@ next-env.d.ts
 
 # python venvs
 /scripts/.venv/
+
+# python cache
+__pycache__/

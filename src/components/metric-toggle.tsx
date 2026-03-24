@@ -1,20 +1,20 @@
 "use client";
 
-import type { Platform } from "@/lib/api/types";
 import { cn } from "@/lib/utils";
 
-const OPTIONS: { label: string; value: Platform }[] = [
-  { label: "Both", value: "both" },
-  { label: "Polymarket", value: "polymarket" },
-  { label: "Kalshi", value: "kalshi" },
+export type Metric = "oi" | "volume";
+
+const OPTIONS: { label: string; value: Metric }[] = [
+  { label: "Open Interest", value: "oi" },
+  { label: "Volume", value: "volume" },
 ];
 
 interface Props {
-  value: Platform;
-  onChange: (v: Platform) => void;
+  value: Metric;
+  onChange: (v: Metric) => void;
 }
 
-export function PlatformToggle({ value, onChange }: Props) {
+export function MetricToggle({ value, onChange }: Props) {
   return (
     <div className="flex rounded-lg border border-pm-border-base bg-pm-bg-card p-0.5">
       {OPTIONS.map((opt) => (
@@ -24,7 +24,7 @@ export function PlatformToggle({ value, onChange }: Props) {
           className={cn(
             "rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
             value === opt.value
-              ? "bg-pm-brand text-white"
+              ? "bg-pm-bg-elevated text-pm-fg-base"
               : "text-pm-fg-muted hover:text-pm-fg-base"
           )}
         >

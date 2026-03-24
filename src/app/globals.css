@@ -3,13 +3,70 @@
 :root {
   --background: #09090b;
   --foreground: #fafafa;
+
+  /* Surfaces */
+  --pm-bg-base: #09090b;
+  --pm-bg-subtle: #0c0c0f;
+  --pm-bg-card: #131316;
+  --pm-bg-card-hover: #252530;
+  --pm-bg-elevated: #27272a;
+
+  /* Text */
+  --pm-fg-base: #fafafa;
+  --pm-fg-subtle: #a1a1aa;
+  --pm-fg-muted: #71717a;
+  --pm-fg-faint: #52525b;
+
+  /* Borders */
+  --pm-border-base: #27272a;
+  --pm-border-subtle: #1f1f23;
+  --pm-border-strong: #3f3f46;
+
+  /* Brand */
+  --pm-brand: #8b5cf6;
+  --pm-brand-dim: #6d28d9;
+  --pm-brand-glow: rgba(139, 92, 246, 0.12);
+
+  /* Platform */
+  --pm-polymarket: #8b5cf6;
+  --pm-kalshi: #3b82f6;
+
+  /* Data */
+  --pm-positive: #22c55e;
+  --pm-negative: #ef4444;
+  --pm-warning: #f59e0b;
+
+  /* Shadows */
+  --pm-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),
+    0 0 0 1px var(--pm-border-base);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-pm-bg-base: var(--pm-bg-base);
+  --color-pm-bg-subtle: var(--pm-bg-subtle);
+  --color-pm-bg-card: var(--pm-bg-card);
+  --color-pm-bg-card-hover: var(--pm-bg-card-hover);
+  --color-pm-bg-elevated: var(--pm-bg-elevated);
+  --color-pm-fg-base: var(--pm-fg-base);
+  --color-pm-fg-subtle: var(--pm-fg-subtle);
+  --color-pm-fg-muted: var(--pm-fg-muted);
+  --color-pm-fg-faint: var(--pm-fg-faint);
+  --color-pm-border-base: var(--pm-border-base);
+  --color-pm-border-subtle: var(--pm-border-subtle);
+  --color-pm-border-strong: var(--pm-border-strong);
+  --color-pm-brand: var(--pm-brand);
+  --color-pm-brand-dim: var(--pm-brand-dim);
+  --color-pm-brand-glow: var(--pm-brand-glow);
+  --color-pm-polymarket: var(--pm-polymarket);
+  --color-pm-kalshi: var(--pm-kalshi);
+  --color-pm-positive: var(--pm-positive);
+  --color-pm-negative: var(--pm-negative);
+  --color-pm-warning: var(--pm-warning);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --shadow-pm-card: var(--pm-card-shadow);
 }
 
 body {
@@ -17,3 +74,39 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
+
+/* Subtle gradient background for visual depth */
+main {
+  background: linear-gradient(
+    180deg,
+    var(--pm-bg-base) 0%,
+    var(--pm-bg-subtle) 100%
+  );
+}
+
+/* Fade-in animation for chart and card transitions */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}
+
+/* Staggered fade-in for grid children */
+.animate-stagger > * {
+  animation: fade-in 0.3s ease-out both;
+}
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 60ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 120ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 180ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 300ms; }

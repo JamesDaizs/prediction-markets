@@ -219,6 +219,7 @@ export type TimeRange = "7d" | "30d" | "90d" | "180d" | "1y" | "all";
 export type Interval = "1h" | "1d" | "latest";
 export type SortBy = "notional_volume_usd" | "open_interest" | "ticker";
 export type MarketStatus = "active" | "finalized" | "ended" | "closed";
+export type Metric = "oi" | "volume";
 
 // Unified market type for cross-platform display
 export interface UnifiedMarket {

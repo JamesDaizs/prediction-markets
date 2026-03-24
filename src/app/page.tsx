@@ -1,9 +1,11 @@
-export const dynamic = "force-dynamic";
+// Revalidate every 5 minutes — serves cached SSR instantly, refreshes in background
+export const revalidate = 300;
 
 import {
   getDashboardTotals,
   getCategoryBreakdown,
   getTopMarkets,
+  getDashboardTotalsTimeSeries,
 } from "@/lib/api/clickhouse";
 import { formatCurrency, formatNumber } from "@/lib/utils";
 import { BarChart3, DollarSign, TrendingUp } from "lucide-react";
@@ -11,10 +13,11 @@ import { StatCard } from "@/components/StatCard";
 import { DashboardClient } from "./dashboard-client";
 
 export default async function DashboardPage() {
-  const [totals, catRows, topMarketsRaw] = await Promise.all([
+  const [totals, catRows, topMarketsRaw, trendData] = await Promise.all([
     getDashboardTotals(),
     getCategoryBreakdown(),
     getTopMarkets(15),
+    getDashboardTotalsTimeSeries(30),
   ]);
 
   // ── Totals ──
@@ -23,6 +26,33 @@ export default async function DashboardPage() {
   const totalOI = (poly?.total_oi ?? 0) + (kalshi?.total_oi ?? 0);
   const totalVolume = (poly?.total_volume ?? 0) + (kalshi?.total_volume ?? 0);
   const totalMarkets = (poly?.market_count ?? 0) + (kalshi?.market_count ?? 0);
+
+  // ── Sparkline & Trend from 30-day time series ──
+  const dailyMap = new Map<string, { oi: number; volume: number; markets: number }>();
+  for (const row of trendData) {
+    const existing = dailyMap.get(row.date) || { oi: 0, volume: 0, markets: 0 };
+    existing.oi += row.total_oi;
+    existing.volume += row.total_volume;
+    existing.markets += row.market_count;
+    dailyMap.set(row.date, existing);
+  }
+  const dailySorted = Array.from(dailyMap.entries())
+    .sort(([a], [b]) => a.localeCompare(b));
+  const oiSparkline = dailySorted.map(([, v]) => v.oi);
+  const volumeSparkline = dailySorted.map(([, v]) => v.volume);
+  const marketSparkline = dailySorted.map(([, v]) => v.markets);
+
+  // Calculate 7d change
+  function calc7dChange(sparkline: number[]): number | undefined {
+    if (sparkline.length < 8) return undefined;
+    const current = sparkline[sparkline.length - 1];
+    const prev = sparkline[sparkline.length - 8];
+    if (prev === 0) return undefined;
+    return ((current - prev) / prev) * 100;
+  }
+
+  const oiChange = calc7dChange(oiSparkline);
+  const volumeChange = calc7dChange(volumeSparkline);
 
   // ── Category aggregation ──
   const catMap = new Map<
@@ -35,10 +65,10 @@ export default async function DashboardPage() {
     }
   >();
 
-  // Also build subcategory hierarchy for treemap
+  // Also build subcategory hierarchy for treemap (clean 2-level: Category > Subcategory)
   const hierarchy = new Map<
     string,
-    Map<string, { name: string; size: number }[]>
+    Map<string, { polymarket: number; kalshi: number }>
   >();
 
   for (const row of catRows) {
@@ -71,15 +101,16 @@ export default async function DashboardPage() {
     }
     catMap.set(cat, existing);
 
-    // Hierarchy for treemap
+    // Hierarchy for treemap — aggregate by subcategory, store per-platform sizes
     if (!hierarchy.has(cat)) hierarchy.set(cat, new Map());
     const subMap = hierarchy.get(cat)!;
-    if (!subMap.has(sub)) subMap.set(sub, []);
+    if (!subMap.has(sub)) subMap.set(sub, { polymarket: 0, kalshi: 0 });
+    const entry = subMap.get(sub)!;
     const size = row.oi > 0 ? row.oi : row.volume;
-    if (size > 0) {
-      subMap
-        .get(sub)!
-        .push({ name: `${row.source}: ${sub}`, size });
+    if (row.source === "Polymarket") {
+      entry.polymarket += size;
+    } else {
+      entry.kalshi += size;
     }
   }
 
@@ -105,20 +136,19 @@ export default async function DashboardPage() {
   const hierarchicalData = Array.from(hierarchy.entries())
     .map(([catName, subMap]) => ({
       name: catName,
-      children: Array.from(subMap.entries()).map(([subName, markets]) => ({
-        name: subName,
-        children: markets.sort((a, b) => b.size - a.size).slice(0, 20),
-      })),
+      children: Array.from(subMap.entries())
+        .map(([subName, vals]) => ({
+          name: subName,
+          size: vals.polymarket + vals.kalshi,
+          polymarket: vals.polymarket,
+          kalshi: vals.kalshi,
+        }))
+        .filter((sub) => sub.size > 0)
+        .sort((a, b) => b.size - a.size),
     }))
     .sort((a, b) => {
-      const aTotal = a.children.reduce(
-        (s, sub) => s + sub.children.reduce((ss, m) => ss + m.size, 0),
-        0
-      );
-      const bTotal = b.children.reduce(
-        (s, sub) => s + sub.children.reduce((ss, m) => ss + m.size, 0),
-        0
-      );
+      const aTotal = a.children.reduce((s, c) => s + c.size, 0);
+      const bTotal = b.children.reduce((s, c) => s + c.size, 0);
       return bTotal - aTotal;
     });
 
@@ -146,32 +176,37 @@ export default async function DashboardPage() {
   }));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-white">Dashboard</h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <h1 className="text-2xl font-bold text-pm-fg-base">Dashboard</h1>
+        <p className="mt-1 text-sm text-pm-fg-faint">
           Prediction market analytics across Polymarket & Kalshi
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="animate-stagger grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard
           label="Total Open Interest"
           value={formatCurrency(totalOI, true)}
           sub={`Poly ${formatCurrency(poly?.total_oi ?? 0, true)} / Kalshi ${formatCurrency(kalshi?.total_oi ?? 0, true)}`}
           icon={<TrendingUp className="h-4 w-4" />}
+          trend={oiChange !== undefined ? { value: oiChange, label: "vs 7d ago" } : undefined}
+          sparkline={oiSparkline.length > 1 ? oiSparkline : undefined}
         />
         <StatCard
           label="Total Volume"
           value={formatCurrency(totalVolume, true)}
           sub={`Poly ${formatCurrency(poly?.total_volume ?? 0, true)} / Kalshi ${formatCurrency(kalshi?.total_volume ?? 0, true)}`}
           icon={<DollarSign className="h-4 w-4" />}
+          trend={volumeChange !== undefined ? { value: volumeChange, label: "vs 7d ago" } : undefined}
+          sparkline={volumeSparkline.length > 1 ? volumeSparkline : undefined}
         />
         <StatCard
           label="Active Markets"
           value={formatNumber(totalMarkets)}
           sub={`Poly ${formatNumber(poly?.market_count ?? 0)} / Kalshi ${formatNumber(kalshi?.market_count ?? 0)}`}
           icon={<BarChart3 className="h-4 w-4" />}
+          sparkline={marketSparkline.length > 1 ? marketSparkline : undefined}
         />
         <StatCard
           label="Top Category"

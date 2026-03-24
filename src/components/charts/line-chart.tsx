@@ -39,17 +39,17 @@ export function TimeSeriesChart({
   height = 280,
 }: Props) {
   return (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+    <div className="rounded-xl border border-pm-border-base bg-pm-bg-card p-5">
       {title && (
-        <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>
+        <h3 className="mb-4 text-sm font-medium text-pm-fg-subtle">{title}</h3>
       )}
       <div style={{ height, minHeight: height }} className="min-w-0">
         <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-            <XAxis dataKey="date" stroke="#52525b" fontSize={10} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--pm-border-subtle)" />
+            <XAxis dataKey="date" stroke="var(--pm-fg-faint)" fontSize={10} />
             <YAxis
-              stroke="#52525b"
+              stroke="var(--pm-fg-faint)"
               fontSize={11}
               tickFormatter={yFormatter}
             />
@@ -58,10 +58,10 @@ export function TimeSeriesChart({
               formatter={(value) => [
                 yFormatter ? yFormatter(Number(value)) : value,
               ]}
-              labelStyle={{ color: "#a1a1aa" }}
+              labelStyle={{ color: "var(--pm-fg-subtle)" }}
             />
             {lines.length > 1 && (
-              <Legend wrapperStyle={{ fontSize: "11px", color: "#a1a1aa" }} />
+              <Legend wrapperStyle={{ fontSize: "11px", color: "var(--pm-fg-subtle)" }} />
             )}
             {lines.map((line) => (
               <Line

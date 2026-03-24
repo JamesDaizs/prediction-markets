@@ -1,166 +1,168 @@
 {
-  "generated_at": "2026-03-20T13:17:06.675327",
+  "generated_at": "2026-03-23T14:49:50.312294",
   "methodology": {
     "description": "% of markets where price-implied direction at T before resolution matched final outcome",
     "correct_if": "YES price > 0.50 and YES won, or YES price < 0.50 and NO won",
     "excluded": "Markets where price = 0.50 or no price data at time window",
     "polymarket_source": "polymarket_market_prices_hourly (4h/12h/1d), polymarket_market_prices_daily (1w/1mo)",
-    "kalshi_source": "kalshi_market_report (daily snapshots for all windows; 4h/12h are approximations)"
+    "kalshi_source": "kalshi_market_report (daily snapshots for all windows; 4h/12h are approximations)",
+    "brier_formula": "mean((predicted_prob - actual_outcome)^2). 0 = perfect, 0.25 = coin flip.",
+    "calibration_method": "20 probability buckets at 5% intervals using 1d-before-resolution price."
   },
   "polymarket": [
     {
       "category": "Sports",
-      "markets": 302716,
-      "acc_4h": 82.6,
-      "n_4h": 210632,
-      "acc_12h": 72.8,
-      "n_12h": 139334,
-      "acc_1d": 74.7,
-      "n_1d": 97359,
+      "markets": 317243,
+      "acc_4h": 82.9,
+      "n_4h": 221293,
+      "acc_12h": 73,
+      "n_12h": 145331,
+      "acc_1d": 74.9,
+      "n_1d": 101905,
       "acc_1w": 81,
-      "n_1w": 25149,
-      "acc_1mo": 91.6,
-      "n_1mo": 5213
+      "n_1w": 26015,
+      "acc_1mo": 91.7,
+      "n_1mo": 5407
     },
     {
       "category": "Crypto",
-      "markets": 226091,
-      "acc_4h": 72.3,
-      "n_4h": 71160,
+      "markets": 236758,
+      "acc_4h": 72.4,
+      "n_4h": 73023,
       "acc_12h": 73.7,
-      "n_12h": 48791,
-      "acc_1d": 79,
-      "n_1d": 36164,
-      "acc_1w": 87.5,
-      "n_1w": 10448,
-      "acc_1mo": 88.3,
-      "n_1mo": 1527
+      "n_12h": 49773,
+      "acc_1d": 78.9,
+      "n_1d": 36934,
+      "acc_1w": 87.7,
+      "n_1w": 10671,
+      "acc_1mo": 88.1,
+      "n_1mo": 1534
     },
     {
       "category": "Politics",
-      "markets": 17229,
+      "markets": 17335,
       "acc_4h": 90.9,
-      "n_4h": 16710,
+      "n_4h": 16833,
       "acc_12h": 85.8,
-      "n_12h": 15376,
-      "acc_1d": 84.2,
-      "n_1d": 14172,
-      "acc_1w": 87.1,
-      "n_1w": 7927,
+      "n_12h": 15497,
+      "acc_1d": 84.3,
+      "n_1d": 14274,
+      "acc_1w": 87.2,
+      "n_1w": 8022,
       "acc_1mo": 89.6,
-      "n_1mo": 4005
-    },
-    {
-      "category": "Entertainment",
-      "markets": 15305,
-      "acc_4h": 98.3,
-      "n_4h": 14956,
-      "acc_12h": 94.9,
-      "n_12h": 14571,
-      "acc_1d": 93.9,
-      "n_1d": 14278,
-      "acc_1w": 91.8,
-      "n_1w": 9471,
-      "acc_1mo": 92.1,
-      "n_1mo": 2800
+      "n_1mo": 4044
     },
     {
       "category": "Weather",
-      "markets": 15077,
+      "markets": 16063,
       "acc_4h": 98.3,
-      "n_4h": 14972,
-      "acc_12h": 96.1,
-      "n_12h": 14808,
-      "acc_1d": 89.6,
-      "n_1d": 14188,
+      "n_4h": 16003,
+      "acc_12h": 96.2,
+      "n_12h": 15822,
+      "acc_1d": 89.8,
+      "n_1d": 15160,
       "acc_1w": 90.1,
       "n_1w": 375,
       "acc_1mo": 89.3,
       "n_1mo": 214
     },
     {
+      "category": "Entertainment",
+      "markets": 15411,
+      "acc_4h": 98.3,
+      "n_4h": 15022,
+      "acc_12h": 94.8,
+      "n_12h": 14636,
+      "acc_1d": 93.8,
+      "n_1d": 14338,
+      "acc_1w": 91.8,
+      "n_1w": 9471,
+      "acc_1mo": 91.9,
+      "n_1mo": 2749
+    },
+    {
       "category": "Financials",
-      "markets": 11417,
-      "acc_4h": 97.1,
-      "n_4h": 11267,
-      "acc_12h": 89.6,
-      "n_12h": 10791,
+      "markets": 11695,
+      "acc_4h": 97.2,
+      "n_4h": 11545,
+      "acc_12h": 89.7,
+      "n_12h": 11066,
       "acc_1d": 87.8,
-      "n_1d": 10000,
-      "acc_1w": 89.1,
-      "n_1w": 4222,
+      "n_1d": 10259,
+      "acc_1w": 89.2,
+      "n_1w": 4381,
       "acc_1mo": 91,
-      "n_1mo": 1108
+      "n_1mo": 1114
     },
     {
       "category": "Geopolitics",
-      "markets": 5966,
+      "markets": 6046,
       "acc_4h": 98.1,
-      "n_4h": 5937,
-      "acc_12h": 95,
-      "n_12h": 5857,
+      "n_4h": 6017,
+      "acc_12h": 95.1,
+      "n_12h": 5937,
       "acc_1d": 93.3,
-      "n_1d": 5776,
-      "acc_1w": 91,
-      "n_1w": 4472,
+      "n_1d": 5858,
+      "acc_1w": 91.1,
+      "n_1w": 4534,
       "acc_1mo": 91.8,
-      "n_1mo": 2292
+      "n_1mo": 2322
     },
     {
       "category": "Other",
-      "markets": 2694,
-      "acc_4h": 84.2,
-      "n_4h": 991,
-      "acc_12h": 83,
-      "n_12h": 893,
+      "markets": 2690,
+      "acc_4h": 84.3,
+      "n_4h": 987,
+      "acc_12h": 82.9,
+      "n_12h": 890,
       "acc_1d": 82.5,
-      "n_1d": 725,
-      "acc_1w": 82.8,
-      "n_1w": 360,
+      "n_1d": 722,
+      "acc_1w": 83,
+      "n_1w": 359,
       "acc_1mo": 85,
       "n_1mo": 100
     },
     {
       "category": "AI/Tech",
-      "markets": 2144,
+      "markets": 2162,
       "acc_4h": 97.3,
-      "n_4h": 2090,
+      "n_4h": 2108,
       "acc_12h": 95.4,
-      "n_12h": 2071,
-      "acc_1d": 95.1,
-      "n_1d": 2021,
-      "acc_1w": 94,
-      "n_1w": 1543,
+      "n_12h": 2089,
+      "acc_1d": 94.9,
+      "n_1d": 2045,
+      "acc_1w": 93.8,
+      "n_1w": 1550,
       "acc_1mo": 90.5,
-      "n_1mo": 665
+      "n_1mo": 654
     },
     {
       "category": "Economics",
-      "markets": 2063,
-      "acc_4h": 92.6,
-      "n_4h": 1929,
-      "acc_12h": 90.2,
-      "n_12h": 1925,
-      "acc_1d": 89.4,
-      "n_1d": 1905,
-      "acc_1w": 88.7,
-      "n_1w": 1696,
-      "acc_1mo": 87.8,
-      "n_1mo": 910
+      "markets": 2003,
+      "acc_4h": 92.4,
+      "n_4h": 1870,
+      "acc_12h": 89.9,
+      "n_12h": 1866,
+      "acc_1d": 89.1,
+      "n_1d": 1846,
+      "acc_1w": 88.4,
+      "n_1w": 1635,
+      "acc_1mo": 87.6,
+      "n_1mo": 852
     },
     {
       "category": "Stock Index",
-      "markets": 1233,
-      "acc_4h": 96.4,
-      "n_4h": 1183,
-      "acc_12h": 74.4,
-      "n_12h": 1016,
-      "acc_1d": 64.4,
-      "n_1d": 685,
-      "acc_1w": 93.8,
-      "n_1w": 128,
-      "acc_1mo": 87.5,
-      "n_1mo": 8
+      "markets": 1280,
+      "acc_4h": 96.6,
+      "n_4h": 1230,
+      "acc_12h": 75.1,
+      "n_12h": 1061,
+      "acc_1d": 65.7,
+      "n_1d": 728,
+      "acc_1w": 94,
+      "n_1w": 149,
+      "acc_1mo": 100,
+      "n_1mo": 7
     },
     {
       "category": "Health",
@@ -178,187 +180,495 @@
     },
     {
       "category": "Total",
-      "markets": 602080,
-      "acc_4h": 83.2,
-      "n_4h": 351937,
-      "acc_12h": 77.9,
-      "n_12h": 255542,
+      "markets": 628831,
+      "acc_4h": 83.4,
+      "n_4h": 366041,
+      "acc_12h": 78.0,
+      "n_12h": 264077,
       "acc_1d": 80.2,
-      "n_1d": 197381,
+      "n_1d": 204177,
       "acc_1w": 86.1,
-      "n_1w": 65888,
+      "n_1w": 67259,
       "acc_1mo": 90.7,
-      "n_1mo": 18888
+      "n_1mo": 19043
     }
   ],
   "kalshi": [
     {
       "category": "Sports",
-      "markets": 7011526,
-      "acc_4h": 87.6,
-      "n_4h": 6590935,
-      "acc_12h": 86.5,
-      "n_12h": 3974365,
-      "acc_1d": 86.5,
-      "n_1d": 3974365,
-      "acc_1w": 92.6,
-      "n_1w": 60667,
-      "acc_1mo": 99.8,
-      "n_1mo": 1631
+      "markets": 37004823,
+      "acc_4h": 84.8,
+      "n_4h": 4402528,
+      "acc_12h": 84.2,
+      "n_12h": 1592862,
+      "acc_1d": 83.6,
+      "n_1d": 614955,
+      "acc_1w": 88.6,
+      "n_1w": 53524,
+      "acc_1mo": 90.9,
+      "n_1mo": 1542
     },
     {
       "category": "Crypto",
-      "markets": 272585,
-      "acc_4h": 96,
-      "n_4h": 270972,
-      "acc_12h": 96.9,
-      "n_12h": 43705,
-      "acc_1d": 96.9,
-      "n_1d": 43705,
-      "acc_1w": 98.3,
-      "n_1w": 1069,
-      "acc_1mo": 100,
-      "n_1mo": 121
+      "markets": 3033423,
+      "acc_4h": 90.5,
+      "n_4h": 35760,
+      "acc_12h": 85.9,
+      "n_12h": 26248,
+      "acc_1d": 85.1,
+      "n_1d": 11963,
+      "acc_1w": 80.2,
+      "n_1w": 838,
+      "acc_1mo": 76.5,
+      "n_1mo": 115
     },
     {
       "category": "Stock Index",
-      "markets": 78875,
-      "acc_4h": 96.3,
-      "n_4h": 78436,
-      "acc_12h": 98,
-      "n_12h": 20598,
-      "acc_1d": 98,
-      "n_1d": 20598,
-      "acc_1w": 98.1,
-      "n_1w": 1018,
-      "acc_1mo": 100,
-      "n_1mo": 111
+      "markets": 1172771,
+      "acc_4h": 89.5,
+      "n_4h": 30156,
+      "acc_12h": 86.2,
+      "n_12h": 17797,
+      "acc_1d": 87.4,
+      "n_1d": 10886,
+      "acc_1w": 91.5,
+      "n_1w": 692,
+      "acc_1mo": 96.2,
+      "n_1mo": 106
     },
     {
       "category": "Financials",
-      "markets": 69082,
-      "acc_4h": 97.1,
-      "n_4h": 68899,
-      "acc_12h": 93.7,
-      "n_12h": 10101,
-      "acc_1d": 93.7,
-      "n_1d": 10101,
-      "acc_1w": 98.5,
-      "n_1w": 2200,
-      "acc_1mo": 98.3,
-      "n_1mo": 989
-    },
-    {
-      "category": "Weather",
-      "markets": 44092,
-      "acc_4h": 98.1,
-      "n_4h": 43961,
-      "acc_12h": 98.2,
-      "n_12h": 43656,
-      "acc_1d": 98.2,
-      "n_1d": 43656,
-      "acc_1w": 99.3,
-      "n_1w": 1092,
-      "acc_1mo": 99.1,
-      "n_1mo": 681
+      "markets": 792306,
+      "acc_4h": 85.2,
+      "n_4h": 10387,
+      "acc_12h": 85,
+      "n_12h": 7542,
+      "acc_1d": 85.3,
+      "n_1d": 4629,
+      "acc_1w": 82.1,
+      "n_1w": 2039,
+      "acc_1mo": 84.6,
+      "n_1mo": 948
     },
     {
       "category": "Entertainment",
-      "markets": 23200,
-      "acc_4h": 95.1,
-      "n_4h": 22959,
-      "acc_12h": 95.3,
-      "n_12h": 22381,
-      "acc_1d": 95.3,
-      "n_1d": 22381,
-      "acc_1w": 98,
-      "n_1w": 8980,
-      "acc_1mo": 98.7,
-      "n_1mo": 2928
+      "markets": 70148,
+      "acc_4h": 93.3,
+      "n_4h": 19653,
+      "acc_12h": 91.6,
+      "n_12h": 17997,
+      "acc_1d": 91.6,
+      "n_1d": 14752,
+      "acc_1w": 88.3,
+      "n_1w": 7429,
+      "acc_1mo": 85.8,
+      "n_1mo": 2728
+    },
+    {
+      "category": "Weather",
+      "markets": 57944,
+      "acc_4h": 97.5,
+      "n_4h": 40446,
+      "acc_12h": 85.6,
+      "n_12h": 39824,
+      "acc_1d": 82,
+      "n_1d": 37950,
+      "acc_1w": 93.4,
+      "n_1w": 711,
+      "acc_1mo": 78.7,
+      "n_1mo": 422
     },
     {
       "category": "Politics",
-      "markets": 22652,
-      "acc_4h": 98.9,
-      "n_4h": 22566,
-      "acc_12h": 98.7,
-      "n_12h": 19254,
-      "acc_1d": 98.7,
-      "n_1d": 19254,
-      "acc_1w": 99.1,
-      "n_1w": 6008,
-      "acc_1mo": 99.6,
-      "n_1mo": 2484
+      "markets": 36398,
+      "acc_4h": 92.3,
+      "n_4h": 20740,
+      "acc_12h": 89.4,
+      "n_12h": 18065,
+      "acc_1d": 84.8,
+      "n_1d": 13592,
+      "acc_1w": 85.8,
+      "n_1w": 5771,
+      "acc_1mo": 91.2,
+      "n_1mo": 2517
     },
     {
       "category": "Economics",
-      "markets": 4960,
-      "acc_4h": 89.9,
-      "n_4h": 4928,
-      "acc_12h": 89.8,
-      "n_12h": 4880,
-      "acc_1d": 89.8,
-      "n_1d": 4880,
-      "acc_1w": 90.4,
-      "n_1w": 4036,
-      "acc_1mo": 92.9,
-      "n_1mo": 2448
+      "markets": 6113,
+      "acc_4h": 88.8,
+      "n_4h": 4491,
+      "acc_12h": 88.6,
+      "n_12h": 4455,
+      "acc_1d": 87.8,
+      "n_1d": 4408,
+      "acc_1w": 87.4,
+      "n_1w": 3726,
+      "acc_1mo": 87.2,
+      "n_1mo": 2329
     },
     {
       "category": "Other",
-      "markets": 4300,
-      "acc_4h": 96.9,
-      "n_4h": 4288,
-      "acc_12h": 97,
-      "n_12h": 4148,
-      "acc_1d": 97,
-      "n_1d": 4148,
-      "acc_1w": 97.2,
-      "n_1w": 1743,
-      "acc_1mo": 96.8,
-      "n_1mo": 881
+      "markets": 4588,
+      "acc_4h": 94.6,
+      "n_4h": 2551,
+      "acc_12h": 92.5,
+      "n_12h": 2453,
+      "acc_1d": 88.7,
+      "n_1d": 2234,
+      "acc_1w": 86.8,
+      "n_1w": 1321,
+      "acc_1mo": 82.4,
+      "n_1mo": 660
     },
     {
       "category": "AI/Tech",
-      "markets": 2248,
-      "acc_4h": 96.7,
-      "n_4h": 2241,
-      "acc_12h": 96.7,
-      "n_12h": 2216,
-      "acc_1d": 96.7,
-      "n_1d": 2216,
-      "acc_1w": 96.6,
-      "n_1w": 1570,
-      "acc_1mo": 99.6,
-      "n_1mo": 453
+      "markets": 4285,
+      "acc_4h": 96,
+      "n_4h": 2570,
+      "acc_12h": 94.8,
+      "n_12h": 2468,
+      "acc_1d": 93.7,
+      "n_1d": 2324,
+      "acc_1w": 88.2,
+      "n_1w": 1671,
+      "acc_1mo": 84.9,
+      "n_1mo": 655
     },
     {
       "category": "Health",
-      "markets": 660,
-      "acc_4h": 94.5,
-      "n_4h": 658,
-      "acc_12h": 94.5,
-      "n_12h": 657,
-      "acc_1d": 94.5,
-      "n_1d": 657,
-      "acc_1w": 97.6,
-      "n_1w": 288,
-      "acc_1mo": 97.8,
-      "n_1mo": 139
+      "markets": 667,
+      "acc_4h": 93.4,
+      "n_4h": 651,
+      "acc_12h": 91,
+      "n_12h": 647,
+      "acc_1d": 89.4,
+      "n_1d": 585,
+      "acc_1w": 90.8,
+      "n_1w": 283,
+      "acc_1mo": 84.4,
+      "n_1mo": 128
     },
     {
       "category": "Total",
-      "markets": 7534180,
-      "acc_4h": 88.2,
-      "n_4h": 7110843,
-      "acc_12h": 86.9,
-      "n_12h": 4145961,
-      "acc_1d": 86.9,
-      "n_1d": 4145961,
-      "acc_1w": 94.0,
-      "n_1w": 88671,
-      "acc_1mo": 97.8,
-      "n_1mo": 12866
+      "markets": 42183466,
+      "acc_4h": 85.1,
+      "n_4h": 4569933,
+      "acc_12h": 84.5,
+      "n_12h": 1730358,
+      "acc_1d": 83.9,
+      "n_1d": 718278,
+      "acc_1w": 88.1,
+      "n_1w": 78005,
+      "acc_1mo": 87.2,
+      "n_1mo": 12150
     }
-  ]
+  ],
+  "calibration": {
+    "polymarket": [
+      {
+        "bucket_low": 0,
+        "bucket_high": 0.05,
+        "avg_predicted": 0.0089,
+        "actual_rate": 0.0116,
+        "n": 69253
+      },
+      {
+        "bucket_low": 0.05,
+        "bucket_high": 0.1,
+        "avg_predicted": 0.0678,
+        "actual_rate": 0.083,
+        "n": 11322
+      },
+      {
+        "bucket_low": 0.1,
+        "bucket_high": 0.15000000000000002,
+        "avg_predicted": 0.12,
+        "actual_rate": 0.1284,
+        "n": 7726
+      },
+      {
+        "bucket_low": 0.15,
+        "bucket_high": 0.2,
+        "avg_predicted": 0.1708,
+        "actual_rate": 0.172,
+        "n": 6580
+      },
+      {
+        "bucket_low": 0.2,
+        "bucket_high": 0.25,
+        "avg_predicted": 0.2203,
+        "actual_rate": 0.2292,
+        "n": 7425
+      },
+      {
+        "bucket_low": 0.25,
+        "bucket_high": 0.3,
+        "avg_predicted": 0.2714,
+        "actual_rate": 0.275,
+        "n": 9226
+      },
+      {
+        "bucket_low": 0.3,
+        "bucket_high": 0.35,
+        "avg_predicted": 0.3216,
+        "actual_rate": 0.3229,
+        "n": 7636
+      },
+      {
+        "bucket_low": 0.35,
+        "bucket_high": 0.39999999999999997,
+        "avg_predicted": 0.3715,
+        "actual_rate": 0.3765,
+        "n": 6540
+      },
+      {
+        "bucket_low": 0.4,
+        "bucket_high": 0.45,
+        "avg_predicted": 0.4223,
+        "actual_rate": 0.4322,
+        "n": 8027
+      },
+      {
+        "bucket_low": 0.45,
+        "bucket_high": 0.5,
+        "avg_predicted": 0.4782,
+        "actual_rate": 0.4869,
+        "n": 14745
+      },
+      {
+        "bucket_low": 0.5,
+        "bucket_high": 0.55,
+        "avg_predicted": 0.5135,
+        "actual_rate": 0.5077,
+        "n": 19729
+      },
+      {
+        "bucket_low": 0.55,
+        "bucket_high": 0.6000000000000001,
+        "avg_predicted": 0.57,
+        "actual_rate": 0.5613,
+        "n": 6488
+      },
+      {
+        "bucket_low": 0.6,
+        "bucket_high": 0.65,
+        "avg_predicted": 0.6206,
+        "actual_rate": 0.6092,
+        "n": 4798
+      },
+      {
+        "bucket_low": 0.65,
+        "bucket_high": 0.7000000000000001,
+        "avg_predicted": 0.6718,
+        "actual_rate": 0.6611,
+        "n": 3983
+      },
+      {
+        "bucket_low": 0.7,
+        "bucket_high": 0.75,
+        "avg_predicted": 0.7202,
+        "actual_rate": 0.7123,
+        "n": 3455
+      },
+      {
+        "bucket_low": 0.75,
+        "bucket_high": 0.8,
+        "avg_predicted": 0.7699,
+        "actual_rate": 0.7535,
+        "n": 3254
+      },
+      {
+        "bucket_low": 0.8,
+        "bucket_high": 0.8500000000000001,
+        "avg_predicted": 0.8205,
+        "actual_rate": 0.7825,
+        "n": 3080
+      },
+      {
+        "bucket_low": 0.85,
+        "bucket_high": 0.9,
+        "avg_predicted": 0.8719,
+        "actual_rate": 0.8371,
+        "n": 2290
+      },
+      {
+        "bucket_low": 0.9,
+        "bucket_high": 0.9500000000000001,
+        "avg_predicted": 0.9227,
+        "actual_rate": 0.8519,
+        "n": 3004
+      },
+      {
+        "bucket_low": 0.95,
+        "bucket_high": 1,
+        "avg_predicted": 0.9859,
+        "actual_rate": 0.9468,
+        "n": 11482
+      }
+    ],
+    "kalshi": [
+      {
+        "bucket_low": 0,
+        "bucket_high": 0.05,
+        "avg_predicted": 0.0211,
+        "actual_rate": 0.024,
+        "n": 215592
+      },
+      {
+        "bucket_low": 0.05,
+        "bucket_high": 0.1,
+        "avg_predicted": 0.0683,
+        "actual_rate": 0.075,
+        "n": 126728
+      },
+      {
+        "bucket_low": 0.1,
+        "bucket_high": 0.15000000000000002,
+        "avg_predicted": 0.1185,
+        "actual_rate": 0.1314,
+        "n": 78127
+      },
+      {
+        "bucket_low": 0.15,
+        "bucket_high": 0.2,
+        "avg_predicted": 0.1688,
+        "actual_rate": 0.1883,
+        "n": 55839
+      },
+      {
+        "bucket_low": 0.2,
+        "bucket_high": 0.25,
+        "avg_predicted": 0.219,
+        "actual_rate": 0.2424,
+        "n": 43256
+      },
+      {
+        "bucket_low": 0.25,
+        "bucket_high": 0.3,
+        "avg_predicted": 0.2691,
+        "actual_rate": 0.2975,
+        "n": 34841
+      },
+      {
+        "bucket_low": 0.3,
+        "bucket_high": 0.35,
+        "avg_predicted": 0.3185,
+        "actual_rate": 0.3407,
+        "n": 28516
+      },
+      {
+        "bucket_low": 0.35,
+        "bucket_high": 0.39999999999999997,
+        "avg_predicted": 0.3693,
+        "actual_rate": 0.4078,
+        "n": 23480
+      },
+      {
+        "bucket_low": 0.4,
+        "bucket_high": 0.45,
+        "avg_predicted": 0.4197,
+        "actual_rate": 0.4557,
+        "n": 20317
+      },
+      {
+        "bucket_low": 0.45,
+        "bucket_high": 0.5,
+        "avg_predicted": 0.4691,
+        "actual_rate": 0.492,
+        "n": 19545
+      },
+      {
+        "bucket_low": 0.5,
+        "bucket_high": 0.55,
+        "avg_predicted": 0.5181,
+        "actual_rate": 0.5308,
+        "n": 15344
+      },
+      {
+        "bucket_low": 0.55,
+        "bucket_high": 0.6000000000000001,
+        "avg_predicted": 0.5685,
+        "actual_rate": 0.5684,
+        "n": 10975
+      },
+      {
+        "bucket_low": 0.6,
+        "bucket_high": 0.65,
+        "avg_predicted": 0.6189,
+        "actual_rate": 0.6136,
+        "n": 8456
+      },
+      {
+        "bucket_low": 0.65,
+        "bucket_high": 0.7000000000000001,
+        "avg_predicted": 0.6696,
+        "actual_rate": 0.6731,
+        "n": 7185
+      },
+      {
+        "bucket_low": 0.7,
+        "bucket_high": 0.75,
+        "avg_predicted": 0.7186,
+        "actual_rate": 0.6755,
+        "n": 5257
+      },
+      {
+        "bucket_low": 0.75,
+        "bucket_high": 0.8,
+        "avg_predicted": 0.7694,
+        "actual_rate": 0.7378,
+        "n": 4736
+      },
+      {
+        "bucket_low": 0.8,
+        "bucket_high": 0.8500000000000001,
+        "avg_predicted": 0.8189,
+        "actual_rate": 0.7946,
+        "n": 4236
+      },
+      {
+        "bucket_low": 0.85,
+        "bucket_high": 0.9,
+        "avg_predicted": 0.87,
+        "actual_rate": 0.8363,
+        "n": 4330
+      },
+      {
+        "bucket_low": 0.9,
+        "bucket_high": 0.9500000000000001,
+        "avg_predicted": 0.9196,
+        "actual_rate": 0.8955,
+        "n": 4401
+      },
+      {
+        "bucket_low": 0.95,
+        "bucket_high": 1,
+        "avg_predicted": 0.9783,
+        "actual_rate": 0.9514,
+        "n": 10882
+      }
+    ]
+  },
+  "brier": {
+    "polymarket": {
+      "overall": 0.1293,
+      "n": 210043
+    },
+    "kalshi": {
+      "overall": 0.1149,
+      "n": 722043
+    }
+  },
+  "resolution": {
+    "polymarket": {
+      "yes": 260657,
+      "no": 368174,
+      "total": 628831
+    },
+    "kalshi": {
+      "yes": 6942735,
+      "no": 35240731,
+      "total": 42183466
+    }
+  }
 }

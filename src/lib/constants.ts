@@ -1,5 +1,16 @@
 import type { TimeRange } from "./api/types";
 
+export const DASHBOARD_TIME_RANGES: { label: string; value: string }[] = [
+  { label: "Latest", value: "latest" },
+  { label: "1W", value: "7d" },
+  { label: "2W", value: "14d" },
+  { label: "1M", value: "30d" },
+  { label: "3M", value: "90d" },
+  { label: "6M", value: "180d" },
+  { label: "1Y", value: "1y" },
+  { label: "All", value: "all" },
+];
+
 export const TIME_RANGES: { label: string; value: TimeRange }[] = [
   { label: "7D", value: "7d" },
   { label: "30D", value: "30d" },
@@ -35,8 +46,11 @@ export const TREEMAP_COLORS = [
 ];
 
 export const CHART_TOOLTIP_STYLE = {
-  backgroundColor: "#18181b",
+  backgroundColor: "#27272a",
   border: "1px solid #3f3f46",
   borderRadius: "8px",
   fontSize: "12px",
+  color: "#d4d4d8",
+  padding: "8px 12px",
+  boxShadow: "0 4px 16px rgba(0,0,0,0.6)",
 };

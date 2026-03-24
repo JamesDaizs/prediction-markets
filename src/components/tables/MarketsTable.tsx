@@ -22,35 +22,35 @@ export function MarketsTable({ markets }: { markets: Market[] }) {
   }
 
   const th = (label: string, key: SortKey) => (
-    <th className="cursor-pointer px-3 py-2 text-right text-xs font-medium text-zinc-500 hover:text-zinc-300" onClick={() => handleSort(key)}>
+    <th className="cursor-pointer px-3 py-2 text-right text-xs font-medium text-pm-fg-muted hover:text-pm-fg-subtle" onClick={() => handleSort(key)}>
       {label} {sortBy === key ? (asc ? "\u2191" : "\u2193") : ""}
     </th>
   );
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/50">
+    <div className="overflow-x-auto rounded-xl border border-pm-border-base bg-pm-bg-card">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-zinc-800">
-            <th className="px-3 py-2 text-left text-xs font-medium text-zinc-500">Market</th>
+          <tr className="border-b border-pm-border-base">
+            <th className="px-3 py-2 text-left text-xs font-medium text-pm-fg-muted">Market</th>
             {th("Volume", "volume")}
             {th("Open Interest", "open_interest")}
             {th("Traders", "unique_traders")}
             {th("Avg Bet", "avg_trade_size")}
-            <th className="px-3 py-2 text-right text-xs font-medium text-zinc-500">End Date</th>
+            <th className="px-3 py-2 text-right text-xs font-medium text-pm-fg-muted">End Date</th>
           </tr>
         </thead>
         <tbody>
           {sorted.map((m) => (
-            <tr key={m.condition_id} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
-              <td className="max-w-xs truncate px-3 py-2.5 text-zinc-200">
-                <Link href={`/markets/${m.condition_id}`} className="hover:text-violet-400">{m.question || m.slug}</Link>
+            <tr key={m.condition_id} className="border-b border-pm-border-subtle hover:bg-pm-bg-card-hover">
+              <td className="max-w-xs truncate px-3 py-2.5 text-pm-fg-subtle">
+                <Link href={`/markets/${m.condition_id}`} className="hover:text-pm-polymarket">{m.question || m.slug}</Link>
               </td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-right text-zinc-300">{formatCurrency(m.volume, true)}</td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-right text-zinc-300">{formatCurrency(m.open_interest, true)}</td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-right text-zinc-300">{m.unique_traders ? formatNumber(m.unique_traders) : "\u2014"}</td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-right text-zinc-300">{m.avg_trade_size ? formatCurrency(m.avg_trade_size) : "\u2014"}</td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-right text-zinc-400">{formatDate(m.end_date)}</td>
+              <td className="whitespace-nowrap px-3 py-2.5 text-right text-pm-fg-subtle">{formatCurrency(m.volume, true)}</td>
+              <td className="whitespace-nowrap px-3 py-2.5 text-right text-pm-fg-subtle">{formatCurrency(m.open_interest, true)}</td>
+              <td className="whitespace-nowrap px-3 py-2.5 text-right text-pm-fg-subtle">{m.unique_traders ? formatNumber(m.unique_traders) : "\u2014"}</td>
+              <td className="whitespace-nowrap px-3 py-2.5 text-right text-pm-fg-subtle">{m.avg_trade_size ? formatCurrency(m.avg_trade_size) : "\u2014"}</td>
+              <td className="whitespace-nowrap px-3 py-2.5 text-right text-pm-fg-subtle">{formatDate(m.end_date)}</td>
             </tr>
           ))}
         </tbody>

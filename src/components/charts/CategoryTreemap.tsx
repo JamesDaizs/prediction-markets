@@ -22,12 +22,12 @@ function CustomContent({ x, y, width, height, name, index, depth }: ContentProps
 
 export function CategoryTreemap({ data, title }: { data: { name: string; size: number }[]; title?: string }) {
   return (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
-      {title && <h3 className="mb-4 text-sm font-medium text-zinc-400">{title}</h3>}
+    <div className="rounded-xl border border-pm-border-base bg-pm-bg-card p-5">
+      {title && <h3 className="mb-4 text-sm font-medium text-pm-fg-subtle">{title}</h3>}
       <div className="h-72 min-h-[288px] min-w-0">
         <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
           <Treemap data={data} dataKey="size" aspectRatio={4 / 3} content={<CustomContent x={0} y={0} width={0} height={0} />}>
-            <Tooltip contentStyle={{ backgroundColor: "#18181b", border: "1px solid #3f3f46", borderRadius: "8px", fontSize: "12px" }} formatter={(value) => [formatCurrency(Number(value), true), "Volume"]} labelStyle={{ color: "#a1a1aa" }} />
+            <Tooltip contentStyle={{ backgroundColor: "#18181b", border: "1px solid #3f3f46", borderRadius: "8px", fontSize: "12px" }} formatter={(value) => [formatCurrency(Number(value), true), "Volume"]} labelStyle={{ color: "var(--pm-fg-subtle)" }} />
           </Treemap>
         </ResponsiveContainer>
       </div>

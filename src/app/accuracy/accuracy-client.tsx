@@ -3,6 +3,7 @@
 import { CalibrationChart } from "@/components/charts/calibration-chart";
 import { AccuracyWindowChart } from "@/components/charts/accuracy-window-chart";
 import { ResolutionDonut } from "@/components/charts/resolution-donut";
+import { BrierScoreSection } from "@/components/charts/brier-score-section";
 import type {
   CalibrationBucket,
   CategoryRow,
@@ -32,6 +33,7 @@ export function AccuracyClient({
   polymarket,
   kalshi,
   resolution,
+  brier,
 }: Props) {
   const hasCalibration =
     calibration &&
@@ -40,8 +42,20 @@ export function AccuracyClient({
     resolution &&
     (resolution.polymarket.total > 0 || resolution.kalshi.total > 0);
 
+  const hasBrier =
+    brier &&
+    (brier.polymarket.overall != null || brier.kalshi.overall != null);
+
   return (
     <div className="space-y-6">
+      {/* Brier Score Analysis — full width */}
+      {hasBrier && (
+        <BrierScoreSection
+          polymarket={brier.polymarket}
+          kalshi={brier.kalshi}
+        />
+      )}
+
       {/* Calibration Chart — full width hero */}
       {hasCalibration && (
         <CalibrationChart

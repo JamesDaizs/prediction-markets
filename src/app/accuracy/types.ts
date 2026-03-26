@@ -8,9 +8,16 @@ export interface CalibrationBucket {
   n: number;
 }
 
+export interface CategoryBrier {
+  category: string;
+  brier: number;
+  n: number;
+}
+
 export interface BrierData {
   overall: number | null;
   n: number;
+  per_category?: CategoryBrier[];
 }
 
 export interface ResolutionData {
@@ -32,6 +39,8 @@ export interface CategoryRow {
   n_1w: number;
   acc_1mo: number | null;
   n_1mo: number;
+  brier: number | null;
+  brier_n: number;
 }
 
 export interface AccuracyData {

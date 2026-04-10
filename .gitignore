@@ -42,6 +42,8 @@ next-env.d.ts
 
 # raw data (large API responses)
 /data/raw/
+/data/surf/
+/data/processed/
 
 # python venvs
 /scripts/.venv/

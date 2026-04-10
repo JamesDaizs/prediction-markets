@@ -1,7 +1,15 @@
-.PHONY: collect process data dev build
+.PHONY: collect collect-surf collect-detailed collect-legacy process data dev build
 
-# Refresh Surf token and collect all data
+# Collect data using surf CLI (fast)
 collect:
+	./scripts/collect_surf.sh
+
+# Collect detailed data using surf CLI (Python)
+collect-surf:
+	cd scripts && python collect_surf.py
+
+# Collect legacy data using internal API
+collect-legacy:
 	surf refresh
 	cd scripts && uv run python collect.py
 

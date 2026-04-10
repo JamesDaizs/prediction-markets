@@ -42,9 +42,13 @@ next-env.d.ts
 
 # raw data (large API responses)
 /data/raw/
+/data/surf/
+/data/processed/
 
 # python venvs
 /scripts/.venv/
 
 # python cache
 __pycache__/
+research/polymarket_leaderboard_features.csv
+.gstack/

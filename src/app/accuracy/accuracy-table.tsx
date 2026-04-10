@@ -1,19 +1,6 @@
 "use client";
 
-interface CategoryRow {
-  category: string;
-  markets: number;
-  acc_4h: number | null;
-  n_4h: number;
-  acc_12h: number | null;
-  n_12h: number;
-  acc_1d: number | null;
-  n_1d: number;
-  acc_1w: number | null;
-  n_1w: number;
-  acc_1mo: number | null;
-  n_1mo: number;
-}
+import type { CategoryRow } from "./types";
 
 interface AccuracyTableProps {
   platform: string;
@@ -50,6 +37,15 @@ function getAccuracyBg(value: number | null): string {
   if (value >= 80) return "bg-lime-500/6";
   if (value >= 75) return "bg-yellow-400/6";
   return "";
+}
+
+function getBrierColor(value: number | null): string {
+  if (value === null) return "text-pm-fg-faint";
+  if (value <= 0.05) return "text-emerald-400";
+  if (value <= 0.10) return "text-emerald-500";
+  if (value <= 0.15) return "text-lime-500";
+  if (value <= 0.20) return "text-yellow-400";
+  return "text-red-400";
 }
 
 function formatNumber(n: number): string {
@@ -104,6 +100,9 @@ export function AccuracyTable({
                   {tw.label}
                 </th>
               ))}
+              <th className="px-3 py-2.5 text-center text-xs font-medium text-pm-fg-faint uppercase tracking-wider">
+                Brier
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-pm-border-subtle/30">
@@ -139,6 +138,16 @@ export function AccuracyTable({
                     </td>
                   );
                 })}
+                <td className="px-3 py-2.5 text-center tabular-nums">
+                  <span className={`font-medium ${getBrierColor(row.brier)}`}>
+                    {row.brier != null ? row.brier.toFixed(4) : "-"}
+                  </span>
+                  {row.brier_n > 0 && row.brier != null && (
+                    <span className="ml-1 text-[10px] text-pm-fg-faint">
+                      ({formatNumber(row.brier_n)})
+                    </span>
+                  )}
+                </td>
               </tr>
             ))}
             {/* Total row */}
@@ -165,6 +174,11 @@ export function AccuracyTable({
                     </td>
                   );
                 })}
+                <td className="px-3 py-2.5 text-center tabular-nums">
+                  <span className={`font-semibold ${getBrierColor(totalRow.brier)}`}>
+                    {totalRow.brier != null ? totalRow.brier.toFixed(4) : "-"}
+                  </span>
+                </td>
               </tr>
             )}
           </tbody>

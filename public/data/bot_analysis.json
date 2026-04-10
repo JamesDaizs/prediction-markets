@@ -1,0 +1,1059 @@
+{
+  "generated_at": "2026-03-26T02:22:06.561Z",
+  "wallet_count": 38839,
+  "heroStats": {
+    "botVolumePercent": 52.56405121895564,
+    "humanNetPnl": -8782891.82846152,
+    "activeBots": 15324,
+    "humanHumanTradePct": 0.3
+  },
+  "classificationSummary": [
+    {
+      "class": "Bot",
+      "count": 80,
+      "volume": 339910870.80353606,
+      "pnl": 1598090.9278144955,
+      "avgPnl": 19976.136597681194,
+      "profitablePercent": 40
+    },
+    {
+      "class": "Likely Bot",
+      "count": 15244,
+      "volume": 18838184393.01471,
+      "pnl": 65835853.190468095,
+      "avgPnl": 4318.8043289470015,
+      "profitablePercent": 36.729204933088425
+    },
+    {
+      "class": "Likely Human",
+      "count": 18703,
+      "volume": 15849402996.419624,
+      "pnl": 51564279.51859467,
+      "avgPnl": 2757.00580220257,
+      "profitablePercent": 32.812917713735764
+    },
+    {
+      "class": "Human",
+      "count": 4812,
+      "volume": 1457694222.228723,
+      "pnl": -8782891.82846152,
+      "avgPnl": -1825.2061156403824,
+      "profitablePercent": 27.660016625103907
+    }
+  ],
+  "pnlWaterfall": [
+    {
+      "class": "Bot",
+      "pnl": 1598090.9278144955
+    },
+    {
+      "class": "Likely Bot",
+      "pnl": 65835853.190468095
+    },
+    {
+      "class": "Likely Human",
+      "pnl": 51564279.51859467
+    },
+    {
+      "class": "Human",
+      "pnl": -8782891.82846152
+    }
+  ],
+  "hourlyActivity": [
+    {
+      "hours": "0-6",
+      "highFreqPct": 23.36341500012456,
+      "lowFreqPct": 22.30922394365234
+    },
+    {
+      "hours": "6-12",
+      "highFreqPct": 23.644438302680605,
+      "lowFreqPct": 22.96137833914781
+    },
+    {
+      "hours": "12-18",
+      "highFreqPct": 27.728221014217773,
+      "lowFreqPct": 29.33841635011747
+    },
+    {
+      "hours": "18-24",
+      "highFreqPct": 25.26392568297706,
+      "lowFreqPct": 25.390981367082375
+    }
+  ],
+  "tradeSizeDistribution": [
+    {
+      "bucket": "Dust (<$1)",
+      "pctTrades": 20.25,
+      "pctVolume": 0.3,
+      "uniqueTakers": 81165
+    },
+    {
+      "bucket": "Tiny ($1-5)",
+      "pctTrades": 43.26,
+      "pctVolume": 4.04,
+      "uniqueTakers": 73123
+    },
+    {
+      "bucket": "Small ($5-20)",
+      "pctTrades": 23.63,
+      "pctVolume": 8.14,
+      "uniqueTakers": 64214
+    },
+    {
+      "bucket": "Medium ($20-100)",
+      "pctTrades": 9.77,
+      "pctVolume": 14.4,
+      "uniqueTakers": 49547
+    },
+    {
+      "bucket": "Large ($100-500)",
+      "pctTrades": 2.32,
+      "pctVolume": 16.2,
+      "uniqueTakers": 24436
+    },
+    {
+      "bucket": "Whale ($500-2K)",
+      "pctTrades": 0.66,
+      "pctVolume": 21.09,
+      "uniqueTakers": 9569
+    },
+    {
+      "bucket": "Mega ($2K+)",
+      "pctTrades": 0.12,
+      "pctVolume": 35.83,
+      "uniqueTakers": 2521
+    }
+  ],
+  "categoryBotConcentration": [
+    {
+      "category": "Sports",
+      "botPct": 85,
+      "humanPct": 15,
+      "totalVolume": 1387256450.4287736
+    },
+    {
+      "category": "Crypto",
+      "botPct": 71.3,
+      "humanPct": 28.7,
+      "totalVolume": 749922873.6286426
+    },
+    {
+      "category": "Politics",
+      "botPct": 65.2,
+      "humanPct": 34.8,
+      "totalVolume": 442840809.46995896
+    },
+    {
+      "category": "Culture",
+      "botPct": 55,
+      "humanPct": 45,
+      "totalVolume": 96013152.98402701
+    },
+    {
+      "category": "Financials",
+      "botPct": 55,
+      "humanPct": 45,
+      "totalVolume": 64970665.60417
+    },
+    {
+      "category": "STEM",
+      "botPct": 55,
+      "humanPct": 45,
+      "totalVolume": 53967694.00572801
+    },
+    {
+      "category": "Economics",
+      "botPct": 55,
+      "humanPct": 45,
+      "totalVolume": 34651844.09709402
+    },
+    {
+      "category": "UNKNOWN",
+      "botPct": 55,
+      "humanPct": 45,
+      "totalVolume": 725.7064700000001
+    }
+  ],
+  "tradeMatrix": {
+    "labels": [
+      "Bot",
+      "Likely Bot",
+      "Likely Human",
+      "Human"
+    ],
+    "data": [
+      [
+        2.1,
+        18.4,
+        15.3,
+        3.8
+      ],
+      [
+        18.4,
+        12.7,
+        11.2,
+        4.1
+      ],
+      [
+        15.3,
+        11.2,
+        3.8,
+        1.7
+      ],
+      [
+        3.8,
+        4.1,
+        1.7,
+        0.3
+      ]
+    ]
+  },
+  "feeExtraction": [
+    {
+      "class": "Bot (147 wallets)",
+      "feesCollected": 11100000,
+      "pctTotal": 61,
+      "feeOverVolume": 5.9
+    },
+    {
+      "class": "Active (1,378 wallets)",
+      "feesCollected": 2700000,
+      "pctTotal": 15,
+      "feeOverVolume": 8.6
+    },
+    {
+      "class": "Human (127K wallets)",
+      "feesCollected": 4400000,
+      "pctTotal": 24,
+      "feeOverVolume": 4.3
+    }
+  ],
+  "botVolumeTimeline": [
+    {
+      "week": "2025-09-22",
+      "highFreqVolume": 73754815.00851867,
+      "totalVolume": 123130230.95178178,
+      "highFreqPct": 59.89984298608301,
+      "highFreqWallets": 51,
+      "totalWallets": 53911
+    },
+    {
+      "week": "2025-09-29",
+      "highFreqVolume": 252511622.6793866,
+      "totalVolume": 381548466.2470268,
+      "highFreqPct": 66.18074635789583,
+      "highFreqWallets": 181,
+      "totalWallets": 115209
+    },
+    {
+      "week": "2025-10-06",
+      "highFreqVolume": 391083400.7180602,
+      "totalVolume": 586264825.9758335,
+      "highFreqPct": 66.70763508063182,
+      "highFreqWallets": 215,
+      "totalWallets": 149828
+    },
+    {
+      "week": "2025-10-13",
+      "highFreqVolume": 467605341.965529,
+      "totalVolume": 690794945.775815,
+      "highFreqPct": 67.69090376600437,
+      "highFreqWallets": 234,
+      "totalWallets": 165831
+    },
+    {
+      "week": "2025-10-20",
+      "highFreqVolume": 524558729.44665533,
+      "totalVolume": 783840701.0357624,
+      "highFreqPct": 66.921598834241,
+      "highFreqWallets": 280,
+      "totalWallets": 214544
+    },
+    {
+      "week": "2025-10-27",
+      "highFreqVolume": 628504558.8149834,
+      "totalVolume": 961437682.9323677,
+      "highFreqPct": 65.37132566908087,
+      "highFreqWallets": 372,
+      "totalWallets": 238445
+    },
+    {
+      "week": "2025-11-03",
+      "highFreqVolume": 592799958.7520682,
+      "totalVolume": 893444171.6325732,
+      "highFreqPct": 66.34997211620467,
+      "highFreqWallets": 407,
+      "totalWallets": 209513
+    },
+    {
+      "week": "2025-11-10",
+      "highFreqVolume": 570896882.1314816,
+      "totalVolume": 828931459.5859723,
+      "highFreqPct": 68.87142182016211,
+      "highFreqWallets": 494,
+      "totalWallets": 207568
+    },
+    {
+      "week": "2025-11-17",
+      "highFreqVolume": 585232815.0043385,
+      "totalVolume": 841445394.124387,
+      "highFreqPct": 69.55089648013762,
+      "highFreqWallets": 563,
+      "totalWallets": 211272
+    },
+    {
+      "week": "2025-11-24",
+      "highFreqVolume": 624719316.358683,
+      "totalVolume": 905355173.1118636,
+      "highFreqPct": 69.00267816567654,
+      "highFreqWallets": 652,
+      "totalWallets": 235420
+    },
+    {
+      "week": "2025-12-01",
+      "highFreqVolume": 718479514.7330126,
+      "totalVolume": 1041169193.8297627,
+      "highFreqPct": 69.00698935301847,
+      "highFreqWallets": 840,
+      "totalWallets": 207586
+    },
+    {
+      "week": "2025-12-08",
+      "highFreqVolume": 633602251.0096971,
+      "totalVolume": 944471036.558002,
+      "highFreqPct": 67.08540828512598,
+      "highFreqWallets": 1034,
+      "totalWallets": 202635
+    },
+    {
+      "week": "2025-12-15",
+      "highFreqVolume": 696894599.8960816,
+      "totalVolume": 1012402623.3364066,
+      "highFreqPct": 68.83571652545133,
+      "highFreqWallets": 1206,
+      "totalWallets": 214298
+    },
+    {
+      "week": "2025-12-22",
+      "highFreqVolume": 704744342.3081057,
+      "totalVolume": 1011816433.6410285,
+      "highFreqPct": 69.65140304868129,
+      "highFreqWallets": 1343,
+      "totalWallets": 194828
+    },
+    {
+      "week": "2025-12-29",
+      "highFreqVolume": 916244372.5879109,
+      "totalVolume": 1300797494.8138952,
+      "highFreqPct": 70.43712616612918,
+      "highFreqWallets": 1709,
+      "totalWallets": 197272
+    },
+    {
+      "week": "2026-01-05",
+      "highFreqVolume": 954520941.5927045,
+      "totalVolume": 1325094367.0188231,
+      "highFreqPct": 72.03418604368314,
+      "highFreqWallets": 2333,
+      "totalWallets": 235574
+    },
+    {
+      "week": "2026-01-12",
+      "highFreqVolume": 1133247331.375186,
+      "totalVolume": 1581902505.3455663,
+      "highFreqPct": 71.63825378275308,
+      "highFreqWallets": 2423,
+      "totalWallets": 246129
+    },
+    {
+      "week": "2026-01-19",
+      "highFreqVolume": 1110296118.0114722,
+      "totalVolume": 1568318012.3262382,
+      "highFreqPct": 70.79534311823684,
+      "highFreqWallets": 2449,
+      "totalWallets": 288078
+    },
+    {
+      "week": "2026-01-26",
+      "highFreqVolume": 1244950687.7531126,
+      "totalVolume": 1835886347.8093317,
+      "highFreqPct": 67.81196936502349,
+      "highFreqWallets": 2640,
+      "totalWallets": 296185
+    },
+    {
+      "week": "2026-02-02",
+      "highFreqVolume": 1234206921.5126417,
+      "totalVolume": 1774779063.0442824,
+      "highFreqPct": 69.54144023964334,
+      "highFreqWallets": 3019,
+      "totalWallets": 268137
+    },
+    {
+      "week": "2026-02-09",
+      "highFreqVolume": 1216965861.6215746,
+      "totalVolume": 1664738141.953017,
+      "highFreqPct": 73.10253972999439,
+      "highFreqWallets": 4139,
+      "totalWallets": 283486
+    },
+    {
+      "week": "2026-02-16",
+      "highFreqVolume": 1224940037.8892107,
+      "totalVolume": 1674454811.0724735,
+      "highFreqPct": 73.15455931024185,
+      "highFreqWallets": 5074,
+      "totalWallets": 236052
+    },
+    {
+      "week": "2026-02-23",
+      "highFreqVolume": 1475363987.6470687,
+      "totalVolume": 2054343334.6160142,
+      "highFreqPct": 71.8168167310181,
+      "highFreqWallets": 5314,
+      "totalWallets": 337925
+    },
+    {
+      "week": "2026-03-02",
+      "highFreqVolume": 1587715417.9982927,
+      "totalVolume": 2172027748.1526976,
+      "highFreqPct": 73.09830269657648,
+      "highFreqWallets": 5892,
+      "totalWallets": 306469
+    },
+    {
+      "week": "2026-03-09",
+      "highFreqVolume": 1529730703.4330997,
+      "totalVolume": 2123359357.3492913,
+      "highFreqPct": 72.04294921339873,
+      "highFreqWallets": 5955,
+      "totalWallets": 338710
+    },
+    {
+      "week": "2026-03-16",
+      "highFreqVolume": 1716412087.4735441,
+      "totalVolume": 2313797180.7821,
+      "highFreqPct": 74.18161374426818,
+      "highFreqWallets": 6241,
+      "totalWallets": 345583
+    },
+    {
+      "week": "2026-03-23",
+      "highFreqVolume": 603848364.3740814,
+      "totalVolume": 911043873.4933906,
+      "highFreqPct": 66.28093135170643,
+      "highFreqWallets": 2684,
+      "totalWallets": 241050
+    }
+  ],
+  "ctfVsNegRisk": [
+    {
+      "date": "2026-02-24",
+      "ctfDAW": 83977,
+      "negRiskDAW": 43731,
+      "totalDAW": 109424
+    },
+    {
+      "date": "2026-02-25",
+      "ctfDAW": 89912,
+      "negRiskDAW": 46547,
+      "totalDAW": 115306
+    },
+    {
+      "date": "2026-02-26",
+      "ctfDAW": 87534,
+      "negRiskDAW": 47439,
+      "totalDAW": 115503
+    },
+    {
+      "date": "2026-02-27",
+      "ctfDAW": 83431,
+      "negRiskDAW": 51663,
+      "totalDAW": 115793
+    },
+    {
+      "date": "2026-02-28",
+      "ctfDAW": 106892,
+      "negRiskDAW": 52461,
+      "totalDAW": 133699
+    },
+    {
+      "date": "2026-03-01",
+      "ctfDAW": 84253,
+      "negRiskDAW": 49234,
+      "totalDAW": 112394
+    },
+    {
+      "date": "2026-03-02",
+      "ctfDAW": 79994,
+      "negRiskDAW": 54948,
+      "totalDAW": 114262
+    },
+    {
+      "date": "2026-03-03",
+      "ctfDAW": 84554,
+      "negRiskDAW": 51442,
+      "totalDAW": 111294
+    },
+    {
+      "date": "2026-03-04",
+      "ctfDAW": 82166,
+      "negRiskDAW": 52837,
+      "totalDAW": 111422
+    },
+    {
+      "date": "2026-03-05",
+      "ctfDAW": 82131,
+      "negRiskDAW": 50865,
+      "totalDAW": 111806
+    },
+    {
+      "date": "2026-03-06",
+      "ctfDAW": 77901,
+      "negRiskDAW": 53711,
+      "totalDAW": 111042
+    },
+    {
+      "date": "2026-03-07",
+      "ctfDAW": 86051,
+      "negRiskDAW": 50430,
+      "totalDAW": 113411
+    },
+    {
+      "date": "2026-03-08",
+      "ctfDAW": 86018,
+      "negRiskDAW": 49287,
+      "totalDAW": 112898
+    },
+    {
+      "date": "2026-03-09",
+      "ctfDAW": 88879,
+      "negRiskDAW": 50738,
+      "totalDAW": 118797
+    },
+    {
+      "date": "2026-03-10",
+      "ctfDAW": 92547,
+      "negRiskDAW": 56466,
+      "totalDAW": 127061
+    },
+    {
+      "date": "2026-03-11",
+      "ctfDAW": 91445,
+      "negRiskDAW": 60919,
+      "totalDAW": 129361
+    },
+    {
+      "date": "2026-03-12",
+      "ctfDAW": 84263,
+      "negRiskDAW": 59107,
+      "totalDAW": 119489
+    },
+    {
+      "date": "2026-03-13",
+      "ctfDAW": 82737,
+      "negRiskDAW": 62028,
+      "totalDAW": 123972
+    },
+    {
+      "date": "2026-03-14",
+      "ctfDAW": 79503,
+      "negRiskDAW": 60384,
+      "totalDAW": 117353
+    },
+    {
+      "date": "2026-03-15",
+      "ctfDAW": 80193,
+      "negRiskDAW": 62017,
+      "totalDAW": 119198
+    },
+    {
+      "date": "2026-03-16",
+      "ctfDAW": 90850,
+      "negRiskDAW": 72309,
+      "totalDAW": 137994
+    },
+    {
+      "date": "2026-03-17",
+      "ctfDAW": 93974,
+      "negRiskDAW": 70992,
+      "totalDAW": 138567
+    },
+    {
+      "date": "2026-03-18",
+      "ctfDAW": 89952,
+      "negRiskDAW": 71482,
+      "totalDAW": 135816
+    },
+    {
+      "date": "2026-03-19",
+      "ctfDAW": 89352,
+      "negRiskDAW": 67637,
+      "totalDAW": 134245
+    },
+    {
+      "date": "2026-03-20",
+      "ctfDAW": 86464,
+      "negRiskDAW": 65292,
+      "totalDAW": 128648
+    },
+    {
+      "date": "2026-03-21",
+      "ctfDAW": 85118,
+      "negRiskDAW": 66231,
+      "totalDAW": 126412
+    },
+    {
+      "date": "2026-03-22",
+      "ctfDAW": 86038,
+      "negRiskDAW": 68488,
+      "totalDAW": 128574
+    },
+    {
+      "date": "2026-03-23",
+      "ctfDAW": 97855,
+      "negRiskDAW": 65210,
+      "totalDAW": 138577
+    },
+    {
+      "date": "2026-03-24",
+      "ctfDAW": 98378,
+      "negRiskDAW": 62733,
+      "totalDAW": 139927
+    },
+    {
+      "date": "2026-03-25",
+      "ctfDAW": 93391,
+      "negRiskDAW": 62058,
+      "totalDAW": 131812
+    },
+    {
+      "date": "2026-03-26",
+      "ctfDAW": 20430,
+      "negRiskDAW": 9365,
+      "totalDAW": 27863
+    }
+  ],
+  "sameBlockStats": {
+    "multiBlocks": 693354,
+    "maxTradesInBlock": 500,
+    "walletsWithMulti": 39697,
+    "totalMultiTrades": 7603776
+  },
+  "strategies": [
+    {
+      "name": "Information Arbitrage",
+      "description": "Private or superior information about event outcomes. Large directional bets across multiple wallets.",
+      "example": "Theo ($85M on 2024 election via private polling)",
+      "profitRange": "$1M-$85M",
+      "status": "Active"
+    },
+    {
+      "name": "Market Making",
+      "description": "Post bid/ask orders, earn spread + maker fee rebates + liquidity rewards.",
+      "example": "0xd0d6 (102K trades/day, $1.69M PnL)",
+      "profitRange": "$1M-$10M",
+      "status": "Active"
+    },
+    {
+      "name": "Latency Trading",
+      "description": "Monitor CEX price feeds, buy mispriced contracts before CLOB reprices.",
+      "example": "0x8dxd ($313 to $438K in 1 month, 98% win rate)",
+      "profitRange": "$100K-$500K",
+      "status": "Countered"
+    },
+    {
+      "name": "Domain Specialization",
+      "description": "NOAA weather models, game APIs (Riot, Valve), real-time scoring feeds.",
+      "example": "gopfan2 ($700K via NOAA forecasts)",
+      "profitRange": "$50K-$700K",
+      "status": "Active"
+    },
+    {
+      "name": "NegRisk Rebalancing",
+      "description": "Multi-outcome events where YES prices don't sum to $1. Buy underpriced NO tokens and merge.",
+      "example": "$39.6M total arb extracted (Apr 2024-Apr 2025)",
+      "profitRange": "$50K-$2M",
+      "status": "Active"
+    },
+    {
+      "name": "Cross-Platform Arb",
+      "description": "Same event priced differently on Polymarket vs Kalshi. Buy cheap, sell expensive.",
+      "example": "Various arbitrageurs",
+      "profitRange": "$100K-$2M",
+      "status": "Active"
+    },
+    {
+      "name": "High-Probability Bond",
+      "description": "Buy outcomes at 95-99 cents near resolution for guaranteed $1 payout. Annualized ~1,900% APY.",
+      "example": "0xdb27 (avg $16,964 per trade at 80c)",
+      "profitRange": "5-20% per trade",
+      "status": "Active"
+    }
+  ],
+  "topBots": [
+    {
+      "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+      "pnl": 6128590.943479226,
+      "volume": 306364288.3154782,
+      "trades": 1593434,
+      "winRate": 0.4939399101141262,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+      "pnl": 5170809.973489566,
+      "volume": 588870814.646386,
+      "trades": 3120677,
+      "winRate": 0.4800557904071494,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+      "pnl": 4371404.087566558,
+      "volume": 278500948.7636772,
+      "trades": 1142188,
+      "winRate": 0.5027807110172474,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+      "pnl": 2755431.906997655,
+      "volume": 192992599.419933,
+      "trades": 78823,
+      "winRate": 0.4993630573248407,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+      "pnl": 2658915.004580825,
+      "volume": 345337279.8445952,
+      "trades": 1148407,
+      "winRate": 0.4998376648474822,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x63ce342161250d705dc0b16df89036c8e5f9ba9a",
+      "pnl": 2352424.1141550015,
+      "volume": 194573835.23762703,
+      "trades": 6640259,
+      "winRate": 0.4997046215368769,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x5bffcf561bcae83af680ad600cb99f1184d6ffbe",
+      "pnl": 2228255.078076994,
+      "volume": 334306511.9218142,
+      "trades": 197523,
+      "winRate": 0.4493927125506073,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+      "pnl": 2054362.895730823,
+      "volume": 62507666.68010599,
+      "trades": 51303,
+      "winRate": 0.5081788440567067,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+      "pnl": 2013801.644807326,
+      "volume": 198984889.694071,
+      "trades": 85047,
+      "winRate": 0.4784394250513347,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x93abbc022ce98d6f45d4444b594791cc4b7a9723",
+      "pnl": 1722429.9742725044,
+      "volume": 29037791.582735,
+      "trades": 25179,
+      "winRate": 0.4933008526187576,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xd0d6053c3c37e727402d84c14069780d360993aa",
+      "pnl": 1694963.7399109988,
+      "volume": 204021555.38602403,
+      "trades": 9741812,
+      "winRate": 0.4979827591211215,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    },
+    {
+      "address": "0x03e8a544e97eeff5753bc1e90d46e5ef22af1697",
+      "pnl": 1531311.922784865,
+      "volume": 67421701.193526,
+      "trades": 66111,
+      "winRate": 0.4988452655889145,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xf2f6af4f27ec2dcf4072095ab804016e14cd5817",
+      "pnl": 1460888.0948754852,
+      "volume": 59664427.055562,
+      "trades": 83715,
+      "winRate": 0.4855614973262032,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x24c8cf69a0e0a17eee21f69d29752bfa32e823e1",
+      "pnl": 1206305.2824509963,
+      "volume": 404431293.4798981,
+      "trades": 871954,
+      "winRate": 0.4674457429048414,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x13414a77a4be48988851c73dfd824d0168e70853",
+      "pnl": 1144200.7995180956,
+      "volume": 32375502.681410003,
+      "trades": 57378,
+      "winRate": 0.4385624089363769,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xbacd00c9080a82ded56f504ee8810af732b0ab35",
+      "pnl": 1137105.9512955782,
+      "volume": 99408102.271069,
+      "trades": 259523,
+      "winRate": 0.4695675387079551,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x9cb990f1862568a63d8601efeebe0304225c32f2",
+      "pnl": 1100651.9637620028,
+      "volume": 45040830.00620599,
+      "trades": 65732,
+      "winRate": 0.4713947990543735,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x7c3db723f1d4d8cb9c550095203b686cb11e5c6b",
+      "pnl": 1066551.8026733978,
+      "volume": 142430194.780849,
+      "trades": 278356,
+      "winRate": 0.4913459767998527,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x55be7aa03ecfbe37aa5460db791205f7ac9ddca3",
+      "pnl": 947734.9050455056,
+      "volume": 74537177.49514002,
+      "trades": 144674,
+      "winRate": 0.5035956851777866,
+      "botClass": "Likely Bot",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xd84c2b6d65dc596f49c7b6aadd6d74ca91e407b9",
+      "pnl": 928644.58821499,
+      "volume": 157488940.11036783,
+      "trades": 1708413,
+      "winRate": 0.5403285050939081,
+      "botClass": "Likely Bot",
+      "label": "Algo/Bot Hybrid"
+    }
+  ],
+  "topHumans": [
+    {
+      "address": "0x6a72f61820b26b1fe4d956e17b6dc2a1ea3033ee",
+      "pnl": 11316547.015288107,
+      "volume": 258464112.06620103,
+      "trades": 158134,
+      "winRate": 0.5073606729758149,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xc2e7800b5af46e6093872b177b7a5e7f0563be51",
+      "pnl": 4734341.716982221,
+      "volume": 197968001.74425095,
+      "trades": 17930,
+      "winRate": 0.4962686567164179,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xdb27bf2ac5d428a9c63dbc914611036855a6c56e",
+      "pnl": 3993566.828890702,
+      "volume": 220606034.06238896,
+      "trades": 262645,
+      "winRate": 0.4788877445932029,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xefbc5fec8d7b0acdc8911bdd9a98d6964308f9a2",
+      "pnl": 3741724.972652995,
+      "volume": 13750266.834776,
+      "trades": 2768,
+      "winRate": 0.5,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x0b9cae2b0dfe7a71c413e0604eaac1c352f87e44",
+      "pnl": 2705039.2492648433,
+      "volume": 90936686.33793616,
+      "trades": 117408,
+      "winRate": 0.3616438356164383,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x9d84ce0306f8551e02efef1680475fc0f1dc1344",
+      "pnl": 2542875.144688149,
+      "volume": 470288603.4539399,
+      "trades": 625340,
+      "winRate": 0.4670196200560573,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xee00ba338c59557141789b127927a55f5cc5cea1",
+      "pnl": 2185999.901378097,
+      "volume": 161034691.939118,
+      "trades": 100416,
+      "winRate": 0.5363249975289117,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xf705fa045201391d9632b7f3cde06a5e24453ca7",
+      "pnl": 1828195.3101184769,
+      "volume": 60592412.77679499,
+      "trades": 81206,
+      "winRate": 0.4772727272727273,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xed107a85a4585a381e48c7f7ca4144909e7dd2e5",
+      "pnl": 1608032.3026836603,
+      "volume": 161820716.80352902,
+      "trades": 57856,
+      "winRate": 0.5223029045643154,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xbddf61af533ff524d27154e589d2d7a81510c684",
+      "pnl": 1553041.867671809,
+      "volume": 67804614.01783301,
+      "trades": 61377,
+      "winRate": 0.4924965893587995,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xcc500cbcc8b7cf5bd21975ebbea34f21b5644c82",
+      "pnl": 1540266.1925336402,
+      "volume": 96329672.10973598,
+      "trades": 369051,
+      "winRate": 0.4973382803678012,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x6ac5bb06a9eb05641fd5e82640268b92f3ab4b6e",
+      "pnl": 1517191.730741463,
+      "volume": 97556471.964316,
+      "trades": 319422,
+      "winRate": 0.49839636721603,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x000d257d2dc7616feaef4ae0f14600fdf50a758e",
+      "pnl": 1479940.0491414447,
+      "volume": 63241425.750029005,
+      "trades": 46985,
+      "winRate": 0.4923830250272035,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x1bc0d88ca86b9049cf05d642e634836d5ddf4429",
+      "pnl": 1390348.462690891,
+      "volume": 41117370.354771,
+      "trades": 39328,
+      "winRate": 0.4993103448275862,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xb90494d9a5d8f71f1930b2aa4b599f95c344c255",
+      "pnl": 1252107.945740001,
+      "volume": 35852301.25667,
+      "trades": 5423,
+      "winRate": 0.5205223880597015,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0xf195721ad850377c96cd634457c70cd9e8308057",
+      "pnl": 1248923.6147826423,
+      "volume": 11999327.399937997,
+      "trades": 7146,
+      "winRate": 0.5252525252525253,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x84dbb7103982e3617704a2ed7d5b39691952aeeb",
+      "pnl": 1130107.746148157,
+      "volume": 54322923.00483302,
+      "trades": 57052,
+      "winRate": 0.5091078935077067,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x6bab41a0dc40d6dd4c1a915b8c01969479fd1292",
+      "pnl": 1026254.7992997826,
+      "volume": 39333114.67290801,
+      "trades": 29109,
+      "winRate": 0.4868058290665616,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x43372356634781eea88d61bbdd7824cdce958882",
+      "pnl": 903549.3960811576,
+      "volume": 131133068.153533,
+      "trades": 322346,
+      "winRate": 0.4801664156086364,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    },
+    {
+      "address": "0x6e82b93eb57b01a63027bd0c6d2f3f04934a752c",
+      "pnl": 827370.6934071472,
+      "volume": 32960921.42682099,
+      "trades": 40095,
+      "winRate": 0.4838990426457789,
+      "botClass": "Likely Human",
+      "label": "Market Maker Bot"
+    }
+  ]
+}

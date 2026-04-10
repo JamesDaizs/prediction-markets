@@ -6,6 +6,22 @@ const CH_PASS = process.env.CLICKHOUSE_PASSWORD || "";
 const CH_DB = process.env.CLICKHOUSE_DB || "prediction_markets";
 const CACHE_TTL = 5 * 60 * 1000; // 5 min
 
+// ─── Input sanitization ──────────────────────────────────────────
+// ClickHouse string literal escaping: replace ' with '' (standard SQL escaping)
+// Also strip control characters and backslashes to prevent escape-based attacks
+function escapeString(s: string): string {
+  return s
+    .replace(/\\/g, "")           // strip backslashes
+    .replace(/'/g, "''")          // escape single quotes
+    .replace(/[\x00-\x1f\x7f]/g, ""); // strip control chars
+}
+
+// Whitelist validators for enum-like inputs
+const VALID_SOURCES = new Set(["Polymarket", "Kalshi"]);
+const VALID_PLATFORMS = new Set(["both", "polymarket", "kalshi"]);
+const VALID_SORT_FIELDS = new Set(["volume", "count"]);
+const VALID_STATUSES = new Set(["open", "active", "closed", "resolved"]);
+
 // ─── Cache ──────────────────────────────────────────────────────
 const cache = new Map<string, { data: unknown; fetchedAt: number }>();
 
@@ -40,7 +56,9 @@ async function queryClickHouse<T>(sql: string): Promise<T[]> {
 
     if (!res.ok) {
       const errText = await res.text().catch(() => "");
-      throw new Error(`ClickHouse HTTP ${res.status}: ${errText.slice(0, 500)}`);
+      // Log full error server-side but don't expose CH details to clients
+      console.error(`ClickHouse HTTP ${res.status}: ${errText.slice(0, 500)}`);
+      throw new Error(`Query failed (${res.status})`);
     }
 
     const text = await res.text();
@@ -199,10 +217,10 @@ export async function getMarketRanking(params?: {
     params?.sortBy === "oi"
       ? "open_interest_usd DESC"
       : "notional_volume_usd DESC";
-  const sourceFilter = params?.source
+  const sourceFilter = params?.source && VALID_SOURCES.has(params.source)
     ? `AND source = '${params.source}'`
     : "";
-  const statusFilter = params?.status
+  const statusFilter = params?.status && VALID_STATUSES.has(params.status)
     ? `AND status = '${params.status}'`
     : "";
 
@@ -378,7 +396,7 @@ export async function getMarketPrices(
   timeRange: string
 ): Promise<CHPriceRow[]> {
   const days = timeRangeToDays(timeRange);
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     if (days <= 30) {
@@ -438,7 +456,7 @@ export async function getMarketOI(
   timeRange: string
 ): Promise<CHOIRow[]> {
   const days = timeRangeToDays(timeRange);
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     const sql = `
@@ -484,7 +502,7 @@ export async function getMarketTrades(
   marketId: string,
   limit = 20
 ): Promise<CHTradeRow[]> {
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     const sql = `
@@ -538,7 +556,7 @@ export async function getMarketMetadata(
   platform: "polymarket" | "kalshi",
   marketId: string
 ): Promise<CHMarketMetadata | null> {
-  const safeId = marketId.replace(/'/g, "");
+  const safeId = escapeString(marketId);
 
   if (platform === "polymarket") {
     const sql = `
@@ -642,21 +660,29 @@ export async function getWhaleTrades(
     ORDER BY t.amount DESC
   `;
 
-  // Kalshi: only scan recent trades, skip the JOIN (ticker IS the title)
+  // Kalshi: scan recent trades, JOIN to resolve human-readable titles
   const kalshiSql = `
+    WITH top_trades AS (
+      SELECT ticker, yes_price, no_price, num_contracts, created_time
+      FROM agent.kalshi_trades
+      WHERE trade_date >= today() - ${days}
+        AND num_contracts >= 100
+      ORDER BY num_contracts DESC
+      LIMIT ${limit}
+    )
     SELECT
       'Kalshi' AS platform,
-      ticker AS market_id,
-      ticker AS title,
-      if(yes_price > no_price, 'Yes', 'No') AS side,
-      greatest(yes_price, no_price) AS price,
-      num_contracts AS amount,
-      formatDateTime(created_time, '%Y-%m-%d %H:%M') AS time
-    FROM agent.kalshi_trades
-    WHERE trade_date >= today() - ${days}
-      AND num_contracts >= 100
-    ORDER BY num_contracts DESC
-    LIMIT ${limit}
+      t.ticker AS market_id,
+      coalesce(any(k.title), t.ticker) AS title,
+      if(t.yes_price > t.no_price, 'Yes', 'No') AS side,
+      greatest(t.yes_price, t.no_price) AS price,
+      t.num_contracts AS amount,
+      formatDateTime(t.created_time, '%Y-%m-%d %H:%M') AS time
+    FROM top_trades t
+    LEFT JOIN kalshi.market_daily_categorized k
+      ON t.ticker = k.market_ticker
+    GROUP BY t.ticker, t.yes_price, t.no_price, t.num_contracts, t.created_time
+    ORDER BY t.num_contracts DESC
     SETTINGS max_execution_time = 120
   `;
 
@@ -934,7 +960,7 @@ export async function searchMarkets(
   query: string,
   limit = 50
 ): Promise<CHMarketRow[]> {
-  const safeQ = query.replace(/'/g, "");
+  const safeQ = escapeString(query);
 
   const polySql = `
     WITH poly_ld AS (
@@ -1031,7 +1057,7 @@ export interface CHWalletTradeHistoryRow {
 export async function getWalletStats(
   address: string
 ): Promise<CHWalletStatsRow | null> {
-  const safeAddr = address.replace(/'/g, "").toLowerCase();
+  const safeAddr = escapeString(address).toLowerCase();
   const sql = `
     SELECT
       taker_address AS address,
@@ -1067,7 +1093,7 @@ export async function getWalletTrades(
   address: string,
   limit = 50
 ): Promise<CHWalletTradeHistoryRow[]> {
-  const safeAddr = address.replace(/'/g, "").toLowerCase();
+  const safeAddr = escapeString(address).toLowerCase();
   const sql = `
     WITH trades AS (
       SELECT condition_id, outcome_label, price, amount_usd, block_time, tx_hash
@@ -1255,8 +1281,8 @@ export async function getSubcategoryMarkets(
   platform: "both" | "polymarket" | "kalshi" = "both",
   limit = 20
 ): Promise<CHSubcategoryMarket[]> {
-  const safeCat = category.replace(/'/g, "''");
-  const safeSub = subcategory.replace(/'/g, "''");
+  const safeCat = escapeString(category);
+  const safeSub = escapeString(subcategory);
   const results: CHSubcategoryMarket[] = [];
 
   if (platform !== "kalshi") {
@@ -1361,4 +1387,182 @@ function normalizeCHCategory(cat: string): string {
     default:
       return cat;
   }
+}
+
+// ─── Platform Metrics ─────────────────────────────────────────────
+
+export type Granularity = "weekly" | "monthly";
+
+export interface CHPlatformPeriodRow {
+  period: string;
+  polymarket: number;
+  kalshi: number;
+}
+
+export interface CHPlatformCategoryRow {
+  period: string;
+  source: string;
+  category: string;
+  volume: number;
+}
+
+/**
+ * Active wallets per period (Polymarket only — Kalshi has no wallet data).
+ */
+export async function getPlatformActiveWallets(
+  granularity: Granularity = "weekly",
+  periods = 12
+): Promise<CHPlatformPeriodRow[]> {
+  const groupFn = granularity === "weekly" ? "toMonday(block_date)" : "toStartOfMonth(block_date)";
+  const interval = granularity === "weekly" ? periods * 7 : periods * 31;
+  const sql = `
+    SELECT
+      toString(${groupFn}) AS period,
+      uniq(taker_address) AS polymarket,
+      0 AS kalshi
+    FROM agent.polymarket_market_trades
+    WHERE block_date >= today() - ${interval}
+    GROUP BY period
+    ORDER BY period
+  `;
+  const rows = await queryClickHouse<Record<string, string>>(sql);
+  return rows.map((r) => ({
+    period: r.period,
+    polymarket: parseInt(r.polymarket) || 0,
+    kalshi: 0,
+  }));
+}
+
+/**
+ * Transaction count per period for both platforms.
+ */
+export async function getPlatformTransactions(
+  granularity: Granularity = "weekly",
+  periods = 12
+): Promise<CHPlatformPeriodRow[]> {
+  const groupFnPoly = granularity === "weekly" ? "toMonday(block_date)" : "toStartOfMonth(block_date)";
+  const groupFnKalshi = granularity === "weekly" ? "toMonday(trade_date)" : "toStartOfMonth(trade_date)";
+  const interval = granularity === "weekly" ? periods * 7 : periods * 31;
+  const sql = `
+    SELECT period, sum(poly_count) AS polymarket, sum(kalshi_count) AS kalshi
+    FROM (
+      SELECT toString(${groupFnPoly}) AS period,
+        toFloat64(count()) AS poly_count, toFloat64(0) AS kalshi_count
+      FROM agent.polymarket_market_trades
+      WHERE block_date >= today() - ${interval}
+      GROUP BY period
+      UNION ALL
+      SELECT toString(${groupFnKalshi}) AS period,
+        toFloat64(0) AS poly_count, toFloat64(count()) AS kalshi_count
+      FROM agent.kalshi_trades
+      WHERE trade_date >= today() - ${interval}
+      GROUP BY period
+    )
+    GROUP BY period ORDER BY period
+  `;
+  const rows = await queryClickHouse<Record<string, string>>(sql);
+  return rows.map((r) => ({
+    period: r.period,
+    polymarket: parseInt(r.polymarket) || 0,
+    kalshi: parseInt(r.kalshi) || 0,
+  }));
+}
+
+/**
+ * Volume by category per period from prediction_markets.daily (fast, pre-aggregated).
+ */
+export async function getPlatformVolumeByCategory(
+  granularity: Granularity = "weekly",
+  periods = 12
+): Promise<CHPlatformCategoryRow[]> {
+  const groupFn = granularity === "weekly" ? "toMonday(date)" : "toStartOfMonth(date)";
+  const interval = granularity === "weekly" ? periods * 7 : periods * 31;
+  const sql = `
+    SELECT
+      toString(${groupFn}) AS period,
+      source,
+      category,
+      sum(notional_volume_usd) AS volume
+    FROM prediction_markets.daily
+    WHERE date >= today() - ${interval}
+    GROUP BY period, source, category
+    ORDER BY period, source, volume DESC
+  `;
+  const rows = await queryClickHouse<Record<string, string>>(sql);
+  return rows.map((r) => ({
+    period: r.period,
+    source: r.source,
+    category: r.category,
+    volume: parseFloat(r.volume) || 0,
+  }));
+}
+
+/**
+ * New markets per period (from market_details created_at + Kalshi first appearance).
+ */
+export async function getPlatformNewMarkets(
+  granularity: Granularity = "weekly",
+  periods = 12
+): Promise<CHPlatformPeriodRow[]> {
+  const groupFnPoly = granularity === "weekly" ? "toMonday(created_at)" : "toStartOfMonth(created_at)";
+  const groupFnKalshi = granularity === "weekly" ? "toMonday(min_date)" : "toStartOfMonth(min_date)";
+  const interval = granularity === "weekly" ? periods * 7 : periods * 31;
+  const sql = `
+    SELECT period, sum(poly_count) AS polymarket, sum(kalshi_count) AS kalshi
+    FROM (
+      SELECT toString(${groupFnPoly}) AS period,
+        toFloat64(uniq(condition_id)) AS poly_count, toFloat64(0) AS kalshi_count
+      FROM polymarket_polygon.market_details
+      WHERE created_at >= today() - ${interval}
+      GROUP BY period
+      UNION ALL
+      SELECT toString(${groupFnKalshi}) AS period,
+        toFloat64(0) AS poly_count, toFloat64(count()) AS kalshi_count
+      FROM (
+        SELECT market_ticker, min(date) AS min_date
+        FROM kalshi.market_daily_categorized
+        GROUP BY market_ticker
+        HAVING min_date >= today() - ${interval}
+      )
+      GROUP BY period
+    )
+    GROUP BY period ORDER BY period
+  `;
+  const rows = await queryClickHouse<Record<string, string>>(sql);
+  return rows.map((r) => ({
+    period: r.period,
+    polymarket: parseInt(r.polymarket) || 0,
+    kalshi: parseInt(r.kalshi) || 0,
+  }));
+}
+
+/**
+ * Open interest end-of-period snapshots from prediction_markets.daily.
+ */
+export async function getPlatformOI(
+  granularity: Granularity = "weekly",
+  periods = 12
+): Promise<CHPlatformPeriodRow[]> {
+  const groupFn = granularity === "weekly" ? "toMonday(date)" : "toStartOfMonth(date)";
+  const interval = granularity === "weekly" ? periods * 7 : periods * 31;
+  const sql = `
+    SELECT
+      toString(${groupFn}) AS period,
+      sumIf(oi, source = 'Polymarket') AS polymarket,
+      sumIf(oi, source = 'Kalshi') AS kalshi
+    FROM (
+      SELECT date, source,
+        sum(open_interest_usd) AS oi
+      FROM prediction_markets.daily
+      WHERE date >= today() - ${interval}
+      GROUP BY date, source
+    )
+    GROUP BY period ORDER BY period
+  `;
+  const rows = await queryClickHouse<Record<string, string>>(sql);
+  return rows.map((r) => ({
+    period: r.period,
+    polymarket: parseFloat(r.polymarket) || 0,
+    kalshi: parseFloat(r.kalshi) || 0,
+  }));
 }

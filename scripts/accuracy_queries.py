@@ -343,6 +343,67 @@ WHERE p1d > 0 AND p1d < 1
 SETTINGS max_execution_time = 600
 """
 
+# --- Per-category Brier scores ---
+
+POLY_BRIER_BY_CATEGORY_SQL = f"""
+SELECT
+  mapped_category,
+  round(avg(pow(p1d - (1 - win), 2)), 4) as brier_score,
+  count() as n
+FROM (
+  SELECT
+    r.condition_id,
+    r.win,
+    r.mapped_category,
+    argMaxIf(h.price, h.block_hour,
+      h.block_hour <= toStartOfHour(r.resolved_at - INTERVAL 1 DAY)
+    ) as p1d
+  FROM (
+    SELECT
+      m.condition_id,
+      m.winning_outcome_index as win,
+      toDateTime(m.resolved_at) as resolved_at,
+      {CATEGORY_MAPPING_SQL} as mapped_category
+    FROM agent.polymarket_market_details m
+    INNER JOIN agent.polymarket_market_category c
+      ON m.condition_id = c.condition_id
+    WHERE m.winning_outcome_index >= 0
+      AND m.outcome_index = 0
+  ) r
+  LEFT JOIN agent.polymarket_market_prices_hourly h
+    ON r.condition_id = h.condition_id AND h.outcome_index = 0
+  GROUP BY r.condition_id, r.win, r.mapped_category
+)
+WHERE p1d > 0 AND p1d < 1
+GROUP BY mapped_category
+ORDER BY n DESC
+"""
+
+KALSHI_BRIER_BY_CATEGORY_SQL = f"""
+SELECT
+  mapped_category,
+  round(avg(pow(p1d - if(result = 'yes', 1, 0), 2)), 4) as brier_score,
+  count() as n
+FROM (
+  SELECT
+    d.market_ticker,
+    d.result,
+    {KALSHI_CATEGORY_MAPPING_SQL} as mapped_category,
+    argMaxIf(h.close, h.block_hour,
+      h.block_hour <= toStartOfHour(d.close_time - INTERVAL 1 DAY)
+    ) as p1d
+  FROM agent.kalshi_market_details d
+  LEFT JOIN agent.kalshi_market_prices_hourly h
+    ON d.market_ticker = h.ticker
+  WHERE d.result IN ('yes', 'no')
+  GROUP BY d.market_ticker, d.result, d.close_time, d.category, d.subcategory
+)
+WHERE p1d > 0 AND p1d < 1
+GROUP BY mapped_category
+ORDER BY n DESC
+SETTINGS max_execution_time = 600
+"""
+
 # --- Resolution distribution ---
 
 POLY_RESOLUTION_SQL = """
@@ -406,14 +467,16 @@ def run_query(sql: str, label: str) -> list[dict]:
 
 
 def merge_poly_results(
-    hourly: list[dict], daily: list[dict]
+    hourly: list[dict], daily: list[dict], brier_by_cat: list[dict] | None = None
 ) -> list[dict]:
     """Merge hourly (4h/12h/1d) and daily (1w/1mo) Polymarket results."""
     daily_map = {r["mapped_category"]: r for r in daily}
+    brier_map = {r["mapped_category"]: r for r in (brier_by_cat or [])}
     merged = []
     for h in hourly:
         cat = h["mapped_category"]
         d = daily_map.get(cat, {})
+        b = brier_map.get(cat, {})
         merged.append(
             {
                 "category": cat,
@@ -428,18 +491,23 @@ def merge_poly_results(
                 "n_1w": d.get("n_1w", 0),
                 "acc_1mo": d.get("acc_1mo"),
                 "n_1mo": d.get("n_1mo", 0),
+                "brier": b.get("brier_score"),
+                "brier_n": b.get("n", 0),
             }
         )
     return sorted(merged, key=lambda x: x["markets"], reverse=True)
 
 
-def format_kalshi(rows: list[dict]) -> list[dict]:
+def format_kalshi(rows: list[dict], brier_by_cat: list[dict] | None = None) -> list[dict]:
     """Format Kalshi results."""
+    brier_map = {r["mapped_category"]: r for r in (brier_by_cat or [])}
     result = []
     for r in rows:
+        cat = r["mapped_category"]
+        b = brier_map.get(cat, {})
         result.append(
             {
-                "category": r["mapped_category"],
+                "category": cat,
                 "markets": r["markets"],
                 "acc_4h": r.get("acc_4h"),
                 "n_4h": r.get("n_4h", 0),
@@ -451,6 +519,8 @@ def format_kalshi(rows: list[dict]) -> list[dict]:
                 "n_1w": r.get("n_1w", 0),
                 "acc_1mo": r.get("acc_1mo"),
                 "n_1mo": r.get("n_1mo", 0),
+                "brier": b.get("brier_score"),
+                "brier_n": b.get("n", 0),
             }
         )
     return sorted(result, key=lambda x: x["markets"], reverse=True)
@@ -471,6 +541,17 @@ def add_total_row(rows: list[dict]) -> list[dict]:
                 valid_sum += n
         total[f"acc_{w}"] = round(correct_sum / valid_sum * 100, 1) if valid_sum > 0 else None
         total[f"n_{w}"] = valid_sum
+    # Weighted Brier across categories
+    brier_sum = 0.0
+    brier_n_sum = 0
+    for r in rows:
+        b = r.get("brier")
+        bn = r.get("brier_n", 0)
+        if b is not None and bn > 0:
+            brier_sum += b * bn
+            brier_n_sum += bn
+    total["brier"] = round(brier_sum / brier_n_sum, 4) if brier_n_sum > 0 else None
+    total["brier_n"] = brier_n_sum
     return rows + [total]
 
 
@@ -488,12 +569,19 @@ def format_calibration(rows: list[dict]) -> list[dict]:
     ]
 
 
-def format_brier(rows: list[dict]) -> dict:
+def format_brier(rows: list[dict], by_category: list[dict] | None = None) -> dict:
     """Format Brier score results."""
     if not rows:
-        return {"overall": None, "n": 0}
-    r = rows[0]
-    return {"overall": r.get("brier_score"), "n": r.get("n", 0)}
+        result = {"overall": None, "n": 0}
+    else:
+        r = rows[0]
+        result = {"overall": r.get("brier_score"), "n": r.get("n", 0)}
+    if by_category:
+        result["per_category"] = [
+            {"category": r["mapped_category"], "brier": r["brier_score"], "n": r["n"]}
+            for r in by_category
+        ]
+    return result
 
 
 def format_resolution(rows: list[dict]) -> dict:
@@ -516,15 +604,11 @@ def main():
     print("Polymarket:")
     poly_hourly = run_query(POLYMARKET_HOURLY_SQL, "hourly (4h/12h/1d)")
     poly_daily = run_query(POLYMARKET_DAILY_SQL, "daily (1w/1mo)")
-    poly_merged = merge_poly_results(poly_hourly, poly_daily)
-    poly_final = add_total_row(poly_merged)
 
     # Kalshi accuracy queries (hourly + daily, matching Polymarket pattern)
     print("\nKalshi:")
     kalshi_hourly = run_query(KALSHI_HOURLY_SQL, "hourly (4h/12h/1d)")
     kalshi_daily = run_query(KALSHI_DAILY_SQL, "daily (1w/1mo)")
-    kalshi_merged = merge_poly_results(kalshi_hourly, kalshi_daily)  # same merge logic
-    kalshi_final = add_total_row(kalshi_merged)
 
     # Calibration queries
     print("\nCalibration:")
@@ -536,10 +620,22 @@ def main():
     poly_brier = run_query(POLY_BRIER_SQL, "Polymarket Brier score")
     kalshi_brier = run_query(KALSHI_BRIER_SQL, "Kalshi Brier score")
 
+    # Per-category Brier scores
+    print("\nPer-Category Brier Scores:")
+    poly_brier_cat = run_query(POLY_BRIER_BY_CATEGORY_SQL, "Polymarket Brier by category")
+    kalshi_brier_cat = run_query(KALSHI_BRIER_BY_CATEGORY_SQL, "Kalshi Brier by category")
+
     # Resolution distribution
     print("\nResolution Distribution:")
     poly_res = run_query(POLY_RESOLUTION_SQL, "Polymarket resolution")
     kalshi_res = run_query(KALSHI_RESOLUTION_SQL, "Kalshi resolution")
+
+    # Merge accuracy + brier data
+    poly_merged = merge_poly_results(poly_hourly, poly_daily, poly_brier_cat)
+    poly_final = add_total_row(poly_merged)
+    kalshi_merged = merge_poly_results(kalshi_hourly, kalshi_daily, kalshi_brier_cat)
+    kalshi_final = add_total_row(kalshi_merged)
+
     # Print accuracy summary
     print("\n--- Polymarket Accuracy ---")
     print(f"{'Category':<16} {'Markets':>8} {'4h':>7} {'12h':>7} {'1d':>7} {'1w':>7} {'1mo':>7}")
@@ -579,8 +675,8 @@ def main():
         )
 
     # Print Brier scores
-    poly_brier_fmt = format_brier(poly_brier)
-    kalshi_brier_fmt = format_brier(kalshi_brier)
+    poly_brier_fmt = format_brier(poly_brier, poly_brier_cat)
+    kalshi_brier_fmt = format_brier(kalshi_brier, kalshi_brier_cat)
     print(f"\n--- Brier Scores (1d, lower = better) ---")
     print(f"  Polymarket: {poly_brier_fmt['overall']} (n={poly_brier_fmt['n']:,})")
     print(f"  Kalshi:     {kalshi_brier_fmt['overall']} (n={kalshi_brier_fmt['n']:,})")

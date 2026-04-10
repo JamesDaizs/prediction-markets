@@ -97,18 +97,35 @@ export default async function AccuracyPage() {
           accentColor="#3b82f6"
         />
         <StatCard
-          label="Polymarket Brier"
-          value={
-            data.brier?.polymarket.overall != null
-              ? data.brier.polymarket.overall.toFixed(4)
-              : "-"
-          }
-          sub={
-            data.brier?.polymarket.n
-              ? `${formatNum(data.brier.polymarket.n)} markets`
-              : undefined
-          }
-          accentColor="#8b5cf6"
+          label="Combined Brier Grade"
+          value={(() => {
+            const pb = data.brier?.polymarket;
+            const kb = data.brier?.kalshi;
+            if (!pb?.overall && !kb?.overall) return "-";
+            const pn = pb?.n ?? 0;
+            const kn = kb?.n ?? 0;
+            const weighted =
+              ((pb?.overall ?? 0) * pn + (kb?.overall ?? 0) * kn) /
+              (pn + kn || 1);
+            if (weighted <= 0.05) return "A+";
+            if (weighted <= 0.10) return "A";
+            if (weighted <= 0.15) return "B+";
+            if (weighted <= 0.20) return "B";
+            if (weighted <= 0.25) return "C";
+            return "D";
+          })()}
+          sub={(() => {
+            const pb = data.brier?.polymarket;
+            const kb = data.brier?.kalshi;
+            if (!pb?.overall && !kb?.overall) return undefined;
+            const pn = pb?.n ?? 0;
+            const kn = kb?.n ?? 0;
+            const weighted =
+              ((pb?.overall ?? 0) * pn + (kb?.overall ?? 0) * kn) /
+              (pn + kn || 1);
+            return `${weighted.toFixed(4)} weighted avg`;
+          })()}
+          accentColor="#22c55e"
         />
         <StatCard
           label="Total Resolved"

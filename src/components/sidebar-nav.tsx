@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BarChart3,
+  Bot,
   LayoutDashboard,
   Target,
   TrendingUp,
@@ -15,6 +16,8 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/accuracy", label: "Accuracy", icon: Target },
+  { href: "/bots", label: "Bots", icon: Bot },
+  { href: "/metrics", label: "Metrics", icon: TrendingUp },
   { href: "/portfolio", label: "Traders", icon: Users },
   { href: "/retention", label: "Retention", icon: UserCheck },
 ];

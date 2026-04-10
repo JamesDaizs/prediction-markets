@@ -11,7 +11,7 @@ import {
 export async function GET(request: NextRequest) {
   const sp = request.nextUrl.searchParams;
   const tab = sp.get("tab") || "whales";
-  const days = parseInt(sp.get("days") || "7", 10);
+  const days = Math.min(Math.max(parseInt(sp.get("days") || "7", 10) || 7, 1), 365);
 
   try {
     if (tab === "whales") {
@@ -20,7 +20,8 @@ export async function GET(request: NextRequest) {
     }
 
     if (tab === "traders") {
-      const sortBy = (sp.get("sort") || "volume") as "volume" | "count";
+      const rawSort = sp.get("sort") || "volume";
+      const sortBy = (rawSort === "count" ? "count" : "volume") as "volume" | "count";
       const data = await getTopTraders(days, 50, sortBy);
       return NextResponse.json(data);
     }
@@ -32,7 +33,7 @@ export async function GET(request: NextRequest) {
 
     if (tab === "lookup") {
       const q = sp.get("q") || "";
-      if (q.length < 2) return NextResponse.json([]);
+      if (q.length < 2 || q.length > 200) return NextResponse.json([]);
       const data = await searchMarkets(q);
       return NextResponse.json(data);
     }
@@ -54,7 +55,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ error: "Invalid tab" }, { status: 400 });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("whale-tracker API error:", err);
+    return NextResponse.json({ error: "Query failed" }, { status: 500 });
   }
 }

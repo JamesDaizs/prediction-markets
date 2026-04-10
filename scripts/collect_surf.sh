@@ -39,7 +39,7 @@ run_surf "polymarket_leaderboard.json" polymarket-leaderboard --limit 50
 
 # 5. Market correlations
 echo "[5/5] Market correlations..."
-run_surf "market_correlations.json" prediction-market-correlations --limit 20
+run_surf "market_correlations.json" prediction-market-correlations --category "Politics" --limit 20
 
 echo
 echo "=== Collection Complete ==="

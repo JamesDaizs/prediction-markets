@@ -249,179 +249,187 @@ export function MetricsClient({
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Transactions */}
         <Card title="Transactions">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={transactions}>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                stroke="var(--pm-border-subtle)"
-              />
-              <XAxis
-                dataKey="period"
-                tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <YAxis
-                tickFormatter={compactNum}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <Tooltip
-                {...chartTooltipStyle}
-                labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                formatter={(value) => [
-                  formatNumber(Number(value)),
-                  undefined,
-                ]}
-              />
-              <Legend
-                wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
-              />
-              <Bar
-                dataKey="polymarket"
-                name="Polymarket"
-                fill={POLY_COLOR}
-                radius={[3, 3, 0, 0]}
-              />
-              <Bar
-                dataKey="kalshi"
-                name="Kalshi"
-                fill={KALSHI_COLOR}
-                radius={[3, 3, 0, 0]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+          <div style={{ width: '100%', height: '300px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={transactions}>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="var(--pm-border-subtle)"
+                />
+                <XAxis
+                  dataKey="period"
+                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <YAxis
+                  tickFormatter={compactNum}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <Tooltip
+                  {...chartTooltipStyle}
+                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
+                  formatter={(value) => [
+                    formatNumber(Number(value)),
+                    undefined,
+                  ]}
+                />
+                <Legend
+                  wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
+                />
+                <Bar
+                  dataKey="polymarket"
+                  name="Polymarket"
+                  fill={POLY_COLOR}
+                  radius={[3, 3, 0, 0]}
+                />
+                <Bar
+                  dataKey="kalshi"
+                  name="Kalshi"
+                  fill={KALSHI_COLOR}
+                  radius={[3, 3, 0, 0]}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </Card>
 
         {/* Open Interest */}
         <Card title="Open Interest">
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={oi}>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                stroke="var(--pm-border-subtle)"
-              />
-              <XAxis
-                dataKey="period"
-                tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <YAxis
-                tickFormatter={(v) => formatCurrency(v, true)}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <Tooltip
-                {...chartTooltipStyle}
-                labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                formatter={(value) => [
-                  formatCurrency(Number(value), true),
-                  undefined,
-                ]}
-              />
-              <Legend
-                wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
-              />
-              <Line
-                dataKey="polymarket"
-                name="Polymarket"
-                stroke={POLY_COLOR}
-                strokeWidth={2}
-                dot={false}
-              />
-              <Line
-                dataKey="kalshi"
-                name="Kalshi"
-                stroke={KALSHI_COLOR}
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+          <div style={{ width: '100%', height: '300px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={oi}>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="var(--pm-border-subtle)"
+                />
+                <XAxis
+                  dataKey="period"
+                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <YAxis
+                  tickFormatter={(v) => formatCurrency(v, true)}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <Tooltip
+                  {...chartTooltipStyle}
+                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
+                  formatter={(value) => [
+                    formatCurrency(Number(value), true),
+                    undefined,
+                  ]}
+                />
+                <Legend
+                  wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
+                />
+                <Line
+                  dataKey="polymarket"
+                  name="Polymarket"
+                  stroke={POLY_COLOR}
+                  strokeWidth={2}
+                  dot={false}
+                />
+                <Line
+                  dataKey="kalshi"
+                  name="Kalshi"
+                  stroke={KALSHI_COLOR}
+                  strokeWidth={2}
+                  dot={false}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </Card>
 
         {/* New Markets */}
         <Card title="New Markets Created">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={newMarkets}>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                stroke="var(--pm-border-subtle)"
-              />
-              <XAxis
-                dataKey="period"
-                tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <YAxis
-                tickFormatter={compactNum}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <Tooltip
-                {...chartTooltipStyle}
-                labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                formatter={(value) => [
-                  formatNumber(Number(value)),
-                  undefined,
-                ]}
-              />
-              <Legend
-                wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
-              />
-              <Bar
-                dataKey="polymarket"
-                name="Polymarket"
-                fill={POLY_COLOR}
-                radius={[3, 3, 0, 0]}
-              />
-              <Bar
-                dataKey="kalshi"
-                name="Kalshi"
-                fill={KALSHI_COLOR}
-                radius={[3, 3, 0, 0]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+          <div style={{ width: '100%', height: '300px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={newMarkets}>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="var(--pm-border-subtle)"
+                />
+                <XAxis
+                  dataKey="period"
+                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <YAxis
+                  tickFormatter={compactNum}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <Tooltip
+                  {...chartTooltipStyle}
+                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
+                  formatter={(value) => [
+                    formatNumber(Number(value)),
+                    undefined,
+                  ]}
+                />
+                <Legend
+                  wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
+                />
+                <Bar
+                  dataKey="polymarket"
+                  name="Polymarket"
+                  fill={POLY_COLOR}
+                  radius={[3, 3, 0, 0]}
+                />
+                <Bar
+                  dataKey="kalshi"
+                  name="Kalshi"
+                  fill={KALSHI_COLOR}
+                  radius={[3, 3, 0, 0]}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </Card>
 
         {/* Active Wallets */}
         <Card title="Active Wallets (Polymarket)">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={wallets}>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                stroke="var(--pm-border-subtle)"
-              />
-              <XAxis
-                dataKey="period"
-                tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <YAxis
-                tickFormatter={compactNum}
-                tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                axisLine={{ stroke: "var(--pm-border-subtle)" }}
-              />
-              <Tooltip
-                {...chartTooltipStyle}
-                labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                formatter={(value) => [
-                  formatNumber(Number(value)),
-                  undefined,
-                ]}
-              />
-              <Bar
-                dataKey="polymarket"
-                name="Polymarket"
-                fill={POLY_COLOR}
-                radius={[3, 3, 0, 0]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+          <div style={{ width: '100%', height: '300px' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={wallets}>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="var(--pm-border-subtle)"
+                />
+                <XAxis
+                  dataKey="period"
+                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <YAxis
+                  tickFormatter={compactNum}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
+                />
+                <Tooltip
+                  {...chartTooltipStyle}
+                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
+                  formatter={(value) => [
+                    formatNumber(Number(value)),
+                    undefined,
+                  ]}
+                />
+                <Bar
+                  dataKey="polymarket"
+                  name="Polymarket"
+                  fill={POLY_COLOR}
+                  radius={[3, 3, 0, 0]}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
           <p className="mt-2 text-center text-xs text-pm-fg-faint">
             Kalshi does not expose wallet/user-level data
           </p>
@@ -489,53 +497,55 @@ function VolumeByCategory({
 
   return (
     <Card title="Volume by Category">
-      <ResponsiveContainer width="100%" height={350}>
-        <BarChart data={pivoted}>
-          <CartesianGrid
-            strokeDasharray="3 3"
-            stroke="var(--pm-border-subtle)"
-          />
-          <XAxis
-            dataKey="period"
-            tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-            tick={{ fontSize: 10, fill: "var(--pm-fg-faint)" }}
-            axisLine={{ stroke: "var(--pm-border-subtle)" }}
-          />
-          <YAxis
-            tickFormatter={(v) => formatCurrency(Number(v), true)}
-            tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-            axisLine={{ stroke: "var(--pm-border-subtle)" }}
-          />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "var(--pm-bg-card)",
-              border: "1px solid var(--pm-border-base)",
-              borderRadius: "8px",
-              fontSize: "12px",
-              color: "var(--pm-fg-base)",
-            }}
-            labelFormatter={(v) =>
-              formatPeriodLabel(v as string, granularity)
-            }
-            formatter={(value) => [
-              formatCurrency(Number(value), true),
-              undefined,
-            ]}
-          />
-          <Legend
-            wrapperStyle={{ fontSize: "11px", color: "var(--pm-fg-muted)" }}
-          />
-          {categories.map((cat, i) => (
-            <Bar
-              key={cat}
-              dataKey={cat}
-              name={cat}
-              stackId="vol"
-              fill={CAT_COLORS[i % CAT_COLORS.length]}
+      <div style={{ width: '100%', height: '350px' }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={pivoted}>
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="var(--pm-border-subtle)"
             />
-          ))}
-        </BarChart>
-      </ResponsiveContainer>
+            <XAxis
+              dataKey="period"
+              tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+              tick={{ fontSize: 10, fill: "var(--pm-fg-faint)" }}
+              axisLine={{ stroke: "var(--pm-border-subtle)" }}
+            />
+            <YAxis
+              tickFormatter={(v) => formatCurrency(Number(v), true)}
+              tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+              axisLine={{ stroke: "var(--pm-border-subtle)" }}
+            />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "var(--pm-bg-card)",
+                border: "1px solid var(--pm-border-base)",
+                borderRadius: "8px",
+                fontSize: "12px",
+                color: "var(--pm-fg-base)",
+              }}
+              labelFormatter={(v) =>
+                formatPeriodLabel(v as string, granularity)
+              }
+              formatter={(value) => [
+                formatCurrency(Number(value), true),
+                undefined,
+              ]}
+            />
+            <Legend
+              wrapperStyle={{ fontSize: "11px", color: "var(--pm-fg-muted)" }}
+            />
+            {categories.map((cat, i) => (
+              <Bar
+                key={`${cat}-${i}`}
+                dataKey={cat}
+                name={cat}
+                stackId="vol"
+                fill={CAT_COLORS[i % CAT_COLORS.length]}
+              />
+            ))}
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </Card>
   );
 }

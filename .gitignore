@@ -51,3 +51,4 @@ next-env.d.ts
 # python cache
 __pycache__/
 research/polymarket_leaderboard_features.csv
+.gstack/

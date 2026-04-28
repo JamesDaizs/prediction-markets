@@ -767,7 +767,7 @@ export function BotsClient({ data }: Props) {
           <p>
             <strong className="text-pm-fg-subtle">Data source</strong>:
             890M trades, 2.42M wallets, $50.87B volume (Nov 2022 - Mar 2026)
-            from Polymarket on-chain data via ClickHouse.
+            from Polymarket on-chain data.
           </p>
         </div>
       </div>

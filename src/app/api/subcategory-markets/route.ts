@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getSubcategoryMarkets } from "@/lib/api/clickhouse";
+import { getSubcategoryMarkets } from "@/lib/queries/markets";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -19,12 +21,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const markets = await getSubcategoryMarkets(
-      category,
-      subcategory,
-      platform,
-      limit
-    );
+    const markets = await getSubcategoryMarkets(category, subcategory, platform, limit);
     return NextResponse.json(markets, {
       headers: {
         "Cache-Control": "public, s-maxage=300, stale-while-revalidate=60",

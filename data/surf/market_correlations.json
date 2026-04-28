@@ -1,0 +1,7 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataAPIError.json",
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "validation failed: expected value to be one of \"crypto, culture, economics, financials, politics, stem, sports\" (query.category: Politics)"
+  }
+}

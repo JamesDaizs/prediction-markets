@@ -1,0 +1,1011 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataResponseMatchedMarketPair.json",
+  "data": [
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-VOL",
+        "open_interest": 6699,
+        "status": "active",
+        "title": "Will Volodymyr Zelenskyy be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 8990
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x0116d578bcea8a432dfa6f4c9e82cf243db339cce81806b58a8053b0bee96dfd",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Volodymyr Zelenskyy rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 85113.198148
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-JIMM",
+        "open_interest": 1988,
+        "status": "active",
+        "title": "Will Jimmy Carter be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 2308
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x045e0bf25d6f91b43c174b4961935bb085735a7479baa63cfd5684f47f392874",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Jimmy Carter rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 31782.252512
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWOHOCKEY-MEN26CGOLD",
+        "market_ticker": "KXWOHOCKEY-MEN26CGOLD-CAN",
+        "open_interest": 269015,
+        "status": "active",
+        "title": "Will Canada win the gold medal in Ice Hockey Men's Ice Hockey?",
+        "volume_contracts": 282509
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x06b611865074cab0ee2991b62be17149ea4912e9cbde167639f2ee882ce28428",
+        "event_slug": "winter-games-2026-ice-hockey-gold-medal-winner",
+        "is_active": true,
+        "question": "Will Canada win the Men's Ice Hockey gold medal at the 2026 Winter Olympics?",
+        "volume_usd": 3527746.50827
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-WSH",
+        "open_interest": 192182,
+        "status": "active",
+        "title": "Will Washington Capitals win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 232175
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x08fa7d350c801391e7ec81d0da90f1fb05ec365f98d16d27e6d64a18d7118973",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Washington Capitals win the 2026 NHL Stanley Cup?",
+        "volume_usd": 436081.88873399957
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-TIM",
+        "open_interest": 0,
+        "status": "active",
+        "title": "Will Timothée Chalamet be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 0
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x0cd6c521fb2a666f475df18c4defe72471018eea51c21f762f7f48b0b289c019",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Timothée Chalamet rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 31273.863152
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-MIN",
+        "open_interest": 780371,
+        "status": "active",
+        "title": "Will Minnesota Wild win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 983546
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x0d082a85f48a5226b1205acdb6e95ead2fe373acabcf6c471f5895f86f42a276",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Minnesota Wild win the 2026 NHL Stanley Cup?",
+        "volume_usd": 8077994.972229024
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-FMERCGER",
+        "open_interest": 1942,
+        "status": "active",
+        "title": "Will Friedrich Merz leave Chancellor of Germany before Jan 1, 2027?",
+        "volume_contracts": 3504
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x0eed331bbe87623024f205ba6b0bfe76c55cbccc1f6b2860fb0a50e6d6139660",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Friedrich Merz be the next leader out before 2027?",
+        "volume_usd": 337307.104857
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-GPETCOL",
+        "open_interest": 46271,
+        "status": "active",
+        "title": "Will Gustavo Petro leave President of Colombia before Jan 1, 2027?",
+        "volume_contracts": 138988
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x0f8bc18e4cddf9713cffe290e6192a25c6aa9cf1425ec4d70964b19f75580d3b",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Gustavo Petro be the next leader out before 2027?",
+        "volume_usd": 357076.84494
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-VLA",
+        "open_interest": 0,
+        "status": "active",
+        "title": "Will Vladimir Putin be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 0
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x0f9063649dff710bdfc0cf583adaf738ce1c46615c3597ccb15b99c104919615",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Vladimir Putin rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 34912.020255
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-JUS",
+        "open_interest": 639,
+        "status": "active",
+        "title": "Will Justin Trudeau be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 709
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x100dccfacc4bc046853bf2358daafddfc4a714f20e5756bafd77ee50621418ab",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Justin Trudeau rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 8709.222448
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-OTT",
+        "open_interest": 201517,
+        "status": "active",
+        "title": "Will Ottawa Senators win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 228326
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x139b893a7ae21eaec72e887ba88910831944b4662512428c122c4ad0a5c125ac",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Ottawa Senators win the 2026 NHL Stanley Cup?",
+        "volume_usd": 722179.0267020022
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWO-GOLD-26",
+        "market_ticker": "KXWO-GOLD-26-CHN",
+        "open_interest": 108869,
+        "status": "active",
+        "title": "Will China PR have the most gold medals in the 2026 Winter Olympics?",
+        "volume_contracts": 109516
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x151141085d14b7eed5d6481ff25fc9b8a1d3b243922d9e3ba3bfe61a5bcba8cb",
+        "event_slug": "winter-games-2026-most-gold-medals",
+        "is_active": true,
+        "question": "Will China win the most gold medals in the 2026 Winter Olympics?",
+        "volume_usd": 692277.702085
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXSENATETXR-26",
+        "market_ticker": "KXSENATETXR-26-BVD",
+        "open_interest": 38657,
+        "status": "active",
+        "title": "Will Beth Van Duyne be the Republican nominee for the Senate in Texas?",
+        "volume_contracts": 38657
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x1a22c136f277a62d27c22521a1ec1363d2edb5c657f129e509e77958dc1846d2",
+        "event_slug": "texas-republican-senate-primary-winner",
+        "is_active": true,
+        "question": "Will Beth Van Duyne win the 2026 Texas Republican Primary?",
+        "volume_usd": 0
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-AALSSYR",
+        "open_interest": 8275,
+        "status": "active",
+        "title": "Will Ahmad al-Sharaa leave President of Syria before Jan 1, 2027?",
+        "volume_contracts": 20778
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x1a2f5e3dbbed59eee2d3ff745b5877db93f55e798d04fe3f279f9bb3746918be",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Ahmed al-Sharaa be the next leader out before 2027?",
+        "volume_usd": 304285.33299
+      }
+    },
+    {
+      "category": "economics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRATECUTCOUNT-26DEC31",
+        "market_ticker": "KXRATECUTCOUNT-26DEC31-T11",
+        "open_interest": 25053,
+        "status": "active",
+        "title": "Will the Fed cut rates 11 times?",
+        "volume_contracts": 25053
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x1adf074e048fa613f4ddbc0766088748a48d120a3a713b0183e219032a411ae3",
+        "event_slug": "how-many-fed-rate-cuts-in-2026",
+        "is_active": true,
+        "question": "Will 11 Fed rate cuts happen in 2026?",
+        "volume_usd": 747038.829104
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-STL",
+        "open_interest": 62935,
+        "status": "active",
+        "title": "Will St. Louis Blues win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 72935
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x1c36595d8a1726549acca61c5eb8c9173de87c780ee1cee660ceb5b517530ab7",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the St. Louis Blues win the 2026 NHL Stanley Cup?",
+        "volume_usd": 782079.7839910017
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-VZELUKR",
+        "open_interest": 27148,
+        "status": "active",
+        "title": "Will Volodymyr Zelenskyy leave President of Ukraine before Jan 1, 2027?",
+        "volume_contracts": 74542
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x1d76a03419421f64288b3a1ae6a618e87449f267b1c29932703736a7eac2ba01",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Volodymyr Zelenskyy be the next leader out before 2027?",
+        "volume_usd": 472796.015251
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-NJ",
+        "open_interest": 79972,
+        "status": "active",
+        "title": "Will New Jersey Devils win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 99219
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x1e03cd6255e4dec87c7c85d2267b7b4104beba48abf50e2fc15acabbf233b308",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the New Jersey Devils win the 2026 NHL Stanley Cup?",
+        "volume_usd": 707374.7081720028
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWOHOCKEY-MEN26CGOLD",
+        "market_ticker": "KXWOHOCKEY-MEN26CGOLD-FIN",
+        "open_interest": 85488,
+        "status": "active",
+        "title": "Will Finland win the gold medal in Ice Hockey Men's Ice Hockey?",
+        "volume_contracts": 85729
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x203be6b7dd7135f5313688151c9bd6a35afa92e0210b6c018f04dd243265b58c",
+        "event_slug": "winter-games-2026-ice-hockey-gold-medal-winner",
+        "is_active": true,
+        "question": "Will Finland win the Men's Ice Hockey gold medal at the 2026 Winter Olympics?",
+        "volume_usd": 1477958.249232
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWO-GOLD-26",
+        "market_ticker": "KXWO-GOLD-26-FRA",
+        "open_interest": 4739,
+        "status": "active",
+        "title": "Will France have the most gold medals in the 2026 Winter Olympics?",
+        "volume_contracts": 4767
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x2170018aad4cbd74ffbdf558f111c0e3bc76cb2027ca64e9590ce6cafe368bf2",
+        "event_slug": "winter-games-2026-most-gold-medals",
+        "is_active": true,
+        "question": "Will France win the most gold medals in the 2026 Winter Olympics?",
+        "volume_usd": 900815.711137
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-LSILBRA",
+        "open_interest": 9478,
+        "status": "active",
+        "title": "Will Luiz Inácio Lula da Silva leave President of Brazil before Jan 1, 2027?",
+        "volume_contracts": 23712
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x21db4c906165c904dfd6fe75232894d86f3c7cb3974fc9e5fee2450ac960f32d",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Luiz Inácio Lula da Silva be the next leader out before 2027?",
+        "volume_usd": 358255.764875
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXFEDCHAIRNOM-29",
+        "market_ticker": "KXFEDCHAIRNOM-29-LK",
+        "open_interest": 163578,
+        "status": "active",
+        "title": "Will Trump next nominate Larry Kudlow as Fed Chair?",
+        "volume_contracts": 163942
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x22d3d4722ce79dae5b2594df2ce89b1c283e3227b78718353bcca2e854d115a4",
+        "event_slug": "who-will-trump-nominate-as-fed-chair",
+        "is_active": true,
+        "question": "Will Trump nominate Larry Kudlow as the next Fed chair?",
+        "volume_usd": 10383485.453766
+      }
+    },
+    {
+      "category": "economics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRATECUTCOUNT-26DEC31",
+        "market_ticker": "KXRATECUTCOUNT-26DEC31-T7",
+        "open_interest": 97662,
+        "status": "active",
+        "title": "Will the Fed cut rates 7 times?",
+        "volume_contracts": 98373
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x2368d2604c9c2b95bc98c51bd50c66e5351caebf05b9fe79d3398c387fe29a89",
+        "event_slug": "how-many-fed-rate-cuts-in-2026",
+        "is_active": true,
+        "question": "Will 7 Fed rate cuts happen in 2026?",
+        "volume_usd": 622228.2545820004
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWO-GOLD-26",
+        "market_ticker": "KXWO-GOLD-26-CAN",
+        "open_interest": 51756,
+        "status": "active",
+        "title": "Will Canada have the most gold medals in the 2026 Winter Olympics?",
+        "volume_contracts": 56533
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x2476b35db9ad17b163872e46f61455ba6c7b5495fe660bdae8090c880fbe947b",
+        "event_slug": "winter-games-2026-most-gold-medals",
+        "is_active": true,
+        "question": "Will Canada win the most gold medals in the 2026 Winter Olympics?",
+        "volume_usd": 616690.991299
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXPORTUGALPRES-26FEB15",
+        "market_ticker": "KXPORTUGALPRES-26FEB15-HGEM",
+        "open_interest": 121103,
+        "status": "active",
+        "title": "Will Henrique Gouveia e Melo win the 2026 Portuguese presidential election?",
+        "volume_contracts": 162376
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x2b1e18ef56cb7222ce2fb03d6cd9fb8fcca06d80b64d0dacbe6ce2f00ab31d00",
+        "event_slug": "portugal-presidential-election",
+        "is_active": true,
+        "question": "Will Henrique Gouveia e Melo win the 2026 Portugal presidential election?",
+        "volume_usd": 2954275.51036
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-VORBHUN",
+        "open_interest": 30819,
+        "status": "active",
+        "title": "Will Viktor Orbán leave Prime Minister of Hungary before Jan 1, 2027?",
+        "volume_contracts": 43914
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x31735bfbe8e32109e3887dc3c8cb7867b50baf61a02a73750a5d5eced8bd3678",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Viktor Orbán be the next leader out before 2027?",
+        "volume_usd": 474697.245459
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWO-GOLD-26",
+        "market_ticker": "KXWO-GOLD-26-ITA",
+        "open_interest": 34208,
+        "status": "active",
+        "title": "Will Italy have the most gold medals in the 2026 Winter Olympics?",
+        "volume_contracts": 39293
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x346e8afb46835a9a9eada865f4a93cca93848a442c0cd3c0586be2aa4fde0454",
+        "event_slug": "winter-games-2026-most-gold-medals",
+        "is_active": true,
+        "question": "Will Italy win the most gold medals in the 2026 Winter Olympics?",
+        "volume_usd": 1714480.889982
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-TRA",
+        "open_interest": 0,
+        "status": "active",
+        "title": "Will Travis Kelce be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 0
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x357abc52d9f5ace08ace2ebea1dd8fe4f77d2ce1eed397ecdf290e27ab441fb5",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Travis Kelce rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 73623.063869
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-DID",
+        "open_interest": 4909,
+        "status": "active",
+        "title": "Will Diddy be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 14754
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x3a891ae7fdf3f08f260d46d2d7c45aecd002218cd5b2f4641996f8ee24709e31",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Diddy rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 25023.485344
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-LA",
+        "open_interest": 218656,
+        "status": "active",
+        "title": "Will Los Angeles Kings win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 238052
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x3b6cdd4f72cef7f29ff7e054444095564dc582266b7230be3c2b5f194d89f37d",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Los Angeles Kings win the 2026 NHL Stanley Cup?",
+        "volume_usd": 6345729.953865934
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-CHI",
+        "open_interest": 91780,
+        "status": "active",
+        "title": "Will Chicago Blackhawks win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 91780
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x3cec1aa0f2496c59cfcd2fd1270ce798e2d7de14ea55d6fdc747cc814a4b9262",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Chicago Blackhawks win the 2026 NHL Stanley Cup?",
+        "volume_usd": 1422165.2080609987
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXFEDCHAIRNOM-29",
+        "market_ticker": "KXFEDCHAIRNOM-29-DJT",
+        "open_interest": 372698,
+        "status": "active",
+        "title": "Will Trump next nominate Donald Trump (Himself) as Fed Chair?",
+        "volume_contracts": 413640
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x3d83f444f62b2afe0cb28485073cbf3617400d58813cd351cd4d242560ac47f2",
+        "event_slug": "who-will-trump-nominate-as-fed-chair",
+        "is_active": true,
+        "question": "Will Trump nominate himself as the next Fed chair?",
+        "volume_usd": 23577646.036
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-CGY",
+        "open_interest": 29410,
+        "status": "active",
+        "title": "Will Calgary Flames win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 29410
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x41d6f86edc88c14aa83373e72b4c26a403b159208f8973c093b928fe16d72930",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Calgary Flames win the 2026 NHL Stanley Cup?",
+        "volume_usd": 1112580.6370340036
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-DAL",
+        "open_interest": 426027,
+        "status": "active",
+        "title": "Will Dallas Stars win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 486416
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x44887f53abbfe7531b1384420b185a5f10ee42a4e6c9441d5883abd4f3c1e5ef",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Dallas Stars win the 2026 NHL Stanley Cup?",
+        "volume_usd": 780304.8222009983
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXFEDCHAIRNOM-29",
+        "market_ticker": "KXFEDCHAIRNOM-29-JS",
+        "open_interest": 66065170,
+        "status": "active",
+        "title": "Will Trump next nominate Judy Shelton as Fed Chair?",
+        "volume_contracts": 111642783
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x46d40e851b24d9b0af4bc1942ccd86439cae82a9011767da14950df0ad997adf",
+        "event_slug": "who-will-trump-nominate-as-fed-chair",
+        "is_active": true,
+        "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+        "volume_usd": 127684064.95211223
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-MARI",
+        "open_interest": 67,
+        "status": "active",
+        "title": "Will María Corina Machado be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 67
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x479e80e4534e5903dae829ed0016e06d85dfb16ab1c3c37a6f38797d436c20ea",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will María Corina Machado rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 56908.424703
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-SEA",
+        "open_interest": 400331,
+        "status": "active",
+        "title": "Will Seattle Kraken win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 404409
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x48dd35aba75f4ffb52d3d19e6665925512e6462ba25232536aa1e7c5ad3dad7b",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Seattle Kraken win the 2026 NHL Stanley Cup?",
+        "volume_usd": 790469.0112499987
+      }
+    },
+    {
+      "category": "economics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRATECUTCOUNT-26DEC31",
+        "market_ticker": "KXRATECUTCOUNT-26DEC31-T6",
+        "open_interest": 110244,
+        "status": "active",
+        "title": "Will the Fed cut rates 6 times?",
+        "volume_contracts": 114213
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4914bfdd892a48c341b5e0f41ec10475a815f2277273110b16f95e21084bfe75",
+        "event_slug": "how-many-fed-rate-cuts-in-2026",
+        "is_active": true,
+        "question": "Will 6 Fed rate cuts happen in 2026?",
+        "volume_usd": 1617808.33731399
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-EDM",
+        "open_interest": 292879,
+        "status": "active",
+        "title": "Will Edmonton Oilers win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 385643
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4a67e1270a2ed86be8fc524b6114640e41b0c56303ecaa9584deacd62402650a",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Edmonton Oilers win the 2026 NHL Stanley Cup?",
+        "volume_usd": 377036.3299100013
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXGOVTSHUTDOWN-26FEB14",
+        "market_ticker": "KXGOVTSHUTDOWN-26FEB14",
+        "open_interest": 582220,
+        "status": "active",
+        "title": "Will the US government be shut down on Feb 14, 2026?",
+        "volume_contracts": 1101700
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4b78de44ea49d0eb8d5fee85352294b6f679a47c56944c6ad5c945e9a2ba7211",
+        "event_slug": "another-us-government-shutdown-by-february-14",
+        "is_active": true,
+        "question": "Government shutdown on Saturday?",
+        "volume_usd": 13550398.086217
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-CBJ",
+        "open_interest": 35074,
+        "status": "active",
+        "title": "Will Columbus Blue Jackets win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 35074
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4c317ee82d81e0a49aa9862a8c2d876fee322064acf02cd8e1346fbed36083e8",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Columbus Blue Jackets win the 2026 NHL Stanley Cup?",
+        "volume_usd": 599815.6427479987
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWO-GOLD-26",
+        "market_ticker": "KXWO-GOLD-26-NLD",
+        "open_interest": 12061,
+        "status": "active",
+        "title": "Will Netherlands have the most gold medals in the 2026 Winter Olympics?",
+        "volume_contracts": 14870
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4c42e80712aa1905009b3014b7d622fd505b4d87dd9d47854a13cbd2a5ff4ca4",
+        "event_slug": "winter-games-2026-most-gold-medals",
+        "is_active": true,
+        "question": "Will Netherlands win the most gold medals in the 2026 Winter Olympics?",
+        "volume_usd": 1110786.885912
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXWOHOCKEY-MEN26CGOLD",
+        "market_ticker": "KXWOHOCKEY-MEN26CGOLD-FRA",
+        "open_interest": 29,
+        "status": "active",
+        "title": "Will France win the gold medal in Ice Hockey Men's Ice Hockey?",
+        "volume_contracts": 29
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4c96c7e8460b8f9c4469483ddfa4d029c94605138dfcd4ab8f4891f79c2544d2",
+        "event_slug": "winter-games-2026-ice-hockey-gold-medal-winner",
+        "is_active": true,
+        "question": "Will France win the Men's Ice Hockey gold medal at the 2026 Winter Olympics?",
+        "volume_usd": 2873072.670185
+      }
+    },
+    {
+      "category": "economics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRATECUTCOUNT-26DEC31",
+        "market_ticker": "KXRATECUTCOUNT-26DEC31-T9",
+        "open_interest": 45128,
+        "status": "active",
+        "title": "Will the Fed cut rates 9 times?",
+        "volume_contracts": 46792
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x4ec6fcb43fe1a32163c7da09d54a99ab9bf6abdc6fd49939d7ad67d696a3248b",
+        "event_slug": "how-many-fed-rate-cuts-in-2026",
+        "is_active": true,
+        "question": "Will 9 Fed rate cuts happen in 2026?",
+        "volume_usd": 537349.1703889993
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-MTL",
+        "open_interest": 316257,
+        "status": "active",
+        "title": "Will Montréal Canadiens win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 362075
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x52847ca1413b76a5570b97c0c432e38dbe61b0140f9d45e912604591b08f6fca",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Montreal Canadiens win the 2026 NHL Stanley Cup?",
+        "volume_usd": 938692.2499050029
+      }
+    },
+    {
+      "category": "sports",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXNHL-26",
+        "market_ticker": "KXNHL-26-NSH",
+        "open_interest": 18415,
+        "status": "active",
+        "title": "Will Nashville Predators win the 2025-26 Stanley Cup Finals?",
+        "volume_contracts": 18415
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x54cb2293de4ce01c85b62b0c43911a36614c8558b02b70703326ca4b938a83d4",
+        "event_slug": "2026-nhl-stanley-cup-champion",
+        "is_active": true,
+        "question": "Will the Nashville Predators win the 2026 NHL Stanley Cup?",
+        "volume_usd": 1366849.804559001
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXLEADERSOUT-27JAN01",
+        "market_ticker": "KXLEADERSOUT-27JAN01-MDIACPC",
+        "open_interest": 177505,
+        "status": "active",
+        "title": "Will Miguel Díaz-Canel leave First Secretary of the Communist Party of Cuba before Jan 1, 2027?",
+        "volume_contracts": 320086
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x563fdec0315713d4f602d7bb1dd473585296e47afe7673768af03b115ae502ba",
+        "event_slug": "next-leader-out-of-power-before-2027-684",
+        "is_active": true,
+        "question": "Will Miguel Díaz-Canel be the next leader out before 2027?",
+        "volume_usd": 512977.38813
+      }
+    },
+    {
+      "category": "culture",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN",
+        "market_ticker": "KXRANKLISTGOOGLESEARCHTOP5-26JAN-KAM",
+        "open_interest": 6406,
+        "status": "active",
+        "title": "Will Kamala Harris be in the Top 5 on Google’s Year in Search 2025 Global – People?",
+        "volume_contracts": 8045
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x566e3e58b4a1ab03b76c70987f026209e9d42327b8bf6f17a855230e26c7d52a",
+        "event_slug": "top-5-most-searched-people-on-google-2025",
+        "is_active": true,
+        "question": "Will Kamala Harris rank in Google’s Top 5 Most Searched People of 2025?",
+        "volume_usd": 64658.4151
+      }
+    },
+    {
+      "category": "politics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXPORTUGALPRES-26FEB15",
+        "market_ticker": "KXPORTUGALPRES-26FEB15-TVIE",
+        "open_interest": 829,
+        "status": "active",
+        "title": "Will Tim Vieira win the 2026 Portuguese presidential election?",
+        "volume_contracts": 829
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x5978de4126f53a200c36ea4b7766939c25018d8a21b33262fe502aafb53ff175",
+        "event_slug": "portugal-presidential-election",
+        "is_active": true,
+        "question": "Will Tim Vieira win the 2026 Portugal presidential election?",
+        "volume_usd": 360281.272783
+      }
+    },
+    {
+      "category": "economics",
+      "confidence": 100,
+      "kalshi": {
+        "event_ticker": "KXRATECUTCOUNT-26DEC31",
+        "market_ticker": "KXRATECUTCOUNT-26DEC31-T1",
+        "open_interest": 87287,
+        "status": "active",
+        "title": "Will the Fed cut rates 1 times?",
+        "volume_contracts": 135497
+      },
+      "match_type": "exact",
+      "polymarket": {
+        "condition_id": "0x5e082f0b57f47a29044aa35b4c5658393122e659d5feae521c06b57cdd7f905c",
+        "event_slug": "how-many-fed-rate-cuts-in-2026",
+        "is_active": true,
+        "question": "Will 1 Fed rate cut happen in 2026?",
+        "volume_usd": 726421.5449420013
+      }
+    }
+  ],
+  "meta": {
+    "cached": false,
+    "credits_used": 1,
+    "limit": 50,
+    "offset": 0
+  }
+}

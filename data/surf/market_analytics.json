@@ -1,0 +1,907 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataObjectResponseAnalyticsBody.json",
+  "data": {
+    "category_trends": [
+      {
+        "market_count": 150034,
+        "open_interest_usd": 458336641,
+        "source": "Kalshi",
+        "timestamp": 1773187200,
+        "volume_usd": 422485626
+      },
+      {
+        "market_count": 337261,
+        "open_interest_usd": 1243926667.4938102,
+        "source": "Polymarket",
+        "timestamp": 1773187200,
+        "volume_usd": 365261962.78022814
+      },
+      {
+        "market_count": 149905,
+        "open_interest_usd": 482406475,
+        "source": "Kalshi",
+        "timestamp": 1773273600,
+        "volume_usd": 413355569
+      },
+      {
+        "market_count": 341325,
+        "open_interest_usd": 1252978808.0111167,
+        "source": "Polymarket",
+        "timestamp": 1773273600,
+        "volume_usd": 341640078.6375596
+      },
+      {
+        "market_count": 345786,
+        "open_interest_usd": 1262661860.78017,
+        "source": "Polymarket",
+        "timestamp": 1773360000,
+        "volume_usd": 330551049.46071106
+      },
+      {
+        "market_count": 160731,
+        "open_interest_usd": 496027908.5,
+        "source": "Kalshi",
+        "timestamp": 1773360000,
+        "volume_usd": 440654655
+      },
+      {
+        "market_count": 350543,
+        "open_interest_usd": 1271441084.0661423,
+        "source": "Polymarket",
+        "timestamp": 1773446400,
+        "volume_usd": 334523322.29001504
+      },
+      {
+        "market_count": 178341,
+        "open_interest_usd": 511138507,
+        "source": "Kalshi",
+        "timestamp": 1773446400,
+        "volume_usd": 486664504
+      },
+      {
+        "market_count": 147859,
+        "open_interest_usd": 428819644.5,
+        "source": "Kalshi",
+        "timestamp": 1773532800,
+        "volume_usd": 490285154
+      },
+      {
+        "market_count": 355010,
+        "open_interest_usd": 1273755838.022062,
+        "source": "Polymarket",
+        "timestamp": 1773532800,
+        "volume_usd": 338073580.12399185
+      },
+      {
+        "market_count": 359172,
+        "open_interest_usd": 1276637809.7383456,
+        "source": "Polymarket",
+        "timestamp": 1773619200,
+        "volume_usd": 346185774.51412857
+      },
+      {
+        "market_count": 106834,
+        "open_interest_usd": 466072933.5,
+        "source": "Kalshi",
+        "timestamp": 1773619200,
+        "volume_usd": 293800718
+      },
+      {
+        "market_count": 134808,
+        "open_interest_usd": 481981560.5,
+        "source": "Kalshi",
+        "timestamp": 1773705600,
+        "volume_usd": 358874028
+      },
+      {
+        "market_count": 365137,
+        "open_interest_usd": 1306506305.0778425,
+        "source": "Polymarket",
+        "timestamp": 1773705600,
+        "volume_usd": 697715338.2269045
+      },
+      {
+        "market_count": 369400,
+        "open_interest_usd": 1289209289.2166598,
+        "source": "Polymarket",
+        "timestamp": 1773792000,
+        "volume_usd": 388072423.6631533
+      },
+      {
+        "market_count": 141734,
+        "open_interest_usd": 475590068.78999996,
+        "source": "Kalshi",
+        "timestamp": 1773792000,
+        "volume_usd": 373751707
+      },
+      {
+        "market_count": 374251,
+        "open_interest_usd": 1274282567.517303,
+        "source": "Polymarket",
+        "timestamp": 1773878400,
+        "volume_usd": 1124280158.893735
+      },
+      {
+        "market_count": 193782,
+        "open_interest_usd": 485295051.28,
+        "source": "Kalshi",
+        "timestamp": 1773878400,
+        "volume_usd": 594570590
+      },
+      {
+        "market_count": 189923,
+        "open_interest_usd": 499615081.96000004,
+        "source": "Kalshi",
+        "timestamp": 1773964800,
+        "volume_usd": 599717084
+      },
+      {
+        "market_count": 380158,
+        "open_interest_usd": 1273413151.8572466,
+        "source": "Polymarket",
+        "timestamp": 1773964800,
+        "volume_usd": 336162510.8404785
+      },
+      {
+        "market_count": 193146,
+        "open_interest_usd": 496952181.36,
+        "source": "Kalshi",
+        "timestamp": 1774051200,
+        "volume_usd": 558620457
+      },
+      {
+        "market_count": 385313,
+        "open_interest_usd": 1288421401.823458,
+        "source": "Polymarket",
+        "timestamp": 1774051200,
+        "volume_usd": 367978374.74034
+      },
+      {
+        "market_count": 163317,
+        "open_interest_usd": 455794544.81,
+        "source": "Kalshi",
+        "timestamp": 1774137600,
+        "volume_usd": 559212449
+      },
+      {
+        "market_count": 390448,
+        "open_interest_usd": 1294335502.3858957,
+        "source": "Polymarket",
+        "timestamp": 1774137600,
+        "volume_usd": 372719652.6640587
+      },
+      {
+        "market_count": 394701,
+        "open_interest_usd": 1275916007.0920787,
+        "source": "Polymarket",
+        "timestamp": 1774224000,
+        "volume_usd": 322551910.4385576
+      },
+      {
+        "market_count": 110390,
+        "open_interest_usd": 468210389.35,
+        "source": "Kalshi",
+        "timestamp": 1774224000,
+        "volume_usd": 388331160
+      },
+      {
+        "market_count": 114840,
+        "open_interest_usd": 509734545,
+        "source": "Kalshi",
+        "timestamp": 1774310400,
+        "volume_usd": 318923860
+      },
+      {
+        "market_count": 400097,
+        "open_interest_usd": 1280221466.48525,
+        "source": "Polymarket",
+        "timestamp": 1774310400,
+        "volume_usd": 305931608.3476944
+      },
+      {
+        "market_count": 404028,
+        "open_interest_usd": 1320516233.0786307,
+        "source": "Polymarket",
+        "timestamp": 1774396800,
+        "volume_usd": 337200908.29502237
+      },
+      {
+        "market_count": 129482,
+        "open_interest_usd": 522037786.17,
+        "source": "Kalshi",
+        "timestamp": 1774396800,
+        "volume_usd": 305303383
+      },
+      {
+        "market_count": 408163,
+        "open_interest_usd": 1292742917.4372346,
+        "source": "Polymarket",
+        "timestamp": 1774483200,
+        "volume_usd": 305580629.7471912
+      },
+      {
+        "market_count": 150589,
+        "open_interest_usd": 502601277.95000005,
+        "source": "Kalshi",
+        "timestamp": 1774483200,
+        "volume_usd": 385123414
+      },
+      {
+        "market_count": 140105,
+        "open_interest_usd": 479833771.28,
+        "source": "Kalshi",
+        "timestamp": 1774569600,
+        "volume_usd": 421253840
+      },
+      {
+        "market_count": 413067,
+        "open_interest_usd": 1293931023.0636544,
+        "source": "Polymarket",
+        "timestamp": 1774569600,
+        "volume_usd": 309057215.9953041
+      },
+      {
+        "market_count": 417963,
+        "open_interest_usd": 1309446130.1565151,
+        "source": "Polymarket",
+        "timestamp": 1774656000,
+        "volume_usd": 324386189.86238706
+      },
+      {
+        "market_count": 176991,
+        "open_interest_usd": 494009273.99,
+        "source": "Kalshi",
+        "timestamp": 1774656000,
+        "volume_usd": 489327496
+      },
+      {
+        "market_count": 423583,
+        "open_interest_usd": 1316606608.8559823,
+        "source": "Polymarket",
+        "timestamp": 1774742400,
+        "volume_usd": 319813548.9323301
+      },
+      {
+        "market_count": 173039,
+        "open_interest_usd": 458218404.81,
+        "source": "Kalshi",
+        "timestamp": 1774742400,
+        "volume_usd": 503739082
+      },
+      {
+        "market_count": 428629,
+        "open_interest_usd": 1313199175.7066753,
+        "source": "Polymarket",
+        "timestamp": 1774828800,
+        "volume_usd": 267704211.26329607
+      },
+      {
+        "market_count": 139833,
+        "open_interest_usd": 471536426.01,
+        "source": "Kalshi",
+        "timestamp": 1774828800,
+        "volume_usd": 310084313
+      },
+      {
+        "market_count": 433827,
+        "open_interest_usd": 1324782539.4793894,
+        "source": "Polymarket",
+        "timestamp": 1774915200,
+        "volume_usd": 587413232.4143583
+      },
+      {
+        "market_count": 162848,
+        "open_interest_usd": 487198052.94000006,
+        "source": "Kalshi",
+        "timestamp": 1774915200,
+        "volume_usd": 386400804
+      },
+      {
+        "market_count": 439039,
+        "open_interest_usd": 1261116286.6083913,
+        "source": "Polymarket",
+        "timestamp": 1775001600,
+        "volume_usd": 290520439.19171906
+      },
+      {
+        "market_count": 162630,
+        "open_interest_usd": 480357549.78,
+        "source": "Kalshi",
+        "timestamp": 1775001600,
+        "volume_usd": 384140049
+      },
+      {
+        "market_count": 444772,
+        "open_interest_usd": 1268649294.0378642,
+        "source": "Polymarket",
+        "timestamp": 1775088000,
+        "volume_usd": 268376749.85317406
+      },
+      {
+        "market_count": 135152,
+        "open_interest_usd": 520299543.53,
+        "source": "Kalshi",
+        "timestamp": 1775088000,
+        "volume_usd": 372975938
+      },
+      {
+        "market_count": 451309,
+        "open_interest_usd": 1275041200.6152616,
+        "source": "Polymarket",
+        "timestamp": 1775174400,
+        "volume_usd": 250552883.73398313
+      },
+      {
+        "market_count": 171610,
+        "open_interest_usd": 534436831.69000006,
+        "source": "Kalshi",
+        "timestamp": 1775174400,
+        "volume_usd": 427493298
+      },
+      {
+        "market_count": 458289,
+        "open_interest_usd": 1305363889.9210963,
+        "source": "Polymarket",
+        "timestamp": 1775260800,
+        "volume_usd": 259397739.46325508
+      },
+      {
+        "market_count": 181452,
+        "open_interest_usd": 506299034.55999994,
+        "source": "Kalshi",
+        "timestamp": 1775260800,
+        "volume_usd": 486886838
+      },
+      {
+        "market_count": 170831,
+        "open_interest_usd": 487212297.03,
+        "source": "Kalshi",
+        "timestamp": 1775347200,
+        "volume_usd": 511872404
+      },
+      {
+        "market_count": 464147,
+        "open_interest_usd": 1273919240.937058,
+        "source": "Polymarket",
+        "timestamp": 1775347200,
+        "volume_usd": 305307987.93438613
+      },
+      {
+        "market_count": 468130,
+        "open_interest_usd": 1284182445.0595195,
+        "source": "Polymarket",
+        "timestamp": 1775433600,
+        "volume_usd": 298483857.27834517
+      },
+      {
+        "market_count": 140225,
+        "open_interest_usd": 486572649.75,
+        "source": "Kalshi",
+        "timestamp": 1775433600,
+        "volume_usd": 372830688
+      },
+      {
+        "market_count": 473900,
+        "open_interest_usd": 1313830989.7617383,
+        "source": "Polymarket",
+        "timestamp": 1775520000,
+        "volume_usd": 394156708.5213141
+      },
+      {
+        "market_count": 183829,
+        "open_interest_usd": 551776530.75,
+        "source": "Kalshi",
+        "timestamp": 1775520000,
+        "volume_usd": 500527499
+      },
+      {
+        "market_count": 199310,
+        "open_interest_usd": 615303660.2,
+        "source": "Kalshi",
+        "timestamp": 1775606400,
+        "volume_usd": 535191443
+      },
+      {
+        "market_count": 478835,
+        "open_interest_usd": 1379376023.2635825,
+        "source": "Polymarket",
+        "timestamp": 1775606400,
+        "volume_usd": 442774235.56678706
+      }
+    ],
+    "momentum_markets": [
+      {
+        "category": "Politics",
+        "condition_id": "0x6d0e09d0f04572d9b1adad84703458b0297bc5603b69dccbde93147ee4443246",
+        "latest_price": 0.999,
+        "oi_change_7d": -2206137.0889630057,
+        "price_change_7d": 0.14900000000000002,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "US forces enter Iran by April 30?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Military Conflicts",
+        "volume_7d": 249315703.58350205,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 2443847.9857199998,
+        "whale_flow_net_7d": 168440660.95012403
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x4c5701bcde0b8fb7d7f48c8e9d20245a6caa58c61a77f981fad98f2bfa0b1bc7",
+        "latest_price": 0.999,
+        "oi_change_7d": 57838321.519042,
+        "price_change_7d": 0.987,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "US x Iran ceasefire by April 7?",
+        "smart_money_direction": "BULLISH",
+        "smart_wallets_involved": 50,
+        "subcategory": "Military Conflicts",
+        "volume_7d": 144078597.370358,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 44817594.96645702,
+        "whale_flow_net_7d": 87163045.03740305
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0xe4b9a52d2bb336ff9d84799b70e72e8e5f4507df881af60f3f4daeb9f541a80e",
+        "latest_price": 0.999,
+        "oi_change_7d": -2150733.370926,
+        "price_change_7d": 0.08899999999999997,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "US forces enter Iran by December 31?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Military Conflicts",
+        "volume_7d": 13225345.156785998,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 49950,
+        "whale_flow_net_7d": 7024160.904488002
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x773abaa5fe55e5cde51a261f444b7921652a4e059ead6b3be9fe56499c2d4609",
+        "latest_price": 0.999,
+        "oi_change_7d": -2818075.70927,
+        "price_change_7d": 0.9390000000000001,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "US x Iran ceasefire by April 15?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Military Conflicts",
+        "volume_7d": 13103819.629606,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 3793810.4328219984
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x1c16b60c7e7ddb559964cd64c8f7d5c33adc83c3fbd0fd124587a8adc1ded8dd",
+        "latest_price": 0.999,
+        "oi_change_7d": 766629.2042200007,
+        "price_change_7d": 0.469,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "Will Paris Saint-Germain FC win on 2026-04-08?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Soccer",
+        "volume_7d": 12935529.173925009,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 475814.21949,
+        "whale_flow_net_7d": 7987232.465837
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x8183a221622f2d5d2b46da86c80d55a61f43d35829589e03c1efae9d072638c5",
+        "latest_price": 0.5,
+        "oi_change_7d": 1791740.307771,
+        "price_change_7d": 0.48799999988,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "Iran x Israel/US conflict ends by April 7?",
+        "smart_money_direction": "BULLISH",
+        "smart_wallets_involved": 20,
+        "subcategory": "Military Conflicts",
+        "volume_7d": 9964352.391193,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 230748.55046000003,
+        "whale_flow_net_7d": 2510807.0227090004
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x6aa39e488afd5dd8e1cd995258c28c3c485dbc4d467d4eb4d94fc6f30e172833",
+        "latest_price": 0.001,
+        "oi_change_7d": -1604582.9222330004,
+        "price_change_7d": -0.001,
+        "price_momentum": "NEUTRAL",
+        "question": "Will Trump talk to Xi Jinping in March?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Diplomacy",
+        "volume_7d": 9142696.206018,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 7078522.5816520015
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x80059ff4e694f878c0498f6f3a067ee7ca62dc2fc46251a4287b58355ce47bc5",
+        "latest_price": 0.999,
+        "oi_change_7d": -3292126.99553,
+        "price_change_7d": 0.8090001216000438,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "US x Iran ceasefire by April 30?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Military Conflicts",
+        "volume_7d": 8183949.664129,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 2328280.598627
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0xe443dab97ad8b7f58558cc7a6a3932d156031e962a451e0461e9a4578d78fe84",
+        "latest_price": 0.029,
+        "oi_change_7d": 1835283.886238,
+        "price_change_7d": -0.006000000000000002,
+        "price_momentum": "NEUTRAL",
+        "question": "Will the Iranian regime fall by April 30?",
+        "smart_money_direction": "BEARISH",
+        "smart_wallets_involved": 31,
+        "subcategory": "International Elections",
+        "volume_7d": 7901866.990412001,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 344914.90726,
+        "whale_flow_net_7d": 2610137.584359001
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x3ca7c5f72d4a52a88d1f5f5fec3bb83f2baae505884d4a98e18c524f808e6dbe",
+        "latest_price": 0.001,
+        "oi_change_7d": 13941.056543000013,
+        "price_change_7d": -0.269,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Connecticut Huskies vs. Michigan Wolverines",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Basketball",
+        "volume_7d": 7283856.191281998,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 3840106.5032879994
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x05eec7f96b04c81dfee7ebf538409e0e6c7be08b7c6bd69bad3b02b6f160dfe0",
+        "latest_price": 0.001,
+        "oi_change_7d": -73155.044858,
+        "price_change_7d": -0.479,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Arizona Wildcats vs. Michigan Wolverines",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Basketball",
+        "volume_7d": 7168343.581357036,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 4585523.907562002
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x4bbcf615ffcb7f5cc8c23db66400033b879450e6820ea8c4ab3007acdaa96897",
+        "latest_price": 0.999,
+        "oi_change_7d": -17706.984232998995,
+        "price_change_7d": 0.5390001150000288,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "Will FC Barcelona win on 2026-04-04?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Soccer",
+        "volume_7d": 6427348.828103008,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 4878126.894029
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x035d590313aa6738b3a69a8f89f6cfad83049d3a29504b724bf42e450a33ca1f",
+        "latest_price": 0.001,
+        "oi_change_7d": 48046.56100699997,
+        "price_change_7d": -0.2389999639999964,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Trail Blazers vs. Nuggets",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Basketball",
+        "volume_7d": 6394614.026220999,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 2162294.6088269996
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x5f5c8d8fa28d77b5552562f32393ac199fb6b92ed1c1e2239e29c09f7e4eb3f5",
+        "latest_price": 0.999,
+        "oi_change_7d": -88774.75873800018,
+        "price_change_7d": 0.5489999999999999,
+        "price_momentum": "CONFIRMING_UP",
+        "question": "Will FC Bayern München win on 2026-04-07?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Soccer",
+        "volume_7d": 6217141.662347988,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 3673533.7846060013
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x77a7cc7408dabf98101563ef64f36125284b172e0557d4207a12cd098471d6b6",
+        "latest_price": 0.001,
+        "oi_change_7d": 8913.428845999906,
+        "price_change_7d": -0.279,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Hornets vs. Celtics",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Basketball",
+        "volume_7d": 5790111.495049002,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 3914851.2697790004
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x24f38479176af2d71f64161d53bde777aef49ef1c03066510174d43a8d2a43fe",
+        "latest_price": 0.014,
+        "oi_change_7d": 2281716.049769,
+        "price_change_7d": 0.003000000000000001,
+        "price_momentum": "NEUTRAL",
+        "question": "Trump out as President by April 30?",
+        "smart_money_direction": "BEARISH",
+        "smart_wallets_involved": 5,
+        "subcategory": "USA Elections",
+        "volume_7d": 5358189.308991001,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 75330.741533,
+        "whale_flow_net_7d": 1176624.3074359996
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0xb6b3d7a2037b3faa7e1306d741840d453432902d73cc9a146a035e40271eae73",
+        "latest_price": 0.148,
+        "oi_change_7d": 7869.339523999997,
+        "price_change_7d": -0.03,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+        "smart_money_direction": "BEARISH",
+        "smart_wallets_involved": 6,
+        "subcategory": "Basketball",
+        "volume_7d": 5143666.973838001,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 0
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x707f4f2f8ecf9658aa9c9f4c085b62816b2367357dca104aaa34b11beff985e3",
+        "latest_price": 0.001,
+        "oi_change_7d": -3255.972940000436,
+        "price_change_7d": -0.549,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Spurs vs. Nuggets",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Basketball",
+        "volume_7d": 5091874.1646869965,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 1909298.039436
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x262fc2df7a59ceffb3b249537ecbb68d310e4760011338eeaf4bc15b36b3ffad",
+        "latest_price": 0.001,
+        "oi_change_7d": 190655.50973000005,
+        "price_change_7d": -0.239,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Will Liverpool FC win on 2026-04-08?",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Soccer",
+        "volume_7d": 5024499.397996009,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 3344403.1254150006
+      },
+      {
+        "category": "Sports",
+        "condition_id": "0x22259c082aa585e5c32b1091cde144e8754ef45e6961fb909cf32ba8573cbde5",
+        "latest_price": 0.001,
+        "oi_change_7d": 1418.8399679999402,
+        "price_change_7d": -0.649,
+        "price_momentum": "CONFIRMING_DOWN",
+        "question": "Pistons vs. Magic",
+        "smart_money_direction": "",
+        "smart_wallets_involved": 0,
+        "subcategory": "Basketball",
+        "volume_7d": 5021876.308754002,
+        "volume_direction": "INCREASING",
+        "whale_flow_net_1d": 0,
+        "whale_flow_net_7d": 1906255.6129569996
+      }
+    ],
+    "momentum_summary": {
+      "confirming_down": 8042,
+      "confirming_up": 5559,
+      "diverging_down": 760,
+      "diverging_up": 700,
+      "neutral": 779191,
+      "total_active": 794252,
+      "volume_decreasing": 168329,
+      "volume_increasing": 59425
+    },
+    "top_markets": [
+      {
+        "category": "Politics",
+        "condition_id": "0xc6485bb7ea46d7bb89beb9c91e7572ecfc72a6273789496f78bc5e989e4d1638",
+        "days_to_resolution": 0,
+        "market_link": "https://polymarket.com/event/presidential-election-winner-2024",
+        "open_interest_usd": 71146367.731124,
+        "platform": "polymarket",
+        "question": "Will Kamala Harris win the 2024 US Presidential Election?",
+        "status": "active",
+        "subcategory": "USA Elections",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "Politics",
+        "days_to_resolution": 0,
+        "market_link": "https://kalshi.com/markets/KXFEDCHAIRNOM-29-JS",
+        "market_ticker": "KXFEDCHAIRNOM-29-JS",
+        "matched_counterpart": "0x46d40e851b24d9b0af4bc1942ccd86439cae82a9011767da14950df0ad997adf",
+        "open_interest_usd": 66065170,
+        "platform": "kalshi",
+        "question": "Will Trump next nominate Judy Shelton as Fed Chair?",
+        "status": "active",
+        "subcategory": "USA Executive Branch",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x4c5701bcde0b8fb7d7f48c8e9d20245a6caa58c61a77f981fad98f2bfa0b1bc7",
+        "days_to_resolution": 0,
+        "latest_price": 0.014,
+        "market_link": "https://polymarket.com/event/us-x-iran-ceasefire-by",
+        "open_interest_usd": 60928540.674846,
+        "platform": "polymarket",
+        "question": "US x Iran ceasefire by April 7?",
+        "smart_money_direction": "BULLISH",
+        "status": "active",
+        "subcategory": "Military Conflicts",
+        "trade_count_7d": 46876,
+        "volume_1d": 62196760.20178304,
+        "volume_30d": 153435588.028897,
+        "volume_7d": 144078597.370358
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x95534417f10863c4b7e4bd71c070fdc6c0b0c25b6fd10f87a3142f66dc00e835",
+        "days_to_resolution": 0,
+        "market_link": "https://polymarket.com/event/people-power-party-ppp-presidential-candidate",
+        "open_interest_usd": 60486105.691575,
+        "platform": "polymarket",
+        "question": "Will Han Duck-soo be the People's Power Party candidate for president?",
+        "status": "active",
+        "subcategory": "USA Elections",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0xe402f72914cc259e93379dd581f5df53f959601fccbd69b1c55dcdfa6d2b080c",
+        "days_to_resolution": 0,
+        "market_link": "https://polymarket.com/event/how-much-gold-is-there-in-fort-knox",
+        "open_interest_usd": 50561335.152804,
+        "platform": "polymarket",
+        "question": "No Data Reported in 2025?",
+        "status": "active",
+        "subcategory": "USA Executive Branch",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "STEM",
+        "condition_id": "0xa52c82dca887d2c875ba3ad43367875f6352b52735d61dab5d71c42a6cc7e595",
+        "days_to_resolution": 0,
+        "market_link": "https://polymarket.com/event/highest-temperature-in-london-on-march-17",
+        "open_interest_usd": 50044790.916002,
+        "platform": "polymarket",
+        "question": "Will the highest temperature in London be 53°F or higher on March 17?",
+        "status": "active",
+        "subcategory": "Climate and Weather",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0x7ad403c3508f8e3912940fd1a913f227591145ca0614074208e0b962d5fcc422",
+        "days_to_resolution": 942,
+        "latest_price": 0.177,
+        "market_link": "https://polymarket.com/event/presidential-election-winner-2028",
+        "open_interest_usd": 27330758.622742,
+        "platform": "polymarket",
+        "question": "Will JD Vance win the 2028 US Presidential Election?",
+        "smart_money_direction": "BULLISH",
+        "status": "active",
+        "subcategory": "USA Elections",
+        "trade_count_7d": 3535,
+        "volume_1d": 46059.37626099999,
+        "volume_30d": 2603899.2049559993,
+        "volume_7d": 394975.70114599995
+      },
+      {
+        "category": "Economics",
+        "condition_id": "0xd6e0317cee513cc3afdc1954ac576b241ad2287536e88b17fd3a77b4c3d0976e",
+        "days_to_resolution": 0,
+        "market_link": "https://polymarket.com/event/fed-decision-in-october",
+        "open_interest_usd": 23823012.892378,
+        "platform": "polymarket",
+        "question": "Fed increases interest rates by 25+ bps after October 2025 meeting?",
+        "status": "active",
+        "subcategory": "Interest Rates",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "Politics",
+        "condition_id": "0xc3496089277c2d5d9951ad652461b1b9cc9778ebbf4c82b661d23d7aa958595a",
+        "days_to_resolution": 265,
+        "market_link": "https://polymarket.com/event/next-country-us-strikes-785",
+        "open_interest_usd": 16029622.061431,
+        "platform": "polymarket",
+        "question": "Will the US not strike another country before 2027?",
+        "status": "active",
+        "subcategory": "Military Conflicts",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      },
+      {
+        "category": "Politics",
+        "days_to_resolution": 0,
+        "market_link": "https://kalshi.com/markets/KXFEDCHAIRNOM-29-KW",
+        "market_ticker": "KXFEDCHAIRNOM-29-KW",
+        "matched_counterpart": "0x61b66d02793b4a68ab0cc25be60d65f517fe18c7d654041281bb130341244fcc",
+        "open_interest_usd": 15861361,
+        "platform": "kalshi",
+        "question": "Will Trump next nominate Kevin Warsh as Fed Chair?",
+        "status": "active",
+        "subcategory": "USA Executive Branch",
+        "trade_count_7d": 0,
+        "volume_1d": 0,
+        "volume_30d": 0,
+        "volume_7d": 0
+      }
+    ]
+  },
+  "meta": {
+    "cached": false,
+    "credits_used": 4
+  }
+}

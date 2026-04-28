@@ -8,7 +8,6 @@ import {
   LayoutDashboard,
   Target,
   TrendingUp,
-  UserCheck,
   Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -19,7 +18,6 @@ const NAV_ITEMS = [
   { href: "/bots", label: "Bots", icon: Bot },
   { href: "/metrics", label: "Metrics", icon: TrendingUp },
   { href: "/portfolio", label: "Traders", icon: Users },
-  { href: "/retention", label: "Retention", icon: UserCheck },
 ];
 
 export function SidebarNav() {
@@ -67,7 +65,7 @@ export function SidebarNav() {
             Polymarket + Kalshi
           </span>
         </div>
-        <div className="text-xs text-pm-fg-faint/60">Data via ClickHouse</div>
+        <div className="text-xs text-pm-fg-faint/60">Data via Surf API</div>
       </div>
     </aside>
   );

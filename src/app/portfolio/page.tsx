@@ -1,15 +1,15 @@
 export const dynamic = "force-dynamic";
 
-import { getWhaleTrades } from "@/lib/api/clickhouse";
+import { getWhaleTrades } from "@/lib/queries/whales";
 import { WhaleTrackerClient } from "./whale-tracker-client";
 
 export default async function WhaleTrackerPage() {
-  // Only fetch the default tab (whale trades) on SSR — other tabs load on demand
-  const whaleTrades = await getWhaleTrades(7, 50);
+  let initialWhales: Awaited<ReturnType<typeof getWhaleTrades>> = [];
+  try {
+    initialWhales = await getWhaleTrades(50);
+  } catch (err) {
+    console.error("Failed to load whale trades:", err);
+  }
 
-  return (
-    <WhaleTrackerClient
-      initialWhales={whaleTrades}
-    />
-  );
+  return <WhaleTrackerClient initialWhales={initialWhales} />;
 }

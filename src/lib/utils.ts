@@ -1,7 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import type { UnifiedMarket } from "./api/types";
-import type { CHMarketRow } from "./api/clickhouse";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -55,22 +53,3 @@ export function shortenAddress(addr: string): string {
   return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
 }
 
-export function unifyFromClickHouse(m: CHMarketRow): UnifiedMarket {
-  const platform = m.source === "Kalshi" ? "kalshi" : "polymarket";
-  const marketId = m.market_id || "";
-  return {
-    id: marketId,
-    platform,
-    question: m.title,
-    status: m.status,
-    volume: m.notional_volume_usd,
-    openInterest: m.open_interest_usd,
-    lastPrice: 0, // CH daily table has no price — detail pages use Hermod
-    endTime: 0,
-    category: m.category,
-    link:
-      platform === "kalshi"
-        ? `https://kalshi.com/markets/${marketId.toLowerCase()}`
-        : `https://polymarket.com/event/${marketId}`,
-  };
-}

@@ -1,28 +1,13 @@
-.PHONY: collect collect-surf collect-detailed collect-legacy process data dev build
+.PHONY: collect dev build install
 
-# Collect data using surf CLI (fast)
+# Refresh static dashboard data via the Surf CLI.
+# Requires `surf` installed and `surf login` completed.
+# See https://docs.asksurf.ai for installation.
 collect:
 	./scripts/collect_surf.sh
 
-# Collect detailed data using surf CLI (Python)
-collect-surf:
-	cd scripts && python collect_surf.py
-
-# Collect legacy data using internal API
-collect-legacy:
-	surf refresh
-	cd scripts && uv run python collect.py
-
-# Process raw data into dashboard-ready JSON
-process:
-	cd scripts && uv run python process.py
-
-# Copy processed data to frontend public dir
-copy:
-	cp -r data/processed/* public/data/
-
-# Full data pipeline: collect → process → copy
-data: collect process copy
+install:
+	pnpm install
 
 # Start dev server
 dev:

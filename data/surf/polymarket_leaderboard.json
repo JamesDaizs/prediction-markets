@@ -1,0 +1,511 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataResponseLeaderboardItem.json",
+  "data": [
+    {
+      "address": "0xd7a308889d620b25f92fc7d2e9bf1c21d5cebf3c",
+      "pnl": 252578760.13982502,
+      "positions": 529,
+      "positions_lost": 259,
+      "positions_open": 0,
+      "positions_won": 261,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x0b007814d459a8ac1f567b231b60ed389dc8369d",
+      "pnl": 223109402.67649093,
+      "positions": 538,
+      "positions_lost": 266,
+      "positions_open": 0,
+      "positions_won": 265,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x90f8b0fee21e920e81d1ca4da6d215152f576537",
+      "pnl": 151193697.43412796,
+      "positions": 17,
+      "positions_lost": 8,
+      "positions_open": 0,
+      "positions_won": 9,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xb9eb019d3d00b8d32ef1f2ddb697a7d1cbc7ab05",
+      "pnl": 94766328.5083174,
+      "positions": 48,
+      "positions_lost": 21,
+      "positions_open": 1,
+      "positions_won": 20,
+      "trade_count": 2,
+      "volume": 238095.238094
+    },
+    {
+      "address": "0xf1302aafc43aa3a69bcd8058fc7a0259dac246ab",
+      "pnl": 92746364.377334,
+      "positions": 1050,
+      "positions_lost": 543,
+      "positions_open": 0,
+      "positions_won": 490,
+      "trade_count": 56,
+      "volume": 168370.444096
+    },
+    {
+      "address": "0xba5e052730edceb1258b1ca575f824eb975c6598",
+      "pnl": 63543065.07749001,
+      "positions": 320,
+      "positions_lost": 155,
+      "positions_open": 0,
+      "positions_won": 153,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x58a2af6c08b141fdb098aa95be67b59fdd55ee81",
+      "pnl": 59994026.10535402,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x730ae359e9441f836022f7ec14b941fdc942a0fe",
+      "pnl": 56127048.34458999,
+      "positions": 196,
+      "positions_lost": 98,
+      "positions_open": 0,
+      "positions_won": 89,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x3d8a89a20aa73fba0f30d080e8120de9f9555724",
+      "pnl": 55902094.701184064,
+      "positions": 415,
+      "positions_lost": 170,
+      "positions_open": 42,
+      "positions_won": 195,
+      "trade_count": 758,
+      "volume": 266422.40935000003
+    },
+    {
+      "address": "0x27e8e5024af5ae2406ec5c49c33cb34677cd3872",
+      "pnl": 48919408.241794005,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xfcbe281f11f195423fdf458582e1215790b7aa8b",
+      "pnl": 42348979.86822501,
+      "positions": 2418,
+      "positions_lost": 1011,
+      "positions_open": 0,
+      "positions_won": 1006,
+      "trade_count": 2,
+      "volume": 0.9308270000000001
+    },
+    {
+      "address": "0xfef5dfd33d40dbc67cf6b0363986eec4d7deafb5",
+      "pnl": 35312019.972224005,
+      "positions": 309,
+      "positions_lost": 139,
+      "positions_open": 0,
+      "positions_won": 126,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x1a40fdb67928462b7f1bfc4501957d144b5705e5",
+      "pnl": 28316925.11751501,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x31c6e128715b66a9996bc30acd26c50e5ad832d3",
+      "pnl": 27114248.418268014,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x0d18e30e252008d83f51dae00d36873ddd9e24a6",
+      "pnl": 23586658.248175,
+      "positions": 12951,
+      "positions_lost": 6370,
+      "positions_open": 0,
+      "positions_won": 6491,
+      "trade_count": 65704,
+      "volume": 10480591.517315004
+    },
+    {
+      "address": "0x7789806c754eb0af4c3abeb026c218b4ba78f823",
+      "pnl": 22053824.449643,
+      "positions": 7688,
+      "positions_lost": 3927,
+      "positions_open": 0,
+      "positions_won": 3715,
+      "trade_count": 182491,
+      "volume": 102721024.87096
+    },
+    {
+      "address": "0x56687bf447db6ffa42ffe2204a05edaa20f55839",
+      "pnl": 22029972.635797005,
+      "positions": 29,
+      "positions_lost": 14,
+      "positions_open": 0,
+      "positions_won": 14,
+      "trade_count": 16002,
+      "volume": 43013258.515682004
+    },
+    {
+      "address": "0x384782a6dd21d7e98c21f018880ac598c9c4cec3",
+      "pnl": 21634839.032204,
+      "positions": 433,
+      "positions_lost": 199,
+      "positions_open": 0,
+      "positions_won": 183,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xbdbb8a4c3d67ce25252a839529edccfb4cf451cb",
+      "pnl": 20980577.217490993,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xeb4f33145308aa42b657844f8bb2ce4f56c06f5e",
+      "pnl": 18820354.480606,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xe222b7bc2466f2c51b8ed7d11ebc280f0f0da039",
+      "pnl": 17702217.94333401,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x4cc3522b689a6bf1fb4a2444c523e7776db47552",
+      "pnl": 17346115.241039187,
+      "positions": 8282,
+      "positions_lost": 4075,
+      "positions_open": 3,
+      "positions_won": 4103,
+      "trade_count": 139235,
+      "volume": 96266813.33885998
+    },
+    {
+      "address": "0x1f2dd6d473f3e824cd2f8a89d9c69fb96f6ad0cf",
+      "pnl": 16578002.750449019,
+      "positions": 76,
+      "positions_lost": 37,
+      "positions_open": 0,
+      "positions_won": 38,
+      "trade_count": 23524,
+      "volume": 76611316.90515402
+    },
+    {
+      "address": "0x64310c79be3502dd17e88d9ca7df781700a66f1f",
+      "pnl": 16535884.261525996,
+      "positions": 507,
+      "positions_lost": 242,
+      "positions_open": 0,
+      "positions_won": 231,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x90f8a49a744d62ea2d91f8b5bcc45ca0710534cb",
+      "pnl": 16428916.711852998,
+      "positions": 291,
+      "positions_lost": 129,
+      "positions_open": 0,
+      "positions_won": 118,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xe25d0102fb28f85d5cabf46bf49eac80c6857a8f",
+      "pnl": 16391077.031199,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xd3573ec4614ce774884eb83c80e09f9bce3cbd44",
+      "pnl": 16356739.411531007,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x9d84ce0306f8551e02efef1680475fc0f1dc1344",
+      "pnl": 15781510.402894877,
+      "positions": 19457,
+      "positions_lost": 9443,
+      "positions_open": 786,
+      "positions_won": 9203,
+      "trade_count": 578193,
+      "volume": 471663545.9664909
+    },
+    {
+      "address": "0x0e8d61f16a2373931ffbfc2993f046e33286dfcc",
+      "pnl": 15748983.92361393,
+      "positions": 1075,
+      "positions_lost": 492,
+      "positions_open": 1,
+      "positions_won": 567,
+      "trade_count": 2137,
+      "volume": 4286185.737852001
+    },
+    {
+      "address": "0x8b5a7da2fdf239b51b9c68a2a1a35bb156d200f2",
+      "pnl": 14387335.038550867,
+      "positions": 397,
+      "positions_lost": 219,
+      "positions_open": 10,
+      "positions_won": 164,
+      "trade_count": 13563,
+      "volume": 20841864.743454
+    },
+    {
+      "address": "0xeb5302f05077c48e7b3b2c68c08f0bb63d80216f",
+      "pnl": 14271384.867238002,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x82802ed429678419181c8251e09f7217a82d4422",
+      "pnl": 13968279.814935999,
+      "positions": 48,
+      "positions_lost": 29,
+      "positions_open": 0,
+      "positions_won": 18,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x7cb1334a91ce81a01b3e51eff024cc70d1a43e95",
+      "pnl": 13561861.217241,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xc125fb60a0b6cd0b3274d74f269a2c4b252f4542",
+      "pnl": 13027390.386220003,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x62845c73b2152019b9dede902f3dd53d933e8da3",
+      "pnl": 12971120.373737,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x9b5f2e00de969eadc42beeda30718707904f9683",
+      "pnl": 12276878.222577998,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x4f7ac30445cf36dc0d7f116f99ac4488d7799909",
+      "pnl": 12186648.551629001,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xc846784405eb9a804b879f326f7bc7e00e536042",
+      "pnl": 12170408.480639013,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x6c3aae17140c5e3cde62380daaa323e38575c459",
+      "pnl": 11894326.508731002,
+      "positions": 519,
+      "positions_lost": 244,
+      "positions_open": 0,
+      "positions_won": 232,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x6a72f61820b26b1fe4d956e17b6dc2a1ea3033ee",
+      "pnl": 11687796.70285458,
+      "positions": 3787,
+      "positions_lost": 1796,
+      "positions_open": 18,
+      "positions_won": 1972,
+      "trade_count": 155800,
+      "volume": 279646978.785192
+    },
+    {
+      "address": "0x560bec8a0e62a8f1d4ae80c7b76786f2b5fcaf09",
+      "pnl": 11265431.435236998,
+      "positions": 1989,
+      "positions_lost": 945,
+      "positions_open": 0,
+      "positions_won": 1002,
+      "trade_count": 193,
+      "volume": 267730.739639
+    },
+    {
+      "address": "0x320208ddb118e306a9c479cc507ac827c0bf9f82",
+      "pnl": 11131979.922585998,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xf08907ff2e51a398d2ef23eb0e9dce76aaebe3a8",
+      "pnl": 11059561.497516003,
+      "positions": 26,
+      "positions_lost": 13,
+      "positions_open": 0,
+      "positions_won": 13,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xa2b5d5626c90d97800a693ddd4682c5115faa1b1",
+      "pnl": 11044027.926818997,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xcaab1ed5a6cc876e3e0e365f403aebbf0f51cad3",
+      "pnl": 10452056.603206001,
+      "positions": 64,
+      "positions_lost": 32,
+      "positions_open": 0,
+      "positions_won": 30,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x8ad5a4a650183f9d214a09852eab0a100b93da26",
+      "pnl": 10423286.159519996,
+      "positions": 916,
+      "positions_lost": 446,
+      "positions_open": 0,
+      "positions_won": 438,
+      "trade_count": 78,
+      "volume": 3481.394766
+    },
+    {
+      "address": "0xe1fa6dfaa3fbe55f104da8ed6dd30f5fb817dd0f",
+      "pnl": 10255663.806861997,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0x8a3a6c99339759f5357681e224ea20364e8006e9",
+      "pnl": 10141032.755311001,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xadf12d98eaa5346a4e6a8659091d4c2e165594eb",
+      "pnl": 9971644.996600997,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    },
+    {
+      "address": "0xecbebe1f9d9183ce1c77fe886f1bd0b84618f68a",
+      "pnl": 9694567.4135,
+      "positions": 2,
+      "positions_lost": 1,
+      "positions_open": 0,
+      "positions_won": 1,
+      "trade_count": 0,
+      "volume": 0
+    }
+  ],
+  "meta": {
+    "cached": false,
+    "credits_used": 4,
+    "limit": 50,
+    "offset": 0
+  }
+}

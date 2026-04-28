@@ -1,7 +1,8 @@
 "use client";
 
-import type { Granularity } from "@/lib/api/clickhouse";
 import { cn } from "@/lib/utils";
+
+export type Granularity = "weekly" | "monthly";
 
 const OPTIONS: { label: string; value: Granularity }[] = [
   { label: "Weekly", value: "weekly" },

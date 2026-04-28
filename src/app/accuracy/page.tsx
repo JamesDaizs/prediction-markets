@@ -9,8 +9,8 @@ async function loadAccuracyData(): Promise<AccuracyData | null> {
   try {
     const filePath = path.join(
       process.cwd(),
+      "public",
       "data",
-      "processed",
       "accuracy_by_category.json"
     );
     const raw = await fs.readFile(filePath, "utf-8");
@@ -37,11 +37,11 @@ export default async function AccuracyPage() {
         </h1>
         <div className="flex flex-col items-center justify-center rounded-xl border border-pm-border-base bg-pm-bg-card px-6 py-12 text-center">
           <p className="text-sm text-pm-fg-muted">
-            No accuracy data available. Run{" "}
+            No accuracy data available. Drop a generated{" "}
             <code className="rounded bg-pm-bg-elevated px-2 py-0.5 text-xs text-pm-brand">
-              cd scripts && uv run python accuracy_queries.py
+              public/data/accuracy_by_category.json
             </code>{" "}
-            to generate data.
+            to populate this view.
           </p>
         </div>
       </div>
@@ -188,8 +188,7 @@ export default async function AccuracyPage() {
       {/* Footer */}
       <div className="flex items-center justify-between text-xs text-pm-fg-faint">
         <p>
-          Data sourced from ClickHouse (Polymarket on-chain + Kalshi market
-          reports). Inspired by{" "}
+          Inspired by{" "}
           <span className="text-pm-fg-muted">@PredictParity</span> and{" "}
           <span className="text-pm-fg-muted">Brier.fyi</span>.
         </p>

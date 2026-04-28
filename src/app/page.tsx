@@ -94,7 +94,11 @@ export default async function DashboardPage() {
   const totalMarkets = (poly?.market_count ?? 0) + (kalshi?.market_count ?? 0);
 
   // Category data for display
-  const categoryData = Array.isArray(categoryBreakdown) ? categoryBreakdown.sort((a: any, b: any) => b.total_volume - a.total_volume) : [];
+  const categoryData: { category: string; market_count: number; total_volume: number }[] =
+    Array.isArray(categoryBreakdown)
+      ? (categoryBreakdown as { category: string; market_count: number; total_volume: number }[])
+          .sort((a, b) => b.total_volume - a.total_volume)
+      : [];
   const topCategory = categoryData[0];
 
   return (

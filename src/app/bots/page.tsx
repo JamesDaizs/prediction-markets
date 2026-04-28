@@ -29,11 +29,11 @@ export default async function BotsPage() {
         <h1 className="text-2xl font-bold text-pm-fg-base">Bot Analysis</h1>
         <div className="flex flex-col items-center justify-center rounded-xl border border-pm-border-base bg-pm-bg-card px-6 py-12 text-center">
           <p className="text-sm text-pm-fg-muted">
-            No bot analysis data available. Run{" "}
+            No bot analysis data available. Drop a generated{" "}
             <code className="rounded bg-pm-bg-elevated px-2 py-0.5 text-xs text-pm-brand">
-              npx tsx scripts/generate-bot-data.ts
+              public/data/bot_analysis.json
             </code>{" "}
-            to generate data.
+            to populate this view.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import {
   BarChart,
   Bar,
@@ -13,33 +13,56 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { Loader2 } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { Card } from "@/components/ui/card";
-import { PeriodToggle } from "@/components/period-toggle";
 import { formatNumber, formatCurrency } from "@/lib/utils";
-import type {
-  CHPlatformPeriodRow,
-  CHPlatformCategoryRow,
-  Granularity,
-} from "@/lib/api/clickhouse";
-
-interface Props {
-  initialWallets: CHPlatformPeriodRow[];
-  initialTransactions: CHPlatformPeriodRow[];
-  initialVolumeByCategory: CHPlatformCategoryRow[];
-  initialNewMarkets: CHPlatformPeriodRow[];
-  initialOI: CHPlatformPeriodRow[];
-}
 
 const POLY_COLOR = "#8b5cf6";
 const KALSHI_COLOR = "#3b82f6";
 
-function formatPeriodLabel(period: string, granularity: Granularity): string {
+export interface PeriodRow {
+  period: string;
+  polymarket: number;
+  kalshi: number;
+}
+
+export interface CategoryRow {
+  period: string;
+  category: string;
+  volume: number;
+  platform: string;
+}
+
+export interface TopMarket {
+  question: string;
+  platform: string;
+  volume_7d: number;
+  open_interest_usd: number;
+  category: string;
+}
+
+export interface MomentumSummary {
+  confirming_up: number;
+  confirming_down: number;
+  diverging_up: number;
+  diverging_down: number;
+  neutral: number;
+  total_active: number;
+  volume_increasing: number;
+  volume_decreasing: number;
+}
+
+interface Props {
+  initialTransactions: PeriodRow[];
+  initialOI: PeriodRow[];
+  initialNewMarkets: PeriodRow[];
+  initialVolumeByCategory: CategoryRow[];
+  topMarkets: TopMarket[];
+  momentumSummary: MomentumSummary | null;
+}
+
+function formatPeriodLabel(period: string): string {
   const d = new Date(period + "T00:00:00");
-  if (granularity === "monthly") {
-    return d.toLocaleDateString("en-US", { month: "short", year: "2-digit" });
-  }
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
@@ -50,7 +73,7 @@ function compactNum(v: number): string {
   return v.toLocaleString();
 }
 
-function calcTrend(data: CHPlatformPeriodRow[]): number {
+function calcTrend(data: PeriodRow[]): number {
   if (data.length < 2) return 0;
   const prev = data[data.length - 2];
   const curr = data[data.length - 1];
@@ -61,72 +84,25 @@ function calcTrend(data: CHPlatformPeriodRow[]): number {
 }
 
 export function MetricsClient({
-  initialWallets,
   initialTransactions,
-  initialVolumeByCategory,
-  initialNewMarkets,
   initialOI,
+  initialNewMarkets,
+  topMarkets,
+  momentumSummary,
 }: Props) {
-  const [granularity, setGranularity] = useState<Granularity>("weekly");
-  const [wallets, setWallets] = useState(initialWallets);
-  const [transactions, setTransactions] = useState(initialTransactions);
-  const [volumeByCategory, setVolumeByCategory] = useState(initialVolumeByCategory);
-  const [newMarkets, setNewMarkets] = useState(initialNewMarkets);
-  const [oi, setOI] = useState(initialOI);
-  const [loading, setLoading] = useState(false);
+  const transactions = initialTransactions;
+  const oi = initialOI;
+  const newMarkets = initialNewMarkets;
 
-  const handleGranularityChange = useCallback(async (g: Granularity) => {
-    setGranularity(g);
-    setLoading(true);
-    try {
-      const [w, t, v, nm, o] = await Promise.all([
-        fetch(`/api/platform-metrics?metric=wallets&granularity=${g}`).then(
-          (r) => r.json()
-        ),
-        fetch(
-          `/api/platform-metrics?metric=transactions&granularity=${g}`
-        ).then((r) => r.json()),
-        fetch(
-          `/api/platform-metrics?metric=volume&granularity=${g}`
-        ).then((r) => r.json()),
-        fetch(
-          `/api/platform-metrics?metric=new_markets&granularity=${g}`
-        ).then((r) => r.json()),
-        fetch(`/api/platform-metrics?metric=oi&granularity=${g}`).then((r) =>
-          r.json()
-        ),
-      ]);
-      setWallets(w);
-      setTransactions(t);
-      setVolumeByCategory(v);
-      setNewMarkets(nm);
-      setOI(o);
-    } catch {
-      // Keep existing data on error
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  // Latest period stats
-  const latestWallets = wallets[wallets.length - 1];
   const latestTx = transactions[transactions.length - 1];
   const latestOI = oi[oi.length - 1];
   const latestNewMarkets = newMarkets[newMarkets.length - 1];
 
-  // Sparkline data
-  const walletSparkline = useMemo(
-    () => wallets.map((w) => w.polymarket),
-    [wallets]
-  );
   const txSparkline = useMemo(
     () => transactions.map((t) => t.polymarket + t.kalshi),
     [transactions]
   );
-  const oiSparkline = useMemo(
-    () => oi.map((o) => o.polymarket + o.kalshi),
-    [oi]
-  );
+  const oiSparkline = useMemo(() => oi.map((o) => o.polymarket + o.kalshi), [oi]);
   const nmSparkline = useMemo(
     () => newMarkets.map((n) => n.polymarket + n.kalshi),
     [newMarkets]
@@ -144,71 +120,36 @@ export function MetricsClient({
 
   return (
     <div className="space-y-8">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-pm-fg-base">
-            Platform Metrics
-          </h1>
-          <p className="mt-1 text-sm text-pm-fg-faint">
-            Polymarket vs Kalshi side-by-side comparison
-          </p>
-        </div>
-        <div className="flex items-center gap-3">
-          {loading && (
-            <Loader2 className="h-4 w-4 animate-spin text-pm-fg-muted" />
-          )}
-          <PeriodToggle value={granularity} onChange={handleGranularityChange} />
-        </div>
+      <div>
+        <h1 className="text-2xl font-bold text-pm-fg-base">Platform Metrics</h1>
+        <p className="mt-1 text-sm text-pm-fg-faint">
+          Polymarket vs Kalshi side-by-side comparison — daily over last 30 days
+        </p>
       </div>
 
       {/* Stat Cards */}
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard
-          label="Active Wallets"
-          value={latestWallets ? compactNum(latestWallets.polymarket) : "-"}
-          sub="Polymarket only"
-          sparkline={walletSparkline}
-          trend={
-            wallets.length >= 2
-              ? {
-                  value: calcTrend(
-                    wallets.map((w) => ({
-                      ...w,
-                      kalshi: 0,
-                    }))
-                  ),
-                  label: "vs prev",
-                }
-              : undefined
-          }
-          accentColor={POLY_COLOR}
-        />
-        <StatCard
-          label="Transactions"
+          label="Daily Volume"
           value={
-            latestTx
-              ? compactNum(latestTx.polymarket + latestTx.kalshi)
-              : "-"
+            latestTx ? formatCurrency(latestTx.polymarket + latestTx.kalshi, true) : "-"
           }
           sub={
             latestTx
-              ? `P: ${compactNum(latestTx.polymarket)} / K: ${compactNum(latestTx.kalshi)}`
+              ? `P: ${formatCurrency(latestTx.polymarket, true)} / K: ${formatCurrency(latestTx.kalshi, true)}`
               : undefined
           }
           sparkline={txSparkline}
           trend={
             transactions.length >= 2
-              ? { value: calcTrend(transactions), label: "vs prev" }
+              ? { value: calcTrend(transactions), label: "vs prev day" }
               : undefined
           }
         />
         <StatCard
           label="Open Interest"
           value={
-            latestOI
-              ? formatCurrency(latestOI.polymarket + latestOI.kalshi, true)
-              : "-"
+            latestOI ? formatCurrency(latestOI.polymarket + latestOI.kalshi, true) : "-"
           }
           sub={
             latestOI
@@ -217,18 +158,14 @@ export function MetricsClient({
           }
           sparkline={oiSparkline}
           trend={
-            oi.length >= 2
-              ? { value: calcTrend(oi), label: "vs prev" }
-              : undefined
+            oi.length >= 2 ? { value: calcTrend(oi), label: "vs prev day" } : undefined
           }
         />
         <StatCard
-          label="New Markets"
+          label="Active Markets"
           value={
             latestNewMarkets
-              ? formatNumber(
-                  latestNewMarkets.polymarket + latestNewMarkets.kalshi
-                )
+              ? formatNumber(latestNewMarkets.polymarket + latestNewMarkets.kalshi)
               : "-"
           }
           sub={
@@ -237,76 +174,29 @@ export function MetricsClient({
               : undefined
           }
           sparkline={nmSparkline}
-          trend={
-            newMarkets.length >= 2
-              ? { value: calcTrend(newMarkets), label: "vs prev" }
+        />
+        <StatCard
+          label="Total Active"
+          value={momentumSummary ? formatNumber(momentumSummary.total_active) : "-"}
+          sub={
+            momentumSummary
+              ? `${momentumSummary.volume_increasing} vol up / ${momentumSummary.volume_decreasing} down`
               : undefined
           }
+          accentColor={POLY_COLOR}
         />
       </div>
 
       {/* Charts */}
       <div className="grid gap-6 lg:grid-cols-2">
-        {/* Transactions */}
-        <Card title="Transactions">
-          <div style={{ width: '100%', height: '300px' }}>
+        <Card title="Daily Volume">
+          <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={transactions}>
-                <CartesianGrid
-                  strokeDasharray="3 3"
-                  stroke="var(--pm-border-subtle)"
-                />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--pm-border-subtle)" />
                 <XAxis
                   dataKey="period"
-                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
-                />
-                <YAxis
-                  tickFormatter={compactNum}
-                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
-                />
-                <Tooltip
-                  {...chartTooltipStyle}
-                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                  formatter={(value) => [
-                    formatNumber(Number(value)),
-                    undefined,
-                  ]}
-                />
-                <Legend
-                  wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
-                />
-                <Bar
-                  dataKey="polymarket"
-                  name="Polymarket"
-                  fill={POLY_COLOR}
-                  radius={[3, 3, 0, 0]}
-                />
-                <Bar
-                  dataKey="kalshi"
-                  name="Kalshi"
-                  fill={KALSHI_COLOR}
-                  radius={[3, 3, 0, 0]}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </Card>
-
-        {/* Open Interest */}
-        <Card title="Open Interest">
-          <div style={{ width: '100%', height: '300px' }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={oi}>
-                <CartesianGrid
-                  strokeDasharray="3 3"
-                  stroke="var(--pm-border-subtle)"
-                />
-                <XAxis
-                  dataKey="period"
-                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+                  tickFormatter={formatPeriodLabel}
                   tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
                   axisLine={{ stroke: "var(--pm-border-subtle)" }}
                 />
@@ -317,46 +207,54 @@ export function MetricsClient({
                 />
                 <Tooltip
                   {...chartTooltipStyle}
-                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                  formatter={(value) => [
-                    formatCurrency(Number(value), true),
-                    undefined,
-                  ]}
+                  labelFormatter={(v) => formatPeriodLabel(v as string)}
+                  formatter={(value) => [formatCurrency(Number(value), true), undefined]}
                 />
-                <Legend
-                  wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
+                <Legend wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }} />
+                <Bar dataKey="polymarket" name="Polymarket" fill={POLY_COLOR} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="kalshi" name="Kalshi" fill={KALSHI_COLOR} radius={[3, 3, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </Card>
+
+        <Card title="Open Interest">
+          <div style={{ width: "100%", height: 300 }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={oi}>
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--pm-border-subtle)" />
+                <XAxis
+                  dataKey="period"
+                  tickFormatter={formatPeriodLabel}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
                 />
-                <Line
-                  dataKey="polymarket"
-                  name="Polymarket"
-                  stroke={POLY_COLOR}
-                  strokeWidth={2}
-                  dot={false}
+                <YAxis
+                  tickFormatter={(v) => formatCurrency(v, true)}
+                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
+                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
                 />
-                <Line
-                  dataKey="kalshi"
-                  name="Kalshi"
-                  stroke={KALSHI_COLOR}
-                  strokeWidth={2}
-                  dot={false}
+                <Tooltip
+                  {...chartTooltipStyle}
+                  labelFormatter={(v) => formatPeriodLabel(v as string)}
+                  formatter={(value) => [formatCurrency(Number(value), true), undefined]}
                 />
+                <Legend wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }} />
+                <Line dataKey="polymarket" name="Polymarket" stroke={POLY_COLOR} strokeWidth={2} dot={false} />
+                <Line dataKey="kalshi" name="Kalshi" stroke={KALSHI_COLOR} strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
         </Card>
 
-        {/* New Markets */}
-        <Card title="New Markets Created">
-          <div style={{ width: '100%', height: '300px' }}>
+        <Card title="Active Markets">
+          <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={newMarkets}>
-                <CartesianGrid
-                  strokeDasharray="3 3"
-                  stroke="var(--pm-border-subtle)"
-                />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--pm-border-subtle)" />
                 <XAxis
                   dataKey="period"
-                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
+                  tickFormatter={formatPeriodLabel}
                   tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
                   axisLine={{ stroke: "var(--pm-border-subtle)" }}
                 />
@@ -367,185 +265,48 @@ export function MetricsClient({
                 />
                 <Tooltip
                   {...chartTooltipStyle}
-                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                  formatter={(value) => [
-                    formatNumber(Number(value)),
-                    undefined,
-                  ]}
+                  labelFormatter={(v) => formatPeriodLabel(v as string)}
+                  formatter={(value) => [formatNumber(Number(value)), undefined]}
                 />
-                <Legend
-                  wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }}
-                />
-                <Bar
-                  dataKey="polymarket"
-                  name="Polymarket"
-                  fill={POLY_COLOR}
-                  radius={[3, 3, 0, 0]}
-                />
-                <Bar
-                  dataKey="kalshi"
-                  name="Kalshi"
-                  fill={KALSHI_COLOR}
-                  radius={[3, 3, 0, 0]}
-                />
+                <Legend wrapperStyle={{ fontSize: "12px", color: "var(--pm-fg-muted)" }} />
+                <Bar dataKey="polymarket" name="Polymarket" fill={POLY_COLOR} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="kalshi" name="Kalshi" fill={KALSHI_COLOR} radius={[3, 3, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         </Card>
 
-        {/* Active Wallets */}
-        <Card title="Active Wallets (Polymarket)">
-          <div style={{ width: '100%', height: '300px' }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={wallets}>
-                <CartesianGrid
-                  strokeDasharray="3 3"
-                  stroke="var(--pm-border-subtle)"
-                />
-                <XAxis
-                  dataKey="period"
-                  tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
-                />
-                <YAxis
-                  tickFormatter={compactNum}
-                  tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-                  axisLine={{ stroke: "var(--pm-border-subtle)" }}
-                />
-                <Tooltip
-                  {...chartTooltipStyle}
-                  labelFormatter={(v) => formatPeriodLabel(v as string, granularity)}
-                  formatter={(value) => [
-                    formatNumber(Number(value)),
-                    undefined,
-                  ]}
-                />
-                <Bar
-                  dataKey="polymarket"
-                  name="Polymarket"
-                  fill={POLY_COLOR}
-                  radius={[3, 3, 0, 0]}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-          <p className="mt-2 text-center text-xs text-pm-fg-faint">
-            Kalshi does not expose wallet/user-level data
-          </p>
-        </Card>
+        {topMarkets.length > 0 && (
+          <Card title="Top Markets by Open Interest">
+            <div className="space-y-2">
+              {topMarkets.slice(0, 8).map((m, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-pm-bg-elevated text-[10px] tabular-nums text-pm-fg-faint">
+                    {i + 1}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate text-sm text-pm-fg-base">{m.question}</div>
+                    <div className="text-xs text-pm-fg-faint">
+                      <span className={m.platform === "polymarket" ? "text-pm-polymarket" : "text-pm-kalshi"}>
+                        {m.platform}
+                      </span>
+                      {" · "}
+                      <span>{m.category}</span>
+                    </div>
+                  </div>
+                  <span className="shrink-0 text-xs tabular-nums text-pm-fg-subtle">
+                    {formatCurrency(m.open_interest_usd, true)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        )}
       </div>
 
-      {/* Volume by Category */}
-      {volumeByCategory.length > 0 && (
-        <VolumeByCategory
-          data={volumeByCategory}
-          granularity={granularity}
-        />
-      )}
-
-      {/* Footer */}
       <div className="text-xs text-pm-fg-faint">
-        Data from ClickHouse. Polymarket on-chain trades + Kalshi market
-        reports. Active wallets are unique taker addresses per period.
+        Data via Surf API — `prediction-market-analytics` endpoint, daily buckets across both platforms.
       </div>
     </div>
-  );
-}
-
-// ─── Volume by Category sub-component ──────────────────────────
-const CAT_COLORS = [
-  "#8b5cf6", "#3b82f6", "#06b6d4", "#22c55e", "#eab308",
-  "#f97316", "#ef4444", "#ec4899", "#6366f1", "#14b8a6",
-];
-
-function VolumeByCategory({
-  data,
-  granularity,
-}: {
-  data: CHPlatformCategoryRow[];
-  granularity: Granularity;
-}) {
-  // Pivot: group by period, each category becomes a key
-  const { pivoted, categories } = useMemo(() => {
-    const catSet = new Set<string>();
-    const periodMap = new Map<string, Record<string, number>>();
-    for (const row of data) {
-      catSet.add(row.category);
-      if (!periodMap.has(row.period)) periodMap.set(row.period, {});
-      const entry = periodMap.get(row.period)!;
-      entry[row.category] = (entry[row.category] || 0) + row.volume;
-    }
-    // Sort categories by total volume descending, take top 8
-    const catTotals = [...catSet].map((cat) => ({
-      cat,
-      total: data
-        .filter((r) => r.category === cat)
-        .reduce((s, r) => s + r.volume, 0),
-    }));
-    catTotals.sort((a, b) => b.total - a.total);
-    const topCats = catTotals.slice(0, 8).map((c) => c.cat);
-
-    const pivoted = [...periodMap.entries()]
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([period, vals]) => ({ period, ...vals }));
-
-    return { pivoted, categories: topCats };
-  }, [data]);
-
-  if (pivoted.length === 0) return null;
-
-  return (
-    <Card title="Volume by Category">
-      <div style={{ width: '100%', height: '350px' }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={pivoted}>
-            <CartesianGrid
-              strokeDasharray="3 3"
-              stroke="var(--pm-border-subtle)"
-            />
-            <XAxis
-              dataKey="period"
-              tickFormatter={(v) => formatPeriodLabel(v, granularity)}
-              tick={{ fontSize: 10, fill: "var(--pm-fg-faint)" }}
-              axisLine={{ stroke: "var(--pm-border-subtle)" }}
-            />
-            <YAxis
-              tickFormatter={(v) => formatCurrency(Number(v), true)}
-              tick={{ fontSize: 11, fill: "var(--pm-fg-faint)" }}
-              axisLine={{ stroke: "var(--pm-border-subtle)" }}
-            />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "var(--pm-bg-card)",
-                border: "1px solid var(--pm-border-base)",
-                borderRadius: "8px",
-                fontSize: "12px",
-                color: "var(--pm-fg-base)",
-              }}
-              labelFormatter={(v) =>
-                formatPeriodLabel(v as string, granularity)
-              }
-              formatter={(value) => [
-                formatCurrency(Number(value), true),
-                undefined,
-              ]}
-            />
-            <Legend
-              wrapperStyle={{ fontSize: "11px", color: "var(--pm-fg-muted)" }}
-            />
-            {categories.map((cat, i) => (
-              <Bar
-                key={`${cat}-${i}`}
-                dataKey={cat}
-                name={cat}
-                stackId="vol"
-                fill={CAT_COLORS[i % CAT_COLORS.length]}
-              />
-            ))}
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-    </Card>
   );
 }

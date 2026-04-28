@@ -8,13 +8,13 @@ import { PlatformBadge } from "@/components/ui/platform-badge";
 import { Card } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import type {
-  CHWhaleTradeRow,
-  CHTopTraderRow,
-  CHHotMarketRow,
-  CHMarketRow,
-  CHWalletStatsRow,
-  CHWalletTradeHistoryRow,
-} from "@/lib/api/clickhouse";
+  WhaleTradeRow,
+  TopTraderRow,
+  HotMarketRow,
+  MarketSearchRow,
+  WalletStatsRow,
+  WalletTradeHistoryRow,
+} from "@/lib/queries/whales";
 
 type Tab = "whales" | "traders" | "hot" | "lookup";
 type LookupMode = "markets" | "wallets";
@@ -34,21 +34,21 @@ const DAY_OPTIONS: { label: string; value: Days }[] = [
 ];
 
 interface Props {
-  initialWhales: CHWhaleTradeRow[];
+  initialWhales: WhaleTradeRow[];
 }
 
 export function WhaleTrackerClient({ initialWhales }: Props) {
   const [tab, setTab] = useState<Tab>("whales");
   const [days, setDays] = useState<Days>(7);
   const [whales, setWhales] = useState(initialWhales);
-  const [traders, setTraders] = useState<CHTopTraderRow[]>([]);
-  const [hot, setHot] = useState<CHHotMarketRow[]>([]);
-  const [lookupResults, setLookupResults] = useState<CHMarketRow[]>([]);
+  const [traders, setTraders] = useState<TopTraderRow[]>([]);
+  const [hot, setHot] = useState<HotMarketRow[]>([]);
+  const [lookupResults, setLookupResults] = useState<MarketSearchRow[]>([]);
   const [lookupQuery, setLookupQuery] = useState("");
   const [lookupMode, setLookupMode] = useState<LookupMode>("markets");
   const [walletAddress, setWalletAddress] = useState("");
-  const [walletStats, setWalletStats] = useState<CHWalletStatsRow | null>(null);
-  const [walletTrades, setWalletTrades] = useState<CHWalletTradeHistoryRow[]>([]);
+  const [walletStats, setWalletStats] = useState<WalletStatsRow | null>(null);
+  const [walletTrades, setWalletTrades] = useState<WalletTradeHistoryRow[]>([]);
   const [walletSearched, setWalletSearched] = useState(false);
   const [loading, setLoading] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -293,8 +293,8 @@ function WalletResults({
   trades,
   searched,
 }: {
-  stats: CHWalletStatsRow | null;
-  trades: CHWalletTradeHistoryRow[];
+  stats: WalletStatsRow | null;
+  trades: WalletTradeHistoryRow[];
   searched: boolean;
 }) {
   if (!searched) {
@@ -457,7 +457,7 @@ function WalletResults({
 
 /* ──── Existing table components ──── */
 
-function WhaleTradesTable({ data }: { data: CHWhaleTradeRow[] }) {
+function WhaleTradesTable({ data }: { data: WhaleTradeRow[] }) {
   if (data.length === 0) {
     return (
       <EmptyState
@@ -523,7 +523,7 @@ function WhaleTradesTable({ data }: { data: CHWhaleTradeRow[] }) {
   );
 }
 
-function TopTradersTable({ data }: { data: CHTopTraderRow[] }) {
+function TopTradersTable({ data }: { data: TopTraderRow[] }) {
   if (data.length === 0) {
     return (
       <EmptyState
@@ -590,7 +590,7 @@ function TopTradersTable({ data }: { data: CHTopTraderRow[] }) {
   );
 }
 
-function HotMarketsTable({ data }: { data: CHHotMarketRow[] }) {
+function HotMarketsTable({ data }: { data: HotMarketRow[] }) {
   if (data.length === 0) {
     return (
       <EmptyState
@@ -652,7 +652,7 @@ function LookupTable({
   data,
   hasQuery,
 }: {
-  data: CHMarketRow[];
+  data: MarketSearchRow[];
   hasQuery: boolean;
 }) {
   if (!hasQuery) {

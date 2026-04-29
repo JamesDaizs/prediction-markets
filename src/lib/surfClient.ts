@@ -203,14 +203,16 @@ export class SurfClient {
   private baseUrl: string;
 
   constructor(opts: { apiKey?: string; baseUrl?: string } = {}) {
-    const key = opts.apiKey ?? process.env.SURF_API_KEY;
-    if (!key) {
+    this.apiKey = opts.apiKey ?? process.env.SURF_API_KEY ?? "";
+    this.baseUrl = opts.baseUrl ?? DEFAULT_BASE_URL;
+  }
+
+  private requireKey(): void {
+    if (!this.apiKey) {
       throw new Error(
         "SURF_API_KEY is required. Get a key at https://agents.asksurf.ai and set it in .env.local"
       );
     }
-    this.apiKey = key;
-    this.baseUrl = opts.baseUrl ?? DEFAULT_BASE_URL;
   }
 
   async searchPredictionMarket(params: SearchPredictionMarketParams = {}): Promise<SearchPredictionMarketResponse> {
@@ -234,6 +236,7 @@ export class SurfClient {
   }
 
   private async request<T>(path: string, params: object = {}): Promise<T> {
+    this.requireKey();
     const url = new URL(this.baseUrl + path);
     for (const [k, v] of Object.entries(params)) {
       if (v !== undefined && v !== null) url.searchParams.set(k, String(v));

@@ -144,7 +144,7 @@ export default async function DashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Categories */}
-        <div className="bg-white rounded-lg border p-6">
+        <div className="bg-pm-bg-card border border-pm-border-base rounded-lg p-6">
           <h3 className="text-lg font-semibold mb-4">Markets by Category</h3>
           <div className="space-y-3">
             {categoryData.slice(0, 8).map((cat: any, i: number) => (
@@ -163,7 +163,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* Top Markets */}
-        <div className="bg-white rounded-lg border p-6">
+        <div className="bg-pm-bg-card border border-pm-border-base rounded-lg p-6">
           <h3 className="text-lg font-semibold mb-4">Top Markets by Volume</h3>
           <div className="space-y-3">
             {topMarkets.slice(0, 8).map((market: any, i: number) => (

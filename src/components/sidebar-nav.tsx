@@ -4,18 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BarChart3,
-  Bot,
   LayoutDashboard,
-  Target,
   TrendingUp,
   Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Accuracy + Bots are hidden until they have a live data source — the public
+// Surf API can't supply resolution-accuracy or bot-classification data, so the
+// old pages only had stale snapshots. See docs/prediction-market-api-endpoint-request.
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/accuracy", label: "Accuracy", icon: Target },
-  { href: "/bots", label: "Bots", icon: Bot },
   { href: "/metrics", label: "Metrics", icon: TrendingUp },
   { href: "/portfolio", label: "Traders", icon: Users },
 ];
